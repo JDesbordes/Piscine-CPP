@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:02:19 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/20 17:03:24 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/02/21 01:13:17 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,134 +15,133 @@
 
 # include <iostream>
 # include <string>
-using namespace std;
 
 class Contact
 {
 public:
-  	string getFirstName() const {
+  	std::string getFirstName() const {
 		  return this->first_name;
 	}
 
-    void setFirstName(string value);
+    void setFirstName(std::string value);
 
-	string getLastName() const {
+	std::string getLastName() const {
 		  return this->last_name;
 	}
 
-    void setLastName(string value);
+    void setLastName(std::string value);
 
-	string getNickname() const {
+	std::string getNickname() const {
 		  return this->nickname;
 	}
 
-    void setNickname(string value);
+    void setNickname(std::string value);
 
-	string getLogin() const {
+	std::string getLogin() const {
 		  return this->login;
 	}
 
-    void setLogin(string value);
+    void setLogin(std::string value);
 
-	string getPostAddr() const {
+	std::string getPostAddr() const {
 		  return this->postal_address;
 	}
 
-    void setPostAddr(string value);
+    void setPostAddr(std::string value);
 
-	string getEmail() const {
+	std::string getEmail() const {
 		  return this->email_address;
 	}
 
-    void setEmail(string value);
+    void setEmail(std::string value);
 
-	string getPhone() const {
+	std::string getPhone() const {
 		  return this->phone_number;
 	}
 
-    void setPhone(string value);
+    void setPhone(std::string value);
 
-	string getBirthday() const {
+	std::string getBirthday() const {
 		  return this->birthday_date;
 	}
 
-    void setBirthday(string value);
+    void setBirthday(std::string value);
 
-	string getMeal() const {
+	std::string getMeal() const {
 		  return this->favorite_meal;
 	}
 
-    void setMeal(string value);
+    void setMeal(std::string value);
 
-	string getColor() const {
+	std::string getColor() const {
 		  return this->underwear_color;
 	}
 
-    void setColor(string value);
+    void setColor(std::string value);
 
-	string getSecret() const {
+	std::string getSecret() const {
 		  return this->darkest_secret;
 	}
 	
-    void setSecret(string value);
+    void setSecret(std::string value);
 
 private: 
-	string first_name, last_name, nickname, login, postal_address,
+	std::string first_name, last_name, nickname, login, postal_address,
 	email_address, phone_number, birthday_date, favorite_meal,
 	underwear_color, darkest_secret;
 };
 
-inline void Contact::setFirstName(string value)
+inline void Contact::setFirstName(std::string value)
 {
     this->first_name = value;
 }
 
-inline void Contact::setLastName(string value)
+inline void Contact::setLastName(std::string value)
 {
     this->last_name = value;
 }
 
-inline void Contact::setNickname(string value)
+inline void Contact::setNickname(std::string value)
 {
     this->nickname = value;
 }
 
-inline void Contact::setLogin(string value)
+inline void Contact::setLogin(std::string value)
 {
     this->login = value;
 }
 
-inline void Contact::setPostAddr(string value)
+inline void Contact::setPostAddr(std::string value)
 {
     this->postal_address = value;
 }
 
-inline void Contact::setEmail(string value)
+inline void Contact::setEmail(std::string value)
 {
     this->email_address = value;
 }
 
-inline void Contact::setPhone(string value)
+inline void Contact::setPhone(std::string value)
 {
     this->phone_number = value;
 }
 
-inline void Contact::setBirthday(string value)
+inline void Contact::setBirthday(std::string value)
 {
     this->birthday_date = value;
 }
 
-inline void Contact::setMeal(string value)
+inline void Contact::setMeal(std::string value)
 {
     this->favorite_meal = value;
 }
 
-inline void Contact::setColor(string value)
+inline void Contact::setColor(std::string value)
 {
     this->underwear_color = value;
 }
 
-inline void Contact::setSecret(string value)
+inline void Contact::setSecret(std::string value)
 {
     this->darkest_secret = value;
 }
