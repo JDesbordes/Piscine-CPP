@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 15:46:35 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/21 03:07:40 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/02/21 03:20:58 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,7 @@ int			main(void)
 
 	while (1)
 	{
-		std::cout << "\033[1;34mWaiting your request sir:\033[0m (\033[1;32mAdd\033[0m // \033[1;33mSearch\033[0m // \033[1;31mExit\033[0m)" << '\n' << "\033[1;35mMinishell\033[0m->";
+		std::cout << "\033[1;34mWaiting your request sir:\033[0m (\033[1;32mAdd\033[0m // \033[1;33mSearch\033[0m // \033[1;31mExit\033[0m)" << '\n' << "\033[1;35mMinishell\033[0m-> ";
 		getline (std::cin, mystr);
 		for (std::string::size_type i=0; i<mystr.length(); ++i)
     		mystr[i] = std::toupper(mystr[i],loc);
