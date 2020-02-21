@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 15:46:35 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/21 02:49:27 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/02/21 03:07:40 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,57 +19,57 @@ static Contact	add_contact(void)
 	
 	// Nom
 	std::cout << "\n\033[1;32m   ---   ADD CONTACT   ---\033[0m\n\n";
-	std::cout << "\033[0;32mFirst Name\033[0m:      ";
+	std::cout << "\033[0;32mFirst Name\033[0m:       ";
 	getline (std::cin, mystr);
 	contact.setFirstName(mystr);
 
 	// Prenom
-	std::cout << "\033[0;32mLast Name\033[0m:       ";
+	std::cout << "\033[0;32mLast Name\033[0m:        ";
 	getline (std::cin, mystr);
 	contact.setLastName(mystr);
 
 	// Pseudo
-	std::cout << "\033[0;32mNickname\033[0m:        ";
+	std::cout << "\033[0;32mNickname\033[0m:         ";
 	getline (std::cin, mystr);
 	contact.setNickname(mystr);
 
 	// Login
-	std::cout << "\033[0;32mLogin\033[0m:           ";
+	std::cout << "\033[0;32mLogin\033[0m:            ";
 	getline (std::cin, mystr);
 	contact.setLogin(mystr);
 
 	// Code Postal
-	std::cout << "\033[0;32mPostal adress\033[0m:   ";
+	std::cout << "\033[0;32mPostal adress\033[0m:    ";
 	getline (std::cin, mystr);
 	contact.setPostAddr(mystr);
 
 	// Email
-	std::cout << "\033[0;32mEmail adress\033[0m:    ";
+	std::cout << "\033[0;32mEmail adress\033[0m:     ";
 	getline (std::cin, mystr);
 	contact.setEmail(mystr);
 
 	// Telephone
-	std::cout << "\033[0;32mPhone number\033[0m:    ";
+	std::cout << "\033[0;32mPhone number\033[0m:     ";
 	getline (std::cin, mystr);
 	contact.setPhone(mystr);
 
 	// Date
-	std::cout << "\033[0;32mBirthday date\033[0m:   ";
+	std::cout << "\033[0;32mBirthday date\033[0m:    ";
 	getline (std::cin, mystr);
 	contact.setBirthday(mystr);
 
 	// Repas
-	std::cout << "\033[0;32mFavorite meal\033[0m:   ";
+	std::cout << "\033[0;32mFavorite meal\033[0m:    ";
 	getline (std::cin, mystr);
 	contact.setMeal(mystr);
 
 	// Couleur
-	std::cout << "\033[0;32mUnderwear color\033[0m: ";
+	std::cout << "\033[0;32mUnderwear color\033[0m:  ";
 	getline (std::cin, mystr);
 	contact.setColor(mystr);
 	    	 	 		 	 		 	 	 	    
 	// Secret
-	std::cout << "\033[0;32mDarkest secret\033[0m:  ";
+	std::cout << "\033[0;32mDarkest secret\033[0m:   ";
 	getline (std::cin, mystr);
 	contact.setSecret(mystr);
 	std::cout << '\n';
