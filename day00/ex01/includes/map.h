@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:02:19 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/22 12:10:57 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/02/22 16:21:27 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,77 +19,77 @@
 
 class Contact
 {
-public:
-  	std::string getFirstName() const {
-		  return this->first_name;
-	}
+	public:
+		std::string getFirstName() const {
+			return this->first_name;
+		}
 
-    void setFirstName(std::string value);
+		void setFirstName(std::string value);
 
-	std::string getLastName() const {
-		  return this->last_name;
-	}
+		std::string getLastName() const {
+			return this->last_name;
+		}
 
-    void setLastName(std::string value);
+		void setLastName(std::string value);
 
-	std::string getNickname() const {
-		  return this->nickname;
-	}
+		std::string getNickname() const {
+			return this->nickname;
+		}
 
-    void setNickname(std::string value);
+		void setNickname(std::string value);
 
-	std::string getLogin() const {
-		  return this->login;
-	}
+		std::string getLogin() const {
+			return this->login;
+		}
 
-    void setLogin(std::string value);
+		void setLogin(std::string value);
 
-	std::string getPostAddr() const {
-		  return this->postal_address;
-	}
+		std::string getPostAddr() const {
+			return this->postal_address;
+		}
 
-    void setPostAddr(std::string value);
+		void setPostAddr(std::string value);
 
-	std::string getEmail() const {
-		  return this->email_address;
-	}
+		std::string getEmail() const {
+			return this->email_address;
+		}
 
-    void setEmail(std::string value);
+		void setEmail(std::string value);
 
-	std::string getPhone() const {
-		  return this->phone_number;
-	}
+		std::string getPhone() const {
+			return this->phone_number;
+		}
 
-    void setPhone(std::string value);
+		void setPhone(std::string value);
 
-	std::string getBirthday() const {
-		  return this->birthday_date;
-	}
+		std::string getBirthday() const {
+			return this->birthday_date;
+		}
 
-    void setBirthday(std::string value);
+		void setBirthday(std::string value);
 
-	std::string getMeal() const {
-		  return this->favorite_meal;
-	}
+		std::string getMeal() const {
+			return this->favorite_meal;
+		}
 
-    void setMeal(std::string value);
+		void setMeal(std::string value);
 
-	std::string getColor() const {
-		  return this->underwear_color;
-	}
+		std::string getColor() const {
+			return this->underwear_color;
+		}
 
-    void setColor(std::string value);
+		void setColor(std::string value);
 
-	std::string getSecret() const {
-		  return this->darkest_secret;
-	}
-	
-    void setSecret(std::string value);
+		std::string getSecret() const {
+			return this->darkest_secret;
+		}
+		
+		void setSecret(std::string value);
 
-private: 
-	std::string first_name, last_name, nickname, login, postal_address,
-	email_address, phone_number, birthday_date, favorite_meal,
-	underwear_color, darkest_secret;
+	private: 
+		std::string first_name, last_name, nickname, login, postal_address,
+		email_address, phone_number, birthday_date, favorite_meal,
+		underwear_color, darkest_secret;
 };
 
 inline void Contact::setFirstName(std::string value)

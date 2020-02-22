@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 11:51:36 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/22 14:48:17 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/02/22 17:26:07 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,38 +21,38 @@ void		ponyOnTheHeap();
 
 class Pony
 {
-public:
-	Pony();
-	~Pony();
+	public:
+		Pony();
+		~Pony();
 
-	void setVal(std::string name, std::string old, std::string color, std::string size);
+		void setVal(std::string name, std::string old, std::string color, std::string size);
 
-	std::string getName() const {
-		  return this->name;
-	}
+		std::string getName() const {
+			return this->name;
+		}
 
-    void setName(std::string value);
+		void setName(std::string value);
 
-	std::string getOld() const {
-		  return this->years_old;
-	}
-    void setOld(std::string value);
+		std::string getOld() const {
+			return this->years_old;
+		}
+		void setOld(std::string value);
 
-	std::string getColor() const {
-		  return this->color;
-	}
-    void setColor(std::string value);
+		std::string getColor() const {
+			return this->color;
+		}
+		void setColor(std::string value);
 
-	std::string getSize() const {
-		  return this->size;
-	}
-    void setSize(std::string value);
+		std::string getSize() const {
+			return this->size;
+		}
+		void setSize(std::string value);
 
-private: 
-	std::string name, years_old, color, size;
+	private: 
+		std::string name, years_old, color, size;
 };
 
-inline void Pony::setVal(std::string name, std::string old, std::string color, std::string size)
+inline void Pony::setVal(std::string name, std::string old, std::string size, std::string color)
 {
     name.empty() ? 0 : this->name = name;
     old.empty() ? 0 : this->years_old = old;
@@ -89,6 +89,5 @@ inline Pony::~Pony()
 {
 	std::cout << "pony destroyed" << std::endl;
 }
-
 
 #endif
