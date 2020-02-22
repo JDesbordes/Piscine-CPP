@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:02:19 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/21 01:13:17 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/02/22 12:03:42 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <iomanip>
 
 class Contact
 {
