@@ -6,13 +6,16 @@
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 11:50:27 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/22 11:51:06 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/02/22 14:10:54 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.h"
+#include "Pony.hpp"
 
 int		main(void)
 {
+	ponyOnTheHeap();
+	std::cout << '\n';
+	ponyOnTheStack();
 	return (0);
 }
