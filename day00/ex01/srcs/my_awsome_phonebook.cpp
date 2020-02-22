@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 15:46:35 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/22 17:36:52 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/02/22 17:43:06 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ static void	search_contact(Contact *contacts, int i)
 	else
 	{
 		std::cout << "_____________________________________________\n\n" ;
-		std::cout << "\033[1;34mSelect an index ? \033[0m:" << "\n\033[0;35mNumber : \033[0m";
+		std::cout << "\033[1;34mSelect an index ? \033[0m:" << "\n\033[0;35mNumber \033[0m: ";
 		std::cin >> j;
 		if (std::cin.fail())
 		{
@@ -175,8 +175,10 @@ int			main(void)
 
 	while (1)
 	{
-		std::cout << "\033[1;34mWaiting your request sir:\033[0m (\033[1;32mAdd\033[0m // \033[1;33mSearch\033[0m // \033[1;31mExit\033[0m)" << '\n' << "\033[1;35mMinishell\033[0m-> ";
+		std::cout << "\033[1;34mWaiting your request sir\033[0m: (\033[1;32mAdd\033[0m // \033[1;33mSearch\033[0m // \033[1;31mExit\033[0m)" << '\n' << "\033[1;35mMinishell\033[0m-> ";
+		std::cout << "\033[3;36m";
 		getline (std::cin, mystr);
+		std::cout << "\033[0m";
 		for (std::string::size_type i=0; i<mystr.length(); ++i)
     		mystr[i] = std::toupper(mystr[i],loc);
 		if (mystr.compare("ADD") == 0)
