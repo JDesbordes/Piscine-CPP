@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 15:46:35 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/22 17:29:46 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/02/22 17:36:52 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ static void	search_contact(Contact *contacts, int i)
 		{
 			std::cin.clear();
       		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "\n\033[0;31mYour selection is not an int.\033[0m\n";
+			std::cout << "\n\033[0;31mYour selection is not a int.\033[0m\n";
 		}
 		else if (j - 1 > i || j - 1 < 0)
 			std::cout << "\n\033[0;31mIndex " << j << " not exist.\033[0m\n\n";
