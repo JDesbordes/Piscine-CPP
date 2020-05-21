@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   Squad.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/03/06 14:53:49 by jacens            #+#    #+#             */
+/*   Updated: 2020/03/06 21:19:51 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef SQUAD_HPP
+# define SQUAD_HPP
 
-void memoryLeak()
-{
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
+# include "ISquad.hpp"
+# include "TacticalMarine.hpp"
 
-int	main(void)
-{
-	memoryLeak();
-	return (1);
-}
+#endif

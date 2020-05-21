@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/03/06 14:53:23 by jacens            #+#    #+#             */
+/*   Updated: 2020/03/06 18:21:30 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef TACTICALMARINE_HPP
+# define TACTICALMARINE_HPP
 
-void memoryLeak()
-{
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
+# include "AssaultTerminator.hpp"
+# include "ISpaceMarine.hpp"
 
-int	main(void)
-{
-	memoryLeak();
-	return (1);
-}
+#endif

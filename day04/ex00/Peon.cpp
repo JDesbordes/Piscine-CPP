@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   Peon.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/03/06 14:31:22 by jacens            #+#    #+#             */
+/*   Updated: 2020/03/06 14:31:24 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Peon.hpp"
 
-void memoryLeak()
+Peon::Peon()
 {
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
+	try
+	{
+		throw 20;
+	}
+	catch(int a) {
+		
+   	}
 }
 
-int	main(void)
+Peon::Peon(std::string name): Victim(name)
 {
-	memoryLeak();
-	return (1);
+	std::cout << "Zog zog." << std::endl;
+}
+
+Peon::~Peon()
+{
+	std::cout << "Bleuark..." << std::endl;
+}
+
+void Peon::getPolymorphed() const
+{
+	std::cout << getName() << " has been turned into a pink pony!" << std::endl;
 }

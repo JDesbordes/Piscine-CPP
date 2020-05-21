@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/27 14:49:53 by jacens            #+#    #+#             */
+/*   Updated: 2020/02/27 15:25:57 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-void memoryLeak()
-{
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
+# include <iostream>
+# include <string>
 
-int	main(void)
+class Zombie
 {
-	memoryLeak();
-	return (1);
-}
+	public:
+	void setValZomb(std::string name, std::string type);
+	std::string getNameZomb();
+	std::string getTypeZomb();
+	void advert(int i);
+
+	private: 
+		std::string name, type;
+};
+
+#endif

@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/03/06 15:03:12 by jacens            #+#    #+#             */
+/*   Updated: 2020/03/06 15:03:13 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef RADSCORPION_HPP
+# define RADSCORPION_HPP
 
-void memoryLeak()
-{
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
+# include "Enemy.hpp"
 
-int	main(void)
+class RadScorpion : public Enemy
 {
-	memoryLeak();
-	return (1);
-}
+	private:
+	std::string Type;
+	int			HP;
+
+	public:
+	RadScorpion();
+	~RadScorpion();
+	RadScorpion(RadScorpion const &copied);
+	RadScorpion& operator=(const RadScorpion &copied);
+	virtual void takeDamage(int);
+};
+
+#endif

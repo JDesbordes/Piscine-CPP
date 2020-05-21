@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   Enemy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/03/06 15:02:09 by jacens            #+#    #+#             */
+/*   Updated: 2020/03/06 15:02:27 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
 
-void memoryLeak()
-{
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
+# include "AWeapon.hpp"
 
-int	main(void)
+class Enemy
 {
-	memoryLeak();
-	return (1);
-}
+	private:
+	std::string Type;
+	int			HP;
+
+	public:
+	Enemy(int hp, std::string const & type);
+	virtual ~Enemy();
+	Enemy(Enemy const &copied);
+	Enemy& operator=(const Enemy &copied);
+	std::string getType() const;
+	void setType(std::string);
+	int getHP() const;
+	void	setHP(int);
+	virtual void takeDamage(int);
+};
+
+#endif

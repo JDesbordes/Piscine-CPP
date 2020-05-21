@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/03/06 14:31:06 by jacens            #+#    #+#             */
+/*   Updated: 2020/03/06 14:31:08 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Sorcerer.hpp"
+#include "Peon.hpp"
 
-void memoryLeak()
+int main()
 {
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
-
-int	main(void)
-{
-	memoryLeak();
-	return (1);
+	Sorcerer robert("Robert", "the Magnificent");
+	Sorcerer bib("Gandalf", "the Grey");
+	std::cout << bib << bib.getName() << " " << bib.getTitle() << " uses Doppelganger" << std::endl;
+	bib = robert;
+	std::cout << bib;
+	Victim jim("Jimmy");
+	Peon joe("Joe");
+	std::cout << robert << jim << joe;
+	robert.polymorph(jim);
+	robert.polymorph(joe);
+	return 0;
 }

@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/03/06 14:49:52 by jacens            #+#    #+#             */
+/*   Updated: 2020/03/06 14:50:45 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef PEON_HPP
+# define PEON_HPP
 
-void memoryLeak()
-{
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
+# include "Victim.hpp"
 
-int	main(void)
+class Peon: virtual public Victim
 {
-	memoryLeak();
-	return (1);
-}
+	private :
+	std::string Name;
+
+	protected :
+	Peon();
+
+	public :
+	Peon(std::string name);
+	~Peon();
+	void getPolymorphed() const;
+};
+
+#endif

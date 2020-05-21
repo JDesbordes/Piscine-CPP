@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/03/06 14:53:38 by jacens            #+#    #+#             */
+/*   Updated: 2020/03/06 14:53:39 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef ISPACEMARINE_HPP
+# define ISPACEMARINE_HPP
 
-void memoryLeak()
+class ISpaceMarine
 {
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
+	public:
+	virtual ~ISpaceMarine() {}
+	virtual ISpaceMarine* clone() const = 0;
+	virtual void battleCry() const = 0;
+	virtual void rangedAttack() const = 0;
+	virtual void meleeAttack() const = 0;
+};
 
-int	main(void)
-{
-	memoryLeak();
-	return (1);
-}
+#endif
