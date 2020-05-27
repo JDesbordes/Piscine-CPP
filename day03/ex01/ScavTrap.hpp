@@ -1,36 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 14:26:58 by jacens            #+#    #+#             */
+/*   Created: 2020/02/22 01:47:58 by jacens            #+#    #+#             */
 /*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
 #include <iostream>
 #include <stdio.h>
 #include <iomanip>
 #include <string.h>
 #include <ctime>
-#include <cstdlib>
+#include <bitset>
+#include <cmath>
 
-class Zombie
+class ScavTrap
 {
 
   public :
+  	ScavTrap();
+  	ScavTrap(std::string name);
+	~ScavTrap();
+	void rangedAttack(std::string const & target);
+	void meleeAttack(std::string const & target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+	void challengNewcomer(std::string const & target);
 
-  void announce();
-  Zombie(std::string name, std::string type);
-  Zombie();
-  int get_Zombie();
-  int set_Zombie();
-  std::string type;
-  std::string name;
+  private :
+  	int Hit_points;
+  	int Max_hit_points;
+	int Energy_points;
+	int Max_energy_points;
+	int Level;
+	std::string Name;
+	int Melee_attack_damage;
+	int Ranged_attack_damage;
+	int Armor_damage_reduction;
 };
 
 #endif

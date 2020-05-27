@@ -5,35 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 14:27:14 by jacens            #+#    #+#             */
+/*   Created: 2020/02/19 17:35:20 by jacens            #+#    #+#             */
 /*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
 
-void   randomChump()
-{
-    Zombie zombi;
-    int i = 0;
-    std::string yo = "abcdefghijklmnopqrstuvwxyz";
-    std::string nam;
-    while (i < 6)
-    {
-        nam[i] = yo[std::rand() % 24];
-        i++;
-    }
-    zombi.name = nam.c_str();
-    zombi.announce();
-}
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
-    std::srand(std::time(nullptr));
-    ZombieEvent hey;
-
-	randomChump();
-    randomChump();
-	delete(hey.zombi);
-  	return (0);
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

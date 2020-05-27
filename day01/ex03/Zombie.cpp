@@ -12,9 +12,21 @@
 
 #include "Zombie.hpp"
 
+void	Zombie::namer()
+{
+ 	int i = 0;
+    std::string yo = "abcdefghijklmnopqrstuvwxyz";
+    std::string nam;
+    while (i < 6)
+    {
+        nam[i] = yo[rand() % 24];
+        i++;
+    }
+	name = nam.c_str();
+}
 void    Zombie::announce()
 {
-    std::cout << "<" << name << " " << "(" << type << ")" << "> ";
+	std::cout << "<" << name << " " << "(" << type << ")" << "> ";
     puts("Braiiiiiiinnnssss ...");
 }
 

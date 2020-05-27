@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 14:27:14 by jacens            #+#    #+#             */
+/*   Created: 2020/02/15 14:26:58 by jacens            #+#    #+#             */
 /*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
+#include <iostream>
+#include <stdio.h>
+#include <iomanip>
+#include <string.h>
+#include <ctime>
+#include <cstdlib>
 
-void   randomChump()
+class Zombie
 {
-    Zombie zombi;
-    int i = 0;
-    std::string yo = "abcdefghijklmnopqrstuvwxyz";
-    std::string nam;
-    while (i < 6)
-    {
-        nam[i] = yo[std::rand() % 24];
-        i++;
-    }
-    zombi.name = nam.c_str();
-    zombi.announce();
-}
 
-int main()
-{
-    std::srand(std::time(nullptr));
-    ZombieEvent hey;
+  public :
 
-	randomChump();
-    randomChump();
-	delete(hey.zombi);
-  	return (0);
-}
+	void announce();
+	Zombie(std::string name, std::string type);
+	Zombie();
+	int get_Zombie();
+	int set_Zombie();
+	void	namer();
+	std::string type;
+	std::string name;
+};
+
+#endif

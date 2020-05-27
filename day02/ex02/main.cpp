@@ -5,35 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 14:27:14 by jacens            #+#    #+#             */
+/*   Created: 2020/02/21 21:05:53 by jacens            #+#    #+#             */
 /*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
 
-void   randomChump()
+#include "Fixed.hpp"
+
+int main(void)
 {
-    Zombie zombi;
-    int i = 0;
-    std::string yo = "abcdefghijklmnopqrstuvwxyz";
-    std::string nam;
-    while (i < 6)
-    {
-        nam[i] = yo[std::rand() % 24];
-        i++;
-    }
-    zombi.name = nam.c_str();
-    zombi.announce();
-}
-
-int main()
-{
-    std::srand(std::time(nullptr));
-    ZombieEvent hey;
-
-	randomChump();
-    randomChump();
-	delete(hey.zombi);
-  	return (0);
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed c;
+	c = a;
+	std::cout << (a > b) << std::endl;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
 }

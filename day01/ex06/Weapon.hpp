@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 14:27:14 by jacens            #+#    #+#             */
+/*   Created: 2020/02/19 17:42:02 by jacens            #+#    #+#             */
 /*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
 
-void   randomChump()
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+
+#include <iostream>
+#include <stdio.h>
+#include <iomanip>
+#include <string.h>
+#include <ctime>
+#include <cstdlib>
+#include <sstream>
+
+class Weapon
 {
-    Zombie zombi;
-    int i = 0;
-    std::string yo = "abcdefghijklmnopqrstuvwxyz";
-    std::string nam;
-    while (i < 6)
-    {
-        nam[i] = yo[std::rand() % 24];
-        i++;
-    }
-    zombi.name = nam.c_str();
-    zombi.announce();
-}
 
-int main()
-{
-    std::srand(std::time(nullptr));
-    ZombieEvent hey;
+	public :
+	std::string type;
+	Weapon();
+	Weapon(std::string str);
+	int	setType(std::string str);
+};
 
-	randomChump();
-    randomChump();
-	delete(hey.zombi);
-  	return (0);
-}
+#endif

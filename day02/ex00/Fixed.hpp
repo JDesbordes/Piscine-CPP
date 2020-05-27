@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 14:27:14 by jacens            #+#    #+#             */
+/*   Created: 2020/02/21 18:23:35 by jacens            #+#    #+#             */
 /*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#ifndef FIXED_CLASS_HPP
+# define FIXED_CLASS_HPP
 
-void   randomChump()
+#include <iostream>
+#include <stdio.h>
+#include <iomanip>
+#include <string.h>
+#include <ctime>
+#include <cstdlib>
+#include <sstream>
+#include <fstream>
+
+class Fixed
 {
-    Zombie zombi;
-    int i = 0;
-    std::string yo = "abcdefghijklmnopqrstuvwxyz";
-    std::string nam;
-    while (i < 6)
-    {
-        nam[i] = yo[std::rand() % 24];
-        i++;
-    }
-    zombi.name = nam.c_str();
-    zombi.announce();
-}
+	private :
+	int value;
+	static const int fract_bits = 8;
 
-int main()
-{
-    std::srand(std::time(nullptr));
-    ZombieEvent hey;
+	public :
+	Fixed();
+	Fixed(const Fixed &copied);
+	~Fixed();
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+	void operator=(const Fixed &copied);
+};
 
-	randomChump();
-    randomChump();
-	delete(hey.zombi);
-  	return (0);
-}
+#endif

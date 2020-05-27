@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 14:27:14 by jacens            #+#    #+#             */
+/*   Created: 2020/02/19 18:10:06 by jacens            #+#    #+#             */
 /*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
 
-void   randomChump()
+#include "HumanB.hpp"
+
+int		HumanB::setWeapon(Weapon& weap)
 {
-    Zombie zombi;
-    int i = 0;
-    std::string yo = "abcdefghijklmnopqrstuvwxyz";
-    std::string nam;
-    while (i < 6)
-    {
-        nam[i] = yo[std::rand() % 24];
-        i++;
-    }
-    zombi.name = nam.c_str();
-    zombi.announce();
+	weapon = &weap;
+	return (1);
 }
 
-int main()
+int		HumanB::attack()
 {
-    std::srand(std::time(nullptr));
-    ZombieEvent hey;
+	std::cout << name << " attacks with his " << weapon->type << "\n";
+	return (1);
+}
 
-	randomChump();
-    randomChump();
-	delete(hey.zombi);
-  	return (0);
+HumanB::HumanB(std::string str)
+{
+	name = str;
+	//weapon = Weapon();
+}
+
+HumanB::HumanB()
+{
+	name = "John Doe";
+	//weapon = Weapon();
 }
