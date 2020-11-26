@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:35:20 by jacens            #+#    #+#             */
-/*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 21:08:21 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main()
 		jim.setWeapon(club);
 		jim.attack();
 		club.setType("some other type of club");
+		std::cout << club.getType() << std::endl;
 		jim.attack();
 	}
 }
