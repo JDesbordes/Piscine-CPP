@@ -1,17 +1,15 @@
-#include "TacticalMarine.hpp"
+#include "AMateria.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-TacticalMarine::TacticalMarine()
+AMateria::AMateria()
 {
-	std::cout << "Tactical Marine ready for battle!" << std::endl;
 }
 
-TacticalMarine::TacticalMarine( const TacticalMarine & src )
+AMateria::AMateria( const AMateria & src )
 {
-	std::cout << "Tactical Marine ready for battle!" << std::endl;
 }
 
 
@@ -19,9 +17,8 @@ TacticalMarine::TacticalMarine( const TacticalMarine & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-TacticalMarine::~TacticalMarine()
+AMateria::~AMateria()
 {
-	std::cout << "Aaargh..." << std::endl;
 }
 
 
@@ -29,7 +26,7 @@ TacticalMarine::~TacticalMarine()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-TacticalMarine &				TacticalMarine::operator=( TacticalMarine const & rhs )
+AMateria &				AMateria::operator=( AMateria const & rhs )
 {
 	//if ( this != &rhs )
 	//{
@@ -38,7 +35,7 @@ TacticalMarine &				TacticalMarine::operator=( TacticalMarine const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, TacticalMarine const & i )
+std::ostream &			operator<<( std::ostream & o, AMateria const & i )
 {
 	//o << "Value = " << i.getValue();
 	return o;
@@ -48,5 +45,6 @@ std::ostream &			operator<<( std::ostream & o, TacticalMarine const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
 
 /* ************************************************************************** */

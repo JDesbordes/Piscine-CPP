@@ -1,15 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/06 14:53:43 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/06 14:57:33 by jacens           ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include "AssaultTerminator.hpp"
+#include "TacticalMarine.hpp"
 #include "Squad.hpp"
 
 int main()
@@ -27,6 +17,5 @@ int main()
 		cur->meleeAttack();
 	}
 	delete vlc;
-
 	return 0;
 }

@@ -1,17 +1,17 @@
-#include "TacticalMarine.hpp"
+#include "Character.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-TacticalMarine::TacticalMarine()
+Character::Character()
 {
-	std::cout << "Tactical Marine ready for battle!" << std::endl;
+	
 }
 
-TacticalMarine::TacticalMarine( const TacticalMarine & src )
+Character::Character( const Character & src )
 {
-	std::cout << "Tactical Marine ready for battle!" << std::endl;
+
 }
 
 
@@ -19,9 +19,8 @@ TacticalMarine::TacticalMarine( const TacticalMarine & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-TacticalMarine::~TacticalMarine()
+Character::~Character()
 {
-	std::cout << "Aaargh..." << std::endl;
 }
 
 
@@ -29,7 +28,7 @@ TacticalMarine::~TacticalMarine()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-TacticalMarine &				TacticalMarine::operator=( TacticalMarine const & rhs )
+Character &				Character::operator=( Character const & rhs )
 {
 	//if ( this != &rhs )
 	//{
@@ -38,7 +37,7 @@ TacticalMarine &				TacticalMarine::operator=( TacticalMarine const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, TacticalMarine const & i )
+std::ostream &			operator<<( std::ostream & o, Character const & i )
 {
 	//o << "Value = " << i.getValue();
 	return o;
@@ -48,5 +47,14 @@ std::ostream &			operator<<( std::ostream & o, TacticalMarine const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+std::string const & getName()
+{
+	return (name);
+}
+void equip(AMateria* m);
+void unequip(int idx);
+void use(int idx, ICharacter& target);
+
 
 /* ************************************************************************** */

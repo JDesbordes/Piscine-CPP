@@ -1,19 +1,30 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/06 14:53:23 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/06 18:21:30 by jacens           ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef TACTICALMARINE_HPP
 # define TACTICALMARINE_HPP
 
-# include "AssaultTerminator.hpp"
-# include "ISpaceMarine.hpp"
+# include <iostream>
+# include <string>
+#include "ISpaceMarine.hpp"
 
-#endif
+class TacticalMarine : public ISpaceMarine
+{
+
+	public:
+
+		TacticalMarine();
+		TacticalMarine(TacticalMarine const & src);
+		~TacticalMarine();
+
+		void battleCry() const {std::cout << "For the holy PLOT!" << std::endl;}
+		void rangedAttack() const {std::cout << "* attacks with a bolter *" << std::endl;}
+		void meleeAttack() const {std::cout << "* attacks with a chainsword *" << std::endl;}
+		ISpaceMarine* clone() const { return new TacticalMarine(*this);}
+
+		TacticalMarine &		operator=( TacticalMarine const & rhs );
+
+	private:
+
+};
+
+std::ostream &			operator<<( std::ostream & o, TacticalMarine const & i );
+
+#endif /* ************************************************** TACTICALMARINE_H */

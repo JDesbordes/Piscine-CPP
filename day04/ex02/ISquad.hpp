@@ -3,32 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ISquad.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/06 14:53:41 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/06 15:15:07 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/11/26 21:46:45 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/11/30 09:33:11 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ISQUAD_HPP
 # define ISQUAD_HPP
-
-# include "ISpaceMarine.hpp"
+#include "ISpaceMarine.hpp"
 
 class ISquad
 {
-	private:
-		int				number;
-		ISpaceMarine*	unit;
-
 	public:
-	ISquad(int number, ISpaceMarine* unit);
 	virtual ~ISquad() {}
-	void setNumber(int i);
-	void setIspaceMarine(ISpaceMarine* unit);
 	virtual int getCount() const = 0;
-	virtual ISpaceMarine* getUnit(int) const = 0;
-	virtual int push(ISpaceMarine*) = 0;
+	virtual ISpaceMarine* getUnit(int target) const = 0;
+	virtual int push(ISpaceMarine* newbie) = 0;
 };
-
 #endif

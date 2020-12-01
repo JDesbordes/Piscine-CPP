@@ -1,17 +1,17 @@
-#include "TacticalMarine.hpp"
+#include "Cure.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-TacticalMarine::TacticalMarine()
+Cure::Cure()
 {
-	std::cout << "Tactical Marine ready for battle!" << std::endl;
+	setType("cure");
 }
 
-TacticalMarine::TacticalMarine( const TacticalMarine & src )
+Cure::Cure( const Cure & src )
 {
-	std::cout << "Tactical Marine ready for battle!" << std::endl;
+	setType(src.getType());
 }
 
 
@@ -19,9 +19,8 @@ TacticalMarine::TacticalMarine( const TacticalMarine & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-TacticalMarine::~TacticalMarine()
+Cure::~Cure()
 {
-	std::cout << "Aaargh..." << std::endl;
 }
 
 
@@ -29,7 +28,7 @@ TacticalMarine::~TacticalMarine()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-TacticalMarine &				TacticalMarine::operator=( TacticalMarine const & rhs )
+Cure &				Cure::operator=( Cure const & rhs )
 {
 	//if ( this != &rhs )
 	//{
@@ -38,7 +37,7 @@ TacticalMarine &				TacticalMarine::operator=( TacticalMarine const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, TacticalMarine const & i )
+std::ostream &			operator<<( std::ostream & o, Cure const & i )
 {
 	//o << "Value = " << i.getValue();
 	return o;
@@ -48,5 +47,12 @@ std::ostream &			operator<<( std::ostream & o, TacticalMarine const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+
+void	Cure::use(ICharacter& target)
+{
+	AMateria::use(target);
+	std::cout << "* heals "<< target.getName <<"’s wounds *" << std::endl;
+}
 
 /* ************************************************************************** */
