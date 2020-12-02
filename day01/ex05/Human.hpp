@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/16 15:14:06 by jacens            #+#    #+#             */
-/*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/16 15:14:06 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/12/02 12:49:14 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Human
 	std::string identify();
 	const Brain brain;
 	Human();
-	Brain getBrain() const;
+	const Brain& getBrain() const;
 };
 
 #endif

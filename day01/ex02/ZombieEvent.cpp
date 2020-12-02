@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 14:26:52 by jacens            #+#    #+#             */
-/*   Updated: 2020/05/27 15:57:45 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/15 14:26:52 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/02/15 16:19:49 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 

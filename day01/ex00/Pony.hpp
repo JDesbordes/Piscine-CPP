@@ -3,91 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   Pony.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 11:51:36 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/22 17:26:07 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/08 08:48:55 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/02/15 14:25:58 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PONY_H
 # define PONY_H
+#include <iostream>
+#include <stdio.h>
+#include <iomanip>
+#include <string.h>
+#include <ctime>
 
-# include <iostream>
-# include <string>
-
-void		ponyOnTheStack();
-void		ponyOnTheHeap();
+void ponyOnTheStack(std::string color, std::string magic);
+void ponyOnTheHeap(std::string color, std::string magic);
 
 class Pony
 {
-	public:
-		Pony();
-		~Pony();
+  // Attributs
 
-		void setVal(std::string name, std::string old, std::string color, std::string size);
+  public :
 
-		std::string getName() const {
-			return this->name;
-		}
+  Pony(std::string color, std::string magic);
+  static int stat;
+  // Geteurs
+  int get_pony();
+  // Seteurs
+  int set_pony();
 
-		void setName(std::string value);
 
-		std::string getOld() const {
-			return this->years_old;
-		}
-		void setOld(std::string value);
 
-		std::string getColor() const {
-			return this->color;
-		}
-		void setColor(std::string value);
+  private :
 
-		std::string getSize() const {
-			return this->size;
-		}
-		void setSize(std::string value);
-
-	private: 
-		std::string name, years_old, color, size;
+  std::string color;
+  std::string magic;
 };
-
-inline void Pony::setVal(std::string name, std::string old, std::string size, std::string color)
-{
-    name.empty() ? 0 : this->name = name;
-    old.empty() ? 0 : this->years_old = old;
-    color.empty() ? 0 : this->color = color;
-    size.empty() ? 0 : this->size = size;
-}
-
-inline void Pony::setName(std::string value)
-{
-    this->name = value;
-}
-
-inline void Pony::setOld(std::string value)
-{
-    this->years_old = value;
-}
-
-inline void Pony::setColor(std::string value)
-{
-    this->color = value;
-}
-
-inline void Pony::setSize(std::string value)
-{
-    this->size = value;
-}
-
-inline Pony::Pony()
-{
-	std::cout << "pony created" << std::endl;
-}
-
-inline Pony::~Pony()
-{
-	std::cout << "pony destroyed" << std::endl;
-}
 
 #endif

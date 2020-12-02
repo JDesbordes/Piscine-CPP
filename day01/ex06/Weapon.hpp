@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 17:42:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/11/26 21:08:58 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/19 17:42:02 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/11/26 21:16:47 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Weapon
 	Weapon();
 	Weapon(std::string str);
 	int	setType(std::string str);
-	std::string getType();
+	std::string	getType();
 };
 
 #endif

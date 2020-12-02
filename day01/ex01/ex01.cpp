@@ -3,25 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ex01.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 17:47:02 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:19:12 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/15 14:12:19 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/02/15 14:12:44 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
+#include <iomanip>
 
-void memoryLeak()
+void	memoryLeak()
 {
-	std::string* panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
+    std::string* panthere = new std::string("String panthere");
 
-int	main(void)
-{
-	memoryLeak();
-	return (1);
+    std::cout << *panthere << std::endl;
+    delete(panthere);
 }
