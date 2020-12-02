@@ -111,7 +111,7 @@ void Character::use(int idx, ICharacter& target)
 	i = -1;
 	while (++i < (idx && 3) && tmp->next)
 		tmp = tmp->next;
-	if (i == idx)
+	if (i == idx && tmp->content)
 		tmp->content->use(target);
 }
 
