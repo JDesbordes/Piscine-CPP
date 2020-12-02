@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 17:58:52 by jacens            #+#    #+#             */
-/*   Updated: 2020/11/26 21:09:08 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/19 17:58:52 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/11/26 21:00:19 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		Weapon::setType(std::string str)
 
 std::string	Weapon::getType()
 {
-	return (type);
+	return(type);
 }
 
 Weapon::Weapon(std::string str)

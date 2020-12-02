@@ -3,37 +3,83 @@
 /*                                                        :::      ::::::::   */
 /*   Pony.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 11:51:11 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/26 15:18:05 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/08 08:49:12 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/02/15 14:25:15 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "Pony.hpp"
 
-void		ponyOnTheStack()
+void ponyOnTheStack(std::string color, std::string magic)
 {
-	Pony stack;
+  int i;
 
-	stack.setName("stackoverflop");
-	stack.setOld("99");
-	stack.setSize("between 2^2cm and 2^20 cm");
-	stack.setColor("green");
-	std::cout << "name = " << stack.getName() << '\n';
-	std::cout << "old = " << stack.getOld() << '\n';
-	std::cout << "size = " << stack.getSize() << '\n';
-	std::cout << "color = " << stack.getColor() << '\n';
+  i = 1;
+  Pony poney(color, magic);
+  std::string cmd;
+  	while (i)
+  	{
+        puts("Menu ponyOnTheStack");
+        puts("Choose 'set' or 'get' or 'exit' : ");
+        std::cin >> cmd;
+        if (!cmd.compare("set"))
+		  poney.set_pony();
+  		else if (!cmd.compare("get"))
+		  poney.get_pony();
+  		else if (!cmd.compare("exit"))
+		  i = 0;
+    }
+    puts("\n");
 }
 
-void		ponyOnTheHeap()
+void ponyOnTheHeap(std::string color, std::string magic)
 {
-	Pony *heap = new Pony;
+    int i;
 
-	heap[0].setVal("hyp-ibra", "-12 s", "30 bras et demi", "pink");
-	std::cout << "name = " << heap[0].getName() << '\n';
-	std::cout << "old = " << heap[0].getOld() << '\n';
-	std::cout << "size = " << heap[0].getSize() << '\n';
-	std::cout << "color = " << heap[0].getColor() << '\n';
-	delete heap;
+    i = 1;
+    Pony* poney =  new Pony(color, magic);
+    std::string cmd;
+  	while (i)
+  	{
+        puts("Menu ponyOnTheHeap");
+        puts("Choose 'set' or 'get' or 'exit' : ");
+        std::cin >> cmd;
+        if (!cmd.compare("set"))
+		  poney->set_pony();
+  		else if (!cmd.compare("get"))
+		  poney->get_pony();
+  		else if (!cmd.compare("exit"))
+		  i = 0;
+    }
+    delete(poney);
+    puts("\n");
 }
+
+int  Pony::get_pony()
+{
+  std::cout << "Your color kawaii is " << color << "\n";
+  std::cout << "Your magic kawaii is " << magic << "\n";
+  return (1);
+}
+
+int  Pony::set_pony()
+{
+    std::string colo;
+	std::string magi;
+	puts("\nNew Color :");
+  	std::cin >> colo;   // mail
+  	puts("\nNew magic kawaii :");
+  	std::cin >> magi;   // Phone
+  	color = colo;
+  	magic = magi;
+  	return (1);
+}
+
+Pony::Pony(std::string color, std::string magic)
+{
+  this->color = color;
+  this->magic = magic;
+};
