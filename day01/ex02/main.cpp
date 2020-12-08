@@ -1,4 +1,3 @@
-
 #include "ZombieEvent.hpp"
 
 void   randomChump()

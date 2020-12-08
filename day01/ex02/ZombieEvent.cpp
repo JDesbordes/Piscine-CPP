@@ -1,4 +1,3 @@
-
 #include "ZombieEvent.hpp"
 #include <unistd.h>
 

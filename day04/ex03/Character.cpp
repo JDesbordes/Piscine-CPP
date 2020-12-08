@@ -13,7 +13,24 @@ Character::Character()
 
 Character::Character( const Character & src )
 {
+	amateria = new t_amateria;
+	t_amateria	*temp;
 
+	while(amateria)
+	{
+		temp = amateria;
+		amateria = amateria->next;
+		delete temp->content;
+		delete temp;
+	}
+	amateria->next = NULL;
+	amateria->content = NULL;
+	temp = src.amateria;
+	while (temp)
+	{
+		equip(temp->content->clone());
+		temp = temp->next;
+	}
 }
 
 
@@ -23,6 +40,15 @@ Character::Character( const Character & src )
 
 Character::~Character()
 {
+	t_amateria	*temp;
+
+	while(amateria)
+	{
+		temp = amateria;
+		amateria = amateria->next;
+		delete temp->content;
+		delete temp;
+	}
 }
 
 
@@ -90,14 +116,14 @@ void Character::unequip(int idx)
 			tmp_prev = tmp;
 			tmp = tmp->next;
 		}
-		if (idx == -1 && tmp_prev != tmp && tmp->content) // Si deuxieme - quatireme
+		if (idx == -1 && tmp_prev != tmp && tmp->content)
 		{
 			tmp_prev->next = tmp->next;
 			tmp->next = NULL;
 			tmp->content = NULL;
 			delete tmp;
 		}
-		else if (idx == -1 && tmp->content) // Si premier a sup
+		else if (idx == -1 && tmp->content)
 			tmp->content = NULL;
 	}
 }

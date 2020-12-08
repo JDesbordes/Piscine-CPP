@@ -1,14 +1,13 @@
-
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
 
-#include <iostream>
-#include <stdio.h>
-#include <iomanip>
-#include <string.h>
-#include <ctime>
-#include <cstdlib>
-#include <sstream>
+# include <iostream>
+# include <stdio.h>
+# include <iomanip>
+# include <string.h>
+# include <ctime>
+# include <cstdlib>
+# include <sstream>
 
 class Weapon
 {

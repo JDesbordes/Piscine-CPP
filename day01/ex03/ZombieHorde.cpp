@@ -1,4 +1,3 @@
-
 #include "ZombieHorde.hpp"
 
 void	ZombieHorde::announce()

@@ -13,31 +13,23 @@ Squad::Squad()
 
 Squad::Squad( const Squad & src )
 {
-	int size = getCount();
-	int i = 0;
+	int size = src.getCount();
+	int i = -1;
 	t_isquad	*temp;
 
 	if (team)
 	{
 		temp = team;
-		if (!team)
-			return ;
-		while (temp->next)
+		while (temp)
 		{
 			team = temp;
 			temp = temp->next;
 			delete team->content;
 			delete team;
 		}
-		delete temp->content;
-		delete temp;
-		return ;
 	}
-	while (i < size)
-	{
-		push(getUnit(i)->clone());
-		i++;
-	}
+	while (++i < size)
+		push(src.getUnit(i)->clone());
 }
 
 
@@ -47,7 +39,6 @@ Squad::Squad( const Squad & src )
 
 Squad::~Squad()
 {
-	ISpaceMarine* target;
 	t_isquad *temp_team;
 
 	while(team)

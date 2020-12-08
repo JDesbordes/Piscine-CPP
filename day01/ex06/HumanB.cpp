@@ -1,4 +1,3 @@
-
 #include "HumanB.hpp"
 
 int		HumanB::setWeapon(Weapon& weap)

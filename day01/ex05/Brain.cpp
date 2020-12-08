@@ -1,4 +1,3 @@
-
 #include "Brain.hpp"
 
 std::string	Brain::identify() const

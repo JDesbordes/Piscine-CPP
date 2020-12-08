@@ -1,11 +1,10 @@
-
 #ifndef PONY_H
 # define PONY_H
-#include <iostream>
-#include <stdio.h>
-#include <iomanip>
-#include <string.h>
-#include <ctime>
+# include <iostream>
+# include <stdio.h>
+# include <iomanip>
+# include <string.h>
+# include <ctime>
 
 void ponyOnTheStack(std::string color, std::string magic);
 void ponyOnTheHeap(std::string color, std::string magic);

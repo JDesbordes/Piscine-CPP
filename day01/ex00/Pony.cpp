@@ -1,5 +1,3 @@
-
-
 #include "Pony.hpp"
 
 void ponyOnTheStack(std::string color, std::string magic)

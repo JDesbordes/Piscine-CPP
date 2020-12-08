@@ -1,4 +1,3 @@
-
 #include "HumanA.hpp"
 
 int		HumanA::attack()

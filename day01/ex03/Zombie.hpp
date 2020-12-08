@@ -1,12 +1,12 @@
 
 #ifndef ZOMBIE_H
 # define ZOMBIE_H
-#include <iostream>
-#include <stdio.h>
-#include <iomanip>
-#include <string.h>
-#include <ctime>
-#include <cstdlib>
+# include <iostream>
+# include <stdio.h>
+# include <iomanip>
+# include <string.h>
+# include <ctime>
+# include <cstdlib>
 
 class Zombie
 {

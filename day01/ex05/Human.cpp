@@ -1,4 +1,3 @@
-
 #include "Human.hpp"
 
 std::string Human::identify()

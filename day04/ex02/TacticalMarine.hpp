@@ -3,7 +3,7 @@
 
 # include <iostream>
 # include <string>
-#include "ISpaceMarine.hpp"
+# include "ISpaceMarine.hpp"
 
 class TacticalMarine : public ISpaceMarine
 {

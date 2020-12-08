@@ -1,4 +1,3 @@
-
 #include "Weapon.hpp"
 
 int		Weapon::setType(std::string str)

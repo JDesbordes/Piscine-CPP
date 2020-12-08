@@ -1,4 +1,3 @@
-
 #include "main.hpp"
 
 int main(int ac, char **av)
@@ -6,15 +5,16 @@ int main(int ac, char **av)
 	size_t pos;
 	std::stringstream ss;
 	std::stringstream ss2;
-	std::ifstream fs(av[1]);
 	std::ofstream fs2;
 	std::string str;
 	std::string str2;
 	std::string *basestr;
-	size_t len = std::strlen(av[2]);
+	size_t len;
 
 	if(ac != 4)
 		return (0);
+	std::ifstream fs(av[1]);
+	len = std::strlen(av[2]);
 	if(!fs.is_open())
 		return(0);
 	ss << av[1];
