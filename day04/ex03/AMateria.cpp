@@ -6,10 +6,13 @@
 
 AMateria::AMateria()
 {
+	_xp = 0;
 }
 
 AMateria::AMateria( const AMateria & src )
 {
+	setType(src.getType());
+	this->_xp = src.getXP();
 }
 
 

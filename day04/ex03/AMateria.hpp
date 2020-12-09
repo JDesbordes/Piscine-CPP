@@ -4,6 +4,12 @@
 # include <iostream>
 # include <string>
 # include "ICharacter.hpp"
+// # include "Cure.hpp"
+// # include "Ice.hpp"
+
+class ICharacter;
+
+// class Cure;
 
 class AMateria
 {
@@ -12,13 +18,14 @@ class AMateria
 
 		AMateria();
 		AMateria( AMateria const & src );
-		~AMateria();
+		virtual ~AMateria();
 
 		AMateria(std::string const & type);
 
-		std::string const & getType() const; //Returns the materia type
-		unsigned int getXP() const; //Returns the Materia's XP
-		virtual AMateria* clone() const { return new AMateria(*this);}
+		std::string const & getType() const { return (type); };
+		unsigned int getXP() const { return (_xp); };
+		virtual AMateria* clone() const = 0;
+		// virtual AMateria* clone() const { return new AMateria(*this);}
 
 		void	setType(std::string temp)
 		{
@@ -26,15 +33,11 @@ class AMateria
 		}
 		virtual void use(ICharacter& target)
 		{
-			set_xp(get_xp() + 10);
+			set_xp(getXP() + 10);
 		}
 		void set_xp(unsigned int x) 
 		{
 			_xp = x;
-		}
-		unsigned int get_xp()
-		{
-			return (_xp);
 		}
 
 		AMateria &		operator=( AMateria const & rhs );

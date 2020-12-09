@@ -15,6 +15,7 @@ class Cure : public AMateria
 		~Cure();
 
 		void use(ICharacter& target);
+		AMateria* clone() const { return new Cure(*this);}
 
 		Cure &		operator=( Cure const & rhs );
 

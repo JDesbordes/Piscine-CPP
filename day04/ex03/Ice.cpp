@@ -14,7 +14,6 @@ Ice::Ice( const Ice & src )
 	setType(src.getType());
 }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */

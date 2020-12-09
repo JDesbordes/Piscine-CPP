@@ -3,15 +3,21 @@
 
 # include <iostream>
 # include <string>
+# include "IMateriaSource.hpp"
+# include "Cure.hpp"
+# include "Ice.hpp"
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
-
+	s_amateria* amateria;
 	public:
 
 		MateriaSource();
 		MateriaSource( MateriaSource const & src );
 		~MateriaSource();
+	
+		void learnMateria(AMateria* m);
+		AMateria* createMateria(std::string const & type);
 
 		MateriaSource &		operator=( MateriaSource const & rhs );
 

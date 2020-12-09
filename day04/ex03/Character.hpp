@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include "ICharacter.hpp"
+# include "AMateria.hpp"
 
 typedef struct			s_amateria
 {
@@ -11,11 +12,7 @@ typedef struct			s_amateria
 	struct s_amateria	*next;
 }						t_amateria;
 
-typedef struct		s_items
-{
-	AMateria*		content;
-	struct s_items	*next;
-}					t_items;
+class ICharacter;
 
 class Character : public ICharacter
 {
@@ -24,6 +21,7 @@ class Character : public ICharacter
 
 		Character();
 		Character( Character const & src );
+		Character(std::string const & name);
 		~Character();
 
 		std::string const & getName() const{return (name);}
@@ -34,7 +32,6 @@ class Character : public ICharacter
 		Character &		operator=( Character const & rhs );
 
 	private:
-		t_items* giggles = new t_items;
 		std::string name;
 };
 

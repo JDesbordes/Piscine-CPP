@@ -1,25 +1,17 @@
-#include "Character.hpp"
+#include "MateriaSource.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Character::Character()
+MateriaSource::MateriaSource()
 {
 	amateria = new t_amateria;
 	amateria->next = NULL;
 	amateria->content = NULL;
 }
 
-Character::Character(std::string const & name)
-{
-	amateria = new t_amateria;
-	amateria->next = NULL;
-	amateria->content = NULL;
-	this->name = name;
-}
-
-Character::Character( const Character & src )
+MateriaSource::MateriaSource( const MateriaSource & src )
 {
 	amateria = new t_amateria;
 	t_amateria	*temp;
@@ -33,13 +25,6 @@ Character::Character( const Character & src )
 	}
 	amateria->next = NULL;
 	amateria->content = NULL;
-	temp = src.amateria;
-	while (temp)
-	{
-		equip(temp->content->clone());
-		temp = temp->next;
-	}
-	this->name = src.getName();
 }
 
 
@@ -47,7 +32,7 @@ Character::Character( const Character & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Character::~Character()
+MateriaSource::~MateriaSource()
 {
 	t_amateria	*temp;
 
@@ -65,16 +50,16 @@ Character::~Character()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Character &				Character::operator=( Character const & rhs )
+MateriaSource &				MateriaSource::operator=( MateriaSource const & rhs )
 {
-	name = rhs.getName();
-	amateria = new t_amateria;
-	amateria->next = NULL;
-	amateria->content = NULL;
+	//if ( this != &rhs )
+	//{
+		//this->_value = rhs.getValue();
+	//}
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Character const & i )
+std::ostream &			operator<<( std::ostream & o, MateriaSource const & i )
 {
 	//o << "Value = " << i.getValue();
 	return o;
@@ -85,7 +70,7 @@ std::ostream &			operator<<( std::ostream & o, Character const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Character::equip(AMateria* m)
+void MateriaSource::learnMateria(AMateria* m)
 {
 	if (m)
 	{
@@ -114,43 +99,19 @@ void Character::equip(AMateria* m)
 	}
 }
 
-void Character::unequip(int idx)
+AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	t_amateria *tmp;
-	t_amateria *tmp_prev;
+	t_amateria	*temp;
+	AMateria *clone;
 
-	if (amateria->content)
+	temp = this->amateria;
+	while (temp)
 	{
-		tmp = amateria;
-		while (--idx < -1 && tmp->next)
-		{
-			tmp_prev = tmp;
-			tmp = tmp->next;
-		}
-		if (idx == -1 && tmp_prev != tmp && tmp->content)
-		{
-			tmp_prev->next = tmp->next;
-			tmp->next = NULL;
-			tmp->content = NULL;
-			delete tmp;
-		}
-		else if (idx == -1 && tmp->content)
-			tmp->content = NULL;
+		if (temp->content->getType() == type)
+			return (temp->content->clone());
+		temp = temp->next;
 	}
+	return (0);
 }
-
-void Character::use(int idx, ICharacter& target)
-{
-	int			i;
-	t_amateria	*tmp;
-
-	tmp = amateria;
-	i = -1;
-	while (++i < idx && tmp->next)
-		tmp = tmp->next;
-	if (i == idx && tmp->content)
-		tmp->content->use(target);
-}
-
 
 /* ************************************************************************** */
