@@ -1,10 +1,11 @@
 #ifndef PONY_H
 # define PONY_H
 # include <iostream>
-# include <stdio.h>
+# include <cstdio>
 # include <iomanip>
-# include <string.h>
+# include <cstring>
 # include <ctime>
+# include <cstdlib>
 
 void ponyOnTheStack(std::string color, std::string magic);
 void ponyOnTheHeap(std::string color, std::string magic);
@@ -16,7 +17,7 @@ class Pony
   public :
 
   Pony(std::string color, std::string magic);
-  static int stat;
+  ~Pony();
   // Geteurs
   int get_pony();
   // Seteurs

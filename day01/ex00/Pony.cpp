@@ -47,8 +47,8 @@ void ponyOnTheHeap(std::string color, std::string magic)
 
 int  Pony::get_pony()
 {
-  std::cout << "Your color kawaii is " << color << "\n";
-  std::cout << "Your magic kawaii is " << magic << "\n";
+  std::cout << "Your color kawaii is " << color << std::endl;
+  std::cout << "Your magic kawaii is " << magic << std::endl;
   return (1);
 }
 
@@ -70,3 +70,8 @@ Pony::Pony(std::string color, std::string magic)
   this->color = color;
   this->magic = magic;
 };
+
+Pony::~Pony()
+{
+	std::cout << "Destructor" << magic << std::endl;;
+}

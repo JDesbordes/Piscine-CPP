@@ -3,9 +3,9 @@
 # define MAIN_HPP
 
 # include <iostream>
-# include <stdio.h>
+# include <cstdio>
 # include <iomanip>
-# include <string.h>
+# include <cstring>
 # include <ctime>
 # include <cstdlib>
 # include <sstream>

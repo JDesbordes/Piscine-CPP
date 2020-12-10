@@ -3,7 +3,7 @@
 int main()
 {
 	int i;
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	std::cout << "How many Z's do you want ?\n";
 	std::cin >> i;
 	ZombieHorde* hey;

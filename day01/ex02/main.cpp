@@ -17,7 +17,7 @@ void   randomChump()
 
 int main()
 {
-    std::srand(std::time(nullptr));
+    std::srand(std::time(NULL));
     ZombieEvent hey;
 
 	randomChump();
