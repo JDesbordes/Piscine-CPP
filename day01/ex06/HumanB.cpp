@@ -8,7 +8,10 @@ int		HumanB::setWeapon(Weapon& weap)
 
 int		HumanB::attack()
 {
-	std::cout << name << " attacks with his " << weapon->type << "\n";
+	if (weapon)
+		std::cout << name << " attacks with his " << weapon->type << std::endl;
+	else
+		std::cout << name << " attacks with his ... nothing?" << std::endl;
 	return (1);
 }
 
