@@ -73,5 +73,5 @@ Pony::Pony(std::string color, std::string magic)
 
 Pony::~Pony()
 {
-	std::cout << "Destructor" << magic << std::endl;;
+	std::cout << "Destructor" << std::endl;;
 }
