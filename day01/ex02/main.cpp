@@ -8,7 +8,7 @@ void   randomChump()
     std::string nam;
     while (i < 6)
     {
-        nam[i] = yo[std::rand() % 24];
+        nam[i] = yo[std::rand() % 26];
         i++;
     }
     zombi.name = nam.c_str();

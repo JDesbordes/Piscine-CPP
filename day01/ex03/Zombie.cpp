@@ -7,7 +7,7 @@ void	Zombie::namer()
     std::string nam;
     while (i < 6)
     {
-        nam[i] = yo[rand() % 24];
+        nam[i] = yo[rand() % 26];
         i++;
     }
 	name = nam.c_str();
