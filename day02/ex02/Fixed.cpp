@@ -113,7 +113,7 @@ Fixed Fixed::operator++()
 
 Fixed Fixed::operator--()
 {
-	value += 1;
+	value -= 1;
 	return *this;
 }
 
@@ -127,7 +127,7 @@ Fixed Fixed::operator++(int)
 Fixed Fixed::operator--(int)
 {
 	Fixed temp(*this);
-	value += 1;
+	value -= 1;
 	return temp;
 }
 

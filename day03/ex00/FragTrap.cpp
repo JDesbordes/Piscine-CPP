@@ -2,7 +2,7 @@
 
 void FragTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "Get off my lawn!" << std::endl;
+	std::cout << "get off my lawn!" << std::endl;
 	std::cout << "FR4G-TP " << Name << " attacks " << target << " at range, causing " << Ranged_attack_damage << " points of damage!" << std::endl;
 }
 
@@ -15,7 +15,8 @@ void FragTrap::meleeAttack(std::string const & target)
 void FragTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "Protect me Squire" << std::endl;
-	Hit_points -= amount - Armor_damage_reduction;
+	if (amount > 0)
+		Hit_points -= amount - Armor_damage_reduction;
 	if (Hit_points < 0)
 		Hit_points = 0;
 }
@@ -23,7 +24,8 @@ void FragTrap::takeDamage(unsigned int amount)
 void FragTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "Here you go, chum!" << std::endl;
-	Hit_points += amount;
+	if (amount > 0)
+		Hit_points += amount;
 	if (Hit_points > Max_hit_points)
 		Hit_points = Max_hit_points;
 }
@@ -91,7 +93,79 @@ FragTrap::FragTrap(std::string name)
 	Armor_damage_reduction = 5;
 }
 
+FragTrap::FragTrap(const FragTrap &src)
+{
+	std::cout << "IM ALIVE!!" << std::endl;
+	Hit_points = src.get_Hit_points();
+  	Max_hit_points = src.get_Max_hit_points();
+	Energy_points = src.get_Energy_points();
+	Max_energy_points = src.get_Max_hit_points();
+	Level = src.get_Level();
+	Name = src.get_Name();
+	Melee_attack_damage = src.get_Melee_attack_damage();
+	Ranged_attack_damage = src.get_Ranged_attack_damage();
+	Armor_damage_reduction = src.get_Armor_damage_reduction();
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << "I'M DEAD I'M DEAD OHMYGOD I'M DEAD!" << std::endl;
+}
+
+int FragTrap::get_Hit_points() const
+{
+	return (Hit_points);
+}
+
+int FragTrap::get_Max_hit_points() const
+{
+	return (Max_hit_points);
+}
+
+int FragTrap::get_Energy_points() const
+{
+	return (Energy_points);
+}
+
+int FragTrap::get_Max_energy_points() const
+{
+	return (Max_energy_points);
+}
+
+int FragTrap::get_Level() const
+{
+	return (Level);
+}
+
+std::string FragTrap::get_Name() const
+{
+	return (Name);
+}
+
+int FragTrap::get_Melee_attack_damage() const
+{
+	return (Melee_attack_damage);
+}
+
+int FragTrap::get_Ranged_attack_damage() const
+{
+	return (Ranged_attack_damage);
+}
+
+int FragTrap::get_Armor_damage_reduction() const
+{
+	return (Armor_damage_reduction);
+}
+
+void	FragTrap::operator=(const FragTrap &copied)
+{
+	Hit_points = copied.get_Hit_points();
+  	Max_hit_points = copied.get_Hit_points();
+	Energy_points = copied.get_Energy_points();
+	Max_energy_points = copied.get_Max_energy_points();
+	Level = copied.get_Level();
+	Name = copied.get_Name();
+	Melee_attack_damage = copied.get_Melee_attack_damage();
+	Ranged_attack_damage = copied.get_Ranged_attack_damage();
+	Armor_damage_reduction = copied.get_Armor_damage_reduction();
 }

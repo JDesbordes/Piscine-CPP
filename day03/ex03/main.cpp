@@ -4,7 +4,7 @@
 
 int main()
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	FragTrap a("FR4G-TP");
 	ScavTrap b("SC4V-TP");
 	NinjaTrap c("NINJA-TP");

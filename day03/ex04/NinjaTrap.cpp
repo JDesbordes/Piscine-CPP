@@ -58,7 +58,36 @@ NinjaTrap::NinjaTrap(std::string name)
 	setArmor_damage_reduction(0);
 }
 
+NinjaTrap::NinjaTrap(const NinjaTrap &src)
+{
+	std::cout << "Give us open ports for remote access or give us death!" << std::endl;
+	setHit_points(src.getHit_points());
+  	setMax_hit_points(src.getMax_hit_points());
+	setEnergy_points(src.getEnergy_points());
+	setMax_energy_points(src.getMax_energy_points());
+	setLevel(src.getLevel());
+	setName(src.getName());
+	setMelee_attack_damage(src.getMelee_attack_damage());
+	setRanged_attack_damage(src.getRanged_attack_damage());
+	setArmor_damage_reduction(src.getArmor_damage_reduction());
+}
+
 NinjaTrap::~NinjaTrap()
 {
 	std::cout << "MurderDeathKill! Annihilate! Extermin-" << std::endl;
+}
+
+NinjaTrap &				NinjaTrap::operator=( NinjaTrap const & rhs )
+{
+	//if ( this != &rhs )
+	//{
+		//this->_value = rhs.getValue();
+	//}
+	return *this;
+}
+
+std::ostream &			operator<<( std::ostream & o, NinjaTrap const & i )
+{
+	//o << "Value = " << i.getValue();
+	return o;
 }

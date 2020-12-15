@@ -1,24 +1,14 @@
-NAME	=	convert
-SRCS	=	main.cpp Scalarc.cpp
-<<<<<<< HEAD
-HEADERS =	Scalarc.hpp
+NAME	=	test
+SRCS	=	main.cpp
+HEADERS =	whatever.hpp
 INC		=   ./
-=======
-HEADER  =   ./
->>>>>>> 69b380d0ee4ec1c536b124aaa5b7ab528d247861
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror
 OBJS	=	$(SRCS:.cpp=.o)
 
-<<<<<<< HEAD
 LFLAGS  =   -I $(INC)
 
 %.o:		%.cpp $(INC)/$(HEADERS)
-=======
-LFLAGS  =   -I $(HEADER)
-
-%.o:		%.cpp $(HEADER)
->>>>>>> 69b380d0ee4ec1c536b124aaa5b7ab528d247861
 	$(CC) $(CFLAGS) $(LFLAGS) -c $< -o $@
 
 all:		$(NAME)

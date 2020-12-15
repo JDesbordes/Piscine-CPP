@@ -1,7 +1,7 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 #include <iostream>
-#include <stdio.h>
+#include <cstdio>
 #include <iomanip>
 #include <string.h>
 #include <ctime>

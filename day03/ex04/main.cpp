@@ -3,7 +3,7 @@
 
 int main()
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	SuperTrap a("SUP-TP");
 	a.meleeAttack("Rat");
 	a.rangedAttack("Badass Psycho");

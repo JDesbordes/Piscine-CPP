@@ -9,8 +9,11 @@ class ScavTrap : virtual public ClapTrap
   public :
   	ScavTrap();
   	ScavTrap(std::string name);
+  	ScavTrap(const ScavTrap &src);
 	~ScavTrap();
 	void challengNewcomer(std::string const & target);
 };
+
+std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );
 
 #endif

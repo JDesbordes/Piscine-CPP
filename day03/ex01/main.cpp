@@ -3,7 +3,7 @@
 
 int main()
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	FragTrap a("CL4P-TP");
 	ScavTrap b("SC4V-TP");
 	a.meleeAttack("Rat");

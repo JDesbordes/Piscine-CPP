@@ -9,8 +9,11 @@ class FragTrap : public ClapTrap
   public :
   	FragTrap();
   	FragTrap(std::string name);
+  	FragTrap(const FragTrap &src);
 	~FragTrap();
 	void vaulthunter_dot_exe(std::string const & target);
 };
+
+std::ostream &			operator<<( std::ostream & o, FragTrap const & i );
 
 #endif

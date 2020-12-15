@@ -14,6 +14,7 @@ class ClapTrap
 
   public :
   	ClapTrap();
+	ClapTrap(const ClapTrap &src);
 	~ClapTrap();
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
@@ -31,15 +32,16 @@ class ClapTrap
 	void setArmor_damage_reduction(int i);
 	void setName(std::string name);
 	//get
-	int getHit_points();
-	int getMax_hit_points();
-	int getEnergy_points();
-	int getMax_energy_points();
-	int getLevel();
-	int getMelee_attack_damage();
-	int getRanged_attack_damage();
-	int getArmor_damage_reduction();
-	std::string getName();
+	int getHit_points() const;
+	int getMax_hit_points() const;
+	int getEnergy_points() const;
+	int getMax_energy_points() const;
+	int getLevel() const;
+	int getMelee_attack_damage() const;
+	int getRanged_attack_damage() const;
+	int getArmor_damage_reduction() const;
+	std::string getName() const;
+	void operator=( ClapTrap const & rhs );
 
   private :
   	int Hit_points;

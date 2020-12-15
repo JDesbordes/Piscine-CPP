@@ -65,39 +65,39 @@ void ClapTrap::setName(std::string name)
 	Name = name;
 }
 
-int ClapTrap::getHit_points()
+int ClapTrap::getHit_points() const
 {
 	return (Hit_points);
 }
-int ClapTrap::getMax_hit_points()
+int ClapTrap::getMax_hit_points() const
 {
 	return (Max_hit_points);
 }
-int ClapTrap::getEnergy_points()
+int ClapTrap::getEnergy_points() const
 {
 	return (Energy_points);
 }
-int ClapTrap::getMax_energy_points()
+int ClapTrap::getMax_energy_points() const
 {
 	return (Max_energy_points);
 }
-int ClapTrap::getLevel()
+int ClapTrap::getLevel() const
 {
 	return (Level);
 }
-int ClapTrap::getMelee_attack_damage()
+int ClapTrap::getMelee_attack_damage() const
 {
 	return (Melee_attack_damage);
 }
-int ClapTrap::getRanged_attack_damage()
+int ClapTrap::getRanged_attack_damage() const
 {
 	return (Ranged_attack_damage);
 }
-int ClapTrap::getArmor_damage_reduction()
+int ClapTrap::getArmor_damage_reduction() const
 {
 	return (Armor_damage_reduction);
 }
-std::string ClapTrap::getName()
+std::string ClapTrap::getName() const
 {
 	return (Name);
 }
@@ -107,7 +107,34 @@ ClapTrap::ClapTrap()
 	std::cout << "Factory new ClapTrap" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &src)
+{
+	std::cout << "Factory new ClapTrap" << std::endl;
+	Hit_points = src.getHit_points();
+  	Max_hit_points = src.getHit_points();
+	Energy_points = src.getEnergy_points();
+	Max_energy_points = src.getMax_energy_points();
+	Level = src.getLevel();
+	Name = src.getName();
+	Melee_attack_damage = src.getMelee_attack_damage();
+	Ranged_attack_damage = src.getRanged_attack_damage();
+	Armor_damage_reduction = src.getArmor_damage_reduction();
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "Decommissioning ClapTrap" << std::endl;
+}
+
+void	ClapTrap::operator=(const ClapTrap &copied)
+{
+	Hit_points = copied.getHit_points();
+  	Max_hit_points = copied.getHit_points();
+	Energy_points = copied.getEnergy_points();
+	Max_energy_points = copied.getMax_energy_points();
+	Level = copied.getLevel();
+	Name = copied.getName();
+	Melee_attack_damage = copied.getMelee_attack_damage();
+	Ranged_attack_damage = copied.getRanged_attack_damage();
+	Armor_damage_reduction = copied.getArmor_damage_reduction();
 }
