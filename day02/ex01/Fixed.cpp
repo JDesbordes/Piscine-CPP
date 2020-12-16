@@ -2,7 +2,7 @@
 
 float Fixed::toFloat(void) const
 {
-	return ((float)value / (float)(1 << Fixed::bit));
+	return ((float)(value / roundf((1 << Fixed::bit))));
 }
 
 int Fixed::toInt(void) const
