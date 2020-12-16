@@ -1,7 +1,7 @@
 #ifndef NINJATRAP_HPP
 # define NINJATRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class NinjaTrap : public ClapTrap
 {

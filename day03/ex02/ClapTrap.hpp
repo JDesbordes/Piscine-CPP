@@ -1,13 +1,13 @@
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-#include <iostream>
-#include <stdio.h>
-#include <iomanip>
-#include <string.h>
-#include <ctime>
-#include <bitset>
-#include <cmath>
+# include <iostream>
+# include <stdio.h>
+# include <iomanip>
+# include <string.h>
+# include <ctime>
+# include <bitset>
+# include <cmath>
 
 class ClapTrap
 {

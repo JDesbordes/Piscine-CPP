@@ -1,13 +1,13 @@
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include <iostream>
-#include <stdio.h>
-#include <iomanip>
-#include <string.h>
-#include <ctime>
-#include <bitset>
-#include <cmath>
+# include <iostream>
+# include <stdio.h>
+# include <iomanip>
+# include <string.h>
+# include <ctime>
+# include <bitset>
+# include <cmath>
 
 class ScavTrap
 {

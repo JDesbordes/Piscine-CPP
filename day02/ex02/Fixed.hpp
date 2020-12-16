@@ -1,12 +1,12 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
-#include <iostream>
-#include <cstdio>
-#include <iomanip>
-#include <string.h>
-#include <ctime>
-#include <bitset>
-#include <cmath>
+# include <iostream>
+# include <cstdio>
+# include <iomanip>
+# include <string.h>
+# include <ctime>
+# include <bitset>
+# include <cmath>
 
 class Fixed
 {

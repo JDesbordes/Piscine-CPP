@@ -1,14 +1,13 @@
 #ifndef FIXED_CLASS_HPP
 # define FIXED_CLASS_HPP
-
-#include <iostream>
-#include <stdio.h>
-#include <iomanip>
-#include <string.h>
-#include <ctime>
-#include <cstdlib>
-#include <sstream>
-#include <fstream>
+# include <iostream>
+# include <stdio.h>
+# include <iomanip>
+# include <string.h>
+# include <ctime>
+# include <cstdlib>
+# include <sstream>
+# include <fstream>
 
 class Fixed
 {

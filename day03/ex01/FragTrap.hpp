@@ -1,13 +1,13 @@
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-#include <iostream>
-#include <cstdio>
-#include <iomanip>
-#include <cstring>
-#include <ctime>
-#include <bitset>
-#include <cmath>
+# include <iostream>
+# include <cstdio>
+# include <iomanip>
+# include <cstring>
+# include <ctime>
+# include <bitset>
+# include <cmath>
 
 class FragTrap
 {
