@@ -8,7 +8,7 @@ float Fixed::toFloat(void) const
 int Fixed::toInt(void) const
 {
 	
-	return ((int)((value - 1) >> Fixed::bit));
+	return ((int)((value) >> Fixed::bit));
 }
 
 int  Fixed::getRawBits() const
