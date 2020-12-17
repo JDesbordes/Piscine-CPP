@@ -11,9 +11,8 @@ class SuperTrap : public NinjaTrap, public FragTrap
   	SuperTrap();
   	SuperTrap(std::string name);
   	SuperTrap(const SuperTrap &src);
+	SuperTrap & operator=( SuperTrap const & rhs );
 	~SuperTrap();
 };
-
-std::ostream &			operator<<( std::ostream & o, SuperTrap const & i );
 
 #endif

@@ -28,23 +28,23 @@ void ClapTrap::beRepaired(unsigned int amount)
 		Hit_points = Max_hit_points;
 }
 
-void ClapTrap::setHit_points(int i)
+void ClapTrap::setHit_points(unsigned int i)
 {
 	Hit_points = i;
 }
-void ClapTrap::setMax_hit_points(int i)
+void ClapTrap::setMax_hit_points(unsigned int i)
 {
 	Max_hit_points = i;
 }
-void ClapTrap::setEnergy_points(int i)
+void ClapTrap::setEnergy_points(unsigned int i)
 {
 	Energy_points = i;
 }
-void ClapTrap::setMax_energy_points(int i)
+void ClapTrap::setMax_energy_points(unsigned int i)
 {
 	Max_energy_points = i;
 }
-void ClapTrap::setLevel(int i)
+void ClapTrap::setLevel(unsigned int i)
 {
 	Level = i;
 }
@@ -65,23 +65,23 @@ void ClapTrap::setName(std::string name)
 	Name = name;
 }
 
-int ClapTrap::getHit_points() const
+unsigned int ClapTrap::getHit_points() const
 {
 	return (Hit_points);
 }
-int ClapTrap::getMax_hit_points() const
+unsigned int ClapTrap::getMax_hit_points() const
 {
 	return (Max_hit_points);
 }
-int ClapTrap::getEnergy_points() const
+unsigned int ClapTrap::getEnergy_points() const
 {
 	return (Energy_points);
 }
-int ClapTrap::getMax_energy_points() const
+unsigned int ClapTrap::getMax_energy_points() const
 {
 	return (Max_energy_points);
 }
-int ClapTrap::getLevel() const
+unsigned int ClapTrap::getLevel() const
 {
 	return (Level);
 }
@@ -107,6 +107,12 @@ ClapTrap::ClapTrap()
 	std::cout << "Factory new ClapTrap" << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string n)
+{
+	std::cout << "Factory new ClapTrap" << std::endl;
+	setName(n);
+}
+
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
 	std::cout << "Factory new ClapTrap" << std::endl;
@@ -128,6 +134,7 @@ ClapTrap::~ClapTrap()
 
 void	ClapTrap::operator=(const ClapTrap &copied)
 {
+	std::cout << "Factory new ClapTrap" << std::endl;
 	Hit_points = copied.getHit_points();
   	Max_hit_points = copied.getHit_points();
 	Energy_points = copied.getEnergy_points();

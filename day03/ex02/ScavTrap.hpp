@@ -10,10 +10,9 @@ class ScavTrap : public ClapTrap
   	ScavTrap();
   	ScavTrap(std::string name);
   	ScavTrap(const ScavTrap &src);
+	ScavTrap &	operator=( ScavTrap const & rhs );
 	~ScavTrap();
 	void challengNewcomer(std::string const & target);
 };
-
-std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );
 
 #endif

@@ -14,6 +14,7 @@ class ClapTrap
 
   public :
   	ClapTrap();
+	ClapTrap(std::string n);
 	ClapTrap(const ClapTrap &src);
 	~ClapTrap();
 	void rangedAttack(std::string const & target);

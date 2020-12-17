@@ -65,16 +65,8 @@ FragTrap::FragTrap(std::string name)
 
 FragTrap::FragTrap(const FragTrap &src)
 {
+	(void)src;
 	std::cout << "IM ALIVE!!" << std::endl;
-	setHit_points(src.getHit_points());
-  	setMax_hit_points(src.getMax_hit_points());
-	setEnergy_points(src.getEnergy_points());
-	setMax_energy_points(src.getMax_energy_points());
-	setLevel(src.getLevel());
-	setName(src.getName());
-	setMelee_attack_damage(src.getMelee_attack_damage());
-	setRanged_attack_damage(src.getRanged_attack_damage());
-	setArmor_damage_reduction(src.getArmor_damage_reduction());
 }
 
 FragTrap::~FragTrap()
@@ -84,15 +76,7 @@ FragTrap::~FragTrap()
 
 FragTrap &				FragTrap::operator=( FragTrap const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	(void)rhs;
+	std::cout << "IM ALIVE!!" << std::endl;
 	return *this;
-}
-
-std::ostream &			operator<<( std::ostream & o, FragTrap const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
 }
