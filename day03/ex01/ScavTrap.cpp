@@ -15,16 +15,18 @@ void ScavTrap::meleeAttack(std::string const & target)
 void ScavTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "SAVE ME!!" << std::endl;
-	Hit_points -= amount - Armor_damage_reduction;
-	if (Hit_points < 0)
+	if (amount > Hit_points)
+		Hit_points -= amount;
+	else
 		Hit_points = 0;
 }
 
 void ScavTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "I'm Back" << std::endl;
-	Hit_points += amount;
-	if (Hit_points > Max_hit_points)
+	if (amount > Max_hit_points - Hit_points)
+		Hit_points += amount;
+	else
 		Hit_points = Max_hit_points;
 }
 
@@ -106,27 +108,27 @@ ScavTrap::~ScavTrap()
 }
 
 
-int ScavTrap::get_Hit_points() const
+unsigned int ScavTrap::get_Hit_points() const
 {
 	return (Hit_points);
 }
 
-int ScavTrap::get_Max_hit_points() const
+unsigned int ScavTrap::get_Max_hit_points() const
 {
 	return (Max_hit_points);
 }
 
-int ScavTrap::get_Energy_points() const
+unsigned int ScavTrap::get_Energy_points() const
 {
 	return (Energy_points);
 }
 
-int ScavTrap::get_Max_energy_points() const
+unsigned int ScavTrap::get_Max_energy_points() const
 {
 	return (Max_energy_points);
 }
 
-int ScavTrap::get_Level() const
+unsigned int ScavTrap::get_Level() const
 {
 	return (Level);
 }

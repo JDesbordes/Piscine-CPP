@@ -42,16 +42,16 @@ Scalarc::~Scalarc()
 
 Scalarc &				Scalarc::operator=( Scalarc const & rhs )
 {
-	//if ( this != &rhs )
-	//{
+	if ( this != &rhs )
+	{
 		//this->_value = rhs.getValue();
-	//}
+	}
 	return *this;
 }
 
 std::ostream &			operator<<( std::ostream & o, Scalarc const & i )
 {
-	//o << "Value = " << i.getValue();
+	o << "Value = " << i.getConverted();
 	return o;
 }
 

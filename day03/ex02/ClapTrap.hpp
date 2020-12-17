@@ -22,21 +22,21 @@ class ClapTrap
 	void beRepaired(unsigned int amount);
 
 	//setters
-	void setHit_points(int i);
-	void setMax_hit_points(int i);
-	void setEnergy_points(int i);
-	void setMax_energy_points(int i);
-	void setLevel(int i);
+	void setHit_points(unsigned int i);
+	void setMax_hit_points(unsigned int i);
+	void setEnergy_points(unsigned int i);
+	void setMax_energy_points(unsigned int i);
+	void setLevel(unsigned int i);
 	void setMelee_attack_damage(int i);
 	void setRanged_attack_damage(int i);
 	void setArmor_damage_reduction(int i);
 	void setName(std::string name);
 	//get
-	int getHit_points() const;
-	int getMax_hit_points() const;
-	int getEnergy_points() const;
-	int getMax_energy_points() const;
-	int getLevel() const;
+	unsigned int getHit_points() const;
+	unsigned int getMax_hit_points() const;
+	unsigned int getEnergy_points() const;
+	unsigned int getMax_energy_points() const;
+	unsigned int getLevel() const;
 	int getMelee_attack_damage() const;
 	int getRanged_attack_damage() const;
 	int getArmor_damage_reduction() const;
@@ -44,11 +44,11 @@ class ClapTrap
 	void operator=( ClapTrap const & rhs );
 
   private :
-  	int Hit_points;
-  	int Max_hit_points;
-	int Energy_points;
-	int Max_energy_points;
-	int Level;
+  	unsigned int Hit_points;
+  	unsigned int Max_hit_points;
+	unsigned int Energy_points;
+	unsigned int Max_energy_points;
+	unsigned int Level;
 	std::string Name;
 	int Melee_attack_damage;
 	int Ranged_attack_damage;

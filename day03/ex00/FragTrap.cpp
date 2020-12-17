@@ -15,18 +15,18 @@ void FragTrap::meleeAttack(std::string const & target)
 void FragTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "Protect me Squire" << std::endl;
-	if (amount > 0)
-		Hit_points -= amount - Armor_damage_reduction;
-	if (Hit_points < 0)
+	if (amount > Hit_points)
+		Hit_points -= amount;
+	else
 		Hit_points = 0;
 }
 
 void FragTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "Here you go, chum!" << std::endl;
-	if (amount > 0)
+	if (amount > Max_hit_points - Hit_points)
 		Hit_points += amount;
-	if (Hit_points > Max_hit_points)
+	else
 		Hit_points = Max_hit_points;
 }
 
@@ -112,27 +112,27 @@ FragTrap::~FragTrap()
 	std::cout << "I'M DEAD I'M DEAD OHMYGOD I'M DEAD!" << std::endl;
 }
 
-int FragTrap::get_Hit_points() const
+unsigned int FragTrap::get_Hit_points() const
 {
 	return (Hit_points);
 }
 
-int FragTrap::get_Max_hit_points() const
+unsigned int FragTrap::get_Max_hit_points() const
 {
 	return (Max_hit_points);
 }
 
-int FragTrap::get_Energy_points() const
+unsigned int FragTrap::get_Energy_points() const
 {
 	return (Energy_points);
 }
 
-int FragTrap::get_Max_energy_points() const
+unsigned int FragTrap::get_Max_energy_points() const
 {
 	return (Max_energy_points);
 }
 
-int FragTrap::get_Level() const
+unsigned int FragTrap::get_Level() const
 {
 	return (Level);
 }
