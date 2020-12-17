@@ -16,9 +16,9 @@ class NinjaTrap : virtual public ClapTrap
 		int getMelee_attack_damage() const;
 		unsigned int getEnergy_points() const;
 		unsigned int getMax_energy_points() const;
-		void setEnergy_points(unsigned int i);
+		/*void setEnergy_points(unsigned int i);
 		void setMax_energy_points(unsigned int i);
-		void setMelee_attack_damage(int i);
+		void setMelee_attack_damage(int i);*/
 	private :
 		unsigned int Energy_points;
 		unsigned int Max_energy_points;

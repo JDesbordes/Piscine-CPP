@@ -1,7 +1,7 @@
 #include "NinjaTrap.hpp"
 
 
-void NinjaTrap::setMelee_attack_damage(int i)
+/*void NinjaTrap::setMelee_attack_damage(int i)
 {
 	Melee_attack_damage = i;
 }
@@ -14,7 +14,7 @@ void NinjaTrap::setEnergy_points(unsigned int i)
 void NinjaTrap::setMax_energy_points(unsigned int i)
 {
 	Max_energy_points = i;
-}
+}*/
 
 unsigned int NinjaTrap::getEnergy_points() const
 {
@@ -66,11 +66,11 @@ NinjaTrap::NinjaTrap()
 	std::cout << "Give us open ports for remote access or give us death!" << std::endl;
 	setHit_points(60);
   	setMax_hit_points(60);
-	setEnergy_points(120);
-	setMax_energy_points(120);
+	Energy_points = 120;
+	Max_energy_points = 120;
 	setLevel(1);
 	setName("IN4C-TP");
-	setMelee_attack_damage(60);
+	Melee_attack_damage = 60;
 	setRanged_attack_damage(5);
 	setArmor_damage_reduction(0);
 }
