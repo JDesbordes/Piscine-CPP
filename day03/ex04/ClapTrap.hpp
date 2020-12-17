@@ -25,20 +25,20 @@ class ClapTrap
 	//setters
 	void setHit_points(unsigned int i);
 	void setMax_hit_points(unsigned int i);
-	void setEnergy_points(unsigned int i);
-	void setMax_energy_points(unsigned int i);
+	virtual void setEnergy_points(unsigned int i);
+	virtual void setMax_energy_points(unsigned int i);
 	void setLevel(unsigned int i);
-	void setMelee_attack_damage(int i);
+	virtual void setMelee_attack_damage(int i);
 	void setRanged_attack_damage(int i);
 	void setArmor_damage_reduction(int i);
 	void setName(std::string name);
 	//get
 	unsigned int getHit_points() const;
 	unsigned int getMax_hit_points() const;
-	unsigned int getEnergy_points() const;
-	unsigned int getMax_energy_points() const;
+	virtual unsigned int getEnergy_points() const;
+	virtual unsigned int getMax_energy_points() const;
 	unsigned int getLevel() const;
-	int getMelee_attack_damage() const;
+	virtual int getMelee_attack_damage() const;
 	int getRanged_attack_damage() const;
 	int getArmor_damage_reduction() const;
 	std::string getName() const;

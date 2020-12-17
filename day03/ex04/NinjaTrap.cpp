@@ -1,5 +1,36 @@
 #include "NinjaTrap.hpp"
 
+
+void NinjaTrap::setMelee_attack_damage(int i)
+{
+	Melee_attack_damage = i;
+}
+
+void NinjaTrap::setEnergy_points(unsigned int i)
+{
+	Energy_points = i;
+}
+
+void NinjaTrap::setMax_energy_points(unsigned int i)
+{
+	Max_energy_points = i;
+}
+
+unsigned int NinjaTrap::getEnergy_points() const
+{
+	return (Energy_points);
+}
+
+unsigned int NinjaTrap::getMax_energy_points() const
+{
+	return (Max_energy_points);
+}
+
+int NinjaTrap::getMelee_attack_damage() const
+{
+	return (Melee_attack_damage);
+}
+
 void NinjaTrap::ninjaShoebox(std::string const & target)
 {
 	if (getEnergy_points() < 25)
