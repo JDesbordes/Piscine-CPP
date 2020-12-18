@@ -57,6 +57,7 @@ FragTrap::FragTrap(std::string name)
 	setEnergy_points(100);
 	setMax_energy_points(100);
 	setLevel(1);
+	setName(name);
 	setMelee_attack_damage(30);
 	setRanged_attack_damage(20);
 	setArmor_damage_reduction(5);
