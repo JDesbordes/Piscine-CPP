@@ -5,6 +5,7 @@ int main()
 {
 	std::srand(std::time(NULL));
 	SuperTrap a("SUP-TP");
+	
 	std::cout << a.getMax_hit_points() << std::endl;
 	std::cout << a.getMax_hit_points() << std::endl;
 	std::cout << a.getEnergy_points() << std::endl;

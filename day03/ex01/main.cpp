@@ -6,6 +6,8 @@ int main()
 	std::srand(std::time(NULL));
 	FragTrap a("CL4P-TP");
 	ScavTrap b("SC4V-TP");
+
+	std::cout << "TEST A" << std::endl;
 	a.meleeAttack("Rat");
 	a.rangedAttack("Badass Psycho");
 	a.takeDamage(45);
@@ -15,6 +17,8 @@ int main()
 	a.vaulthunter_dot_exe("Handsome Jack");
 	a.vaulthunter_dot_exe("Handsome Jack");
 	a.vaulthunter_dot_exe("Handsome Jack");
+
+	std::cout << "TEST B" << std::endl;
 	b.meleeAttack("Rat");
 	b.rangedAttack("Badass Psycho");
 	b.takeDamage(45);

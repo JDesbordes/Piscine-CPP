@@ -25,7 +25,7 @@ int main()
 	b.beRepaired(50);
 	b.vaulthunter_dot_exe("Handsome Jack");
 
-	std::cout << "TEST A" << std::endl;
+	std::cout << "TEST C" << std::endl;
 	c.meleeAttack("Rat");
 	c.rangedAttack("Badass Psycho");
 	c.takeDamage(45);
