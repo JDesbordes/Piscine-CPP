@@ -52,6 +52,7 @@ ScavTrap::ScavTrap(std::string name)
 	setEnergy_points(50);
 	setMax_energy_points(50);
 	setLevel(1);
+	setName(name);
 	setMelee_attack_damage(20);
 	setRanged_attack_damage(15);
 	setArmor_damage_reduction(3);
