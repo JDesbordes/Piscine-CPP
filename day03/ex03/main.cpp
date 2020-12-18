@@ -8,6 +8,8 @@ int main()
 	FragTrap a("FR4G-TP");
 	ScavTrap b("SC4V-TP");
 	NinjaTrap c("NINJA-TP");
+	NinjaTrap d = c;
+	NinjaTrap e(c);
 
 	std::cout << "TEST A" << std::endl;
 	a.meleeAttack("Rat");
@@ -32,5 +34,21 @@ int main()
 	c.beRepaired(50);
 	c.ninjaShoebox(a.getName());
 	c.ninjaShoebox(b.getName());
+
+	std::cout << "TEST D" << std::endl;
+	d.meleeAttack("Rat");
+	d.rangedAttack("Badass Psycho");
+	d.takeDamage(45);
+	d.beRepaired(50);
+	d.ninjaShoebox(a.getName());
+	d.ninjaShoebox(b.getName());
+
+	std::cout << "TEST E" << std::endl;
+	e.meleeAttack("Rat");
+	e.rangedAttack("Badass Psycho");
+	e.takeDamage(45);
+	e.beRepaired(50);
+	e.ninjaShoebox(a.getName());
+	e.ninjaShoebox(b.getName());
   	return (0);
 }

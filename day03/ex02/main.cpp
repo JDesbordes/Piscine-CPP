@@ -6,6 +6,8 @@ int main()
 	std::srand(std::time(NULL));
 	FragTrap a("FR4G-TP");
 	ScavTrap b("SC4V-TP");
+	ScavTrap c = b;
+	ScavTrap d(b);
 
 	std::cout << "TEST A" << std::endl;
 	a.meleeAttack("Rat");
@@ -28,5 +30,27 @@ int main()
 	b.challengNewcomer("Handsome Jack");
 	b.challengNewcomer("Handsome Jack");
 	b.challengNewcomer("Handsome Jack");
+
+	std::cout << "TEST C" << std::endl;
+	c.meleeAttack("Rat");
+	c.rangedAttack("Badass Psycho");
+	c.takeDamage(45);
+	c.beRepaired(50);
+	c.challengNewcomer("Handsome Jack");
+	c.challengNewcomer("Handsome Jack");
+	c.challengNewcomer("Handsome Jack");
+	c.challengNewcomer("Handsome Jack");
+	c.challengNewcomer("Handsome Jack");
+
+	std::cout << "TEST D" << std::endl;
+	d.meleeAttack("Rat");
+	d.rangedAttack("Badass Psycho");
+	d.takeDamage(45);
+	d.beRepaired(50);
+	d.challengNewcomer("Handsome Jack");
+	d.challengNewcomer("Handsome Jack");
+	d.challengNewcomer("Handsome Jack");
+	d.challengNewcomer("Handsome Jack");
+	d.challengNewcomer("Handsome Jack");
   	return (0);
 }
