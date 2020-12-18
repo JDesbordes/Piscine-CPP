@@ -1,23 +1,22 @@
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(): ClapTrap(), NinjaTrap(), FragTrap()
+SuperTrap::SuperTrap(): NinjaTrap(), FragTrap()
 {
 	std::cout << "IM SUPER ALIVE!!" << std::endl;
 	setName("SUP3R-TP");
-	setEnergy_points(120);
-	setMax_energy_points(120);
+	setEnergy_points(NinjaTrap::getEnergy_points());
+	setMax_energy_points(NinjaTrap::getMax_energy_points());
 	setLevel(1);
-	setMelee_attack_damage(60);
+	setMelee_attack_damage(NinjaTrap::getMelee_attack_damage());
 }
 
-SuperTrap::SuperTrap(std::string name): ClapTrap(), NinjaTrap(), FragTrap()
+SuperTrap::SuperTrap(std::string name): NinjaTrap(), FragTrap()
 {
 	std::cout << "IM SUPER ALIVE!!" << std::endl;
-	setEnergy_points(120);
-	setMax_energy_points(120);
-	setLevel(1);
+	setEnergy_points(NinjaTrap::getEnergy_points());
+	setMax_energy_points(NinjaTrap::getMax_energy_points());
 	setName(name);
-	setMelee_attack_damage(60);
+	setMelee_attack_damage(NinjaTrap::getMelee_attack_damage());
 }
 
 SuperTrap::SuperTrap(const SuperTrap &src)
