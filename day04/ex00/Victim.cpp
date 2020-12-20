@@ -42,3 +42,11 @@ std::ostream &operator<<(std::ostream &o, Victim const &rhs)
 	o << "I'm " << rhs.getName() << " and I like otters!" << std::endl;
 	return o;
 }
+
+Victim & operator=(const Victim &rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	this->name = rhs.getName();
+	return (*this);
+}

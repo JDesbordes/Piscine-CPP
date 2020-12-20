@@ -1,14 +1,6 @@
 #ifndef VICTIM_HPP
 # define VICTIM_HPP
 
-# include <iostream>
-# include <stdio.h>
-# include <iomanip>
-# include <string.h>
-# include <ctime>
-# include <bitset>
-# include <cmath>
-
 class Victim
 {
 	private :
@@ -19,8 +11,9 @@ class Victim
 
 	public :
 	Victim(std::string name);
-	~Victim();
+	virtual ~Victim();
 	virtual void getPolymorphed() const;
+	Victim & operator=(const Victim &rhs)
 	void setName(std::string name);
 	std::string getName() const;
 };

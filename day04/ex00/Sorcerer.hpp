@@ -2,9 +2,9 @@
 # define SORCERER_HPP
 
 # include <iostream>
-# include <stdio.h>
+# include <cstdio>
 # include <iomanip>
-# include <string.h>
+# include <cstring>
 # include <ctime>
 # include <bitset>
 # include <cmath>
