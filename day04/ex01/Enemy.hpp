@@ -8,6 +8,7 @@ class Enemy
 	private:
 	std::string Type;
 	int			HP;
+	Enemy();
 
 	public:
 	Enemy(int hp, std::string const & type);
