@@ -5,10 +5,6 @@
 
 class RadScorpion : public Enemy
 {
-	private:
-	std::string Type;
-	int			HP;
-
 	public:
 	RadScorpion();
 	virtual ~RadScorpion();

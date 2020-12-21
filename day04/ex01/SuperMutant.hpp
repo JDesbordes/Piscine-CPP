@@ -5,10 +5,6 @@
 
 class SuperMutant : public Enemy
 {
-	private:
-	std::string Type;
-	int			HP;
-
 	public:
 	SuperMutant();
 	virtual ~SuperMutant();
