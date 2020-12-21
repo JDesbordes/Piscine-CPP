@@ -23,6 +23,7 @@ int main2()
 
 	std::cout << "-- testing equip / attack --" << std::endl;
 	me->equip(z);
+	me->attack(d);
 
 	me->equip(bl);
 	me->attack(b);
