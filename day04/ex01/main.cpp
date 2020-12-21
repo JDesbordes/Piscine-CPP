@@ -33,6 +33,8 @@ int main2()
 	std::cout << *me;
 
 	me->attack(b);
+	if (b)
+        std::cout << b->getType() << " has " << b->getHP() << " HP." << std::endl;
 	std::cout << *me;
 	
 	std::cout << "-- testing ap --" << std::endl;
@@ -68,18 +70,26 @@ int main2()
 	std::cout << *me;
 
 	std::cout << "-- killing ennemy --" << std::endl;
+	if (c)
+        std::cout << c->getType() << " has " << c->getHP() << " HP." << std::endl;
 	me->recoverAP();
 	me->recoverAP();
 	me->attack(c);
 	me->attack(c);
+	if (c)
+        std::cout << c->getType() << " has " << c->getHP() << " HP." << std::endl;
 	me->recoverAP();
 	me->recoverAP();
 	me->attack(c);
 	me->attack(c);
+	if (c)
+        std::cout << c->getType() << " has " << c->getHP() << " HP." << std::endl;
 	me->recoverAP();
 	me->recoverAP();
 	me->attack(c);
 	me->attack(c);
+	if (c)
+        std::cout << c->getType() << " has " << c->getHP() << " HP." << std::endl;
 	std::cout << *me;
 
 	delete pf;
