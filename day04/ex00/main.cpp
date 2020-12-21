@@ -10,6 +10,7 @@ int main()
 	std::cout << bib << bib.getName() << " " << bib.getTitle() << " uses Doppelganger" << std::endl;
 	bib = robert;
 	std::cout << bib;
+	std::cout << &bib << " <= bib | robert => " << &robert << endl;
 
 	Victim jim("Jimmy");
 	Peon joe("Joe");
