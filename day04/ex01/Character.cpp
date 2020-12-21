@@ -46,9 +46,7 @@ void Character::attack(Enemy* en)
 		current->attack();
 		en->takeDamage(current->getDamage());
 		if (en->getHP() <= 0)
-		{
 			delete(en);
-		}
 	}
 }
 

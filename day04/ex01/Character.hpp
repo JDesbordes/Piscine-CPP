@@ -15,7 +15,7 @@ class Character
 	Character(std::string const & name);
 	Character(Character const &copied);
 	Character();
-	~Character();
+	virtual ~Character();
 	Character& operator=(const Character &copied);
 	void recoverAP();
 	void equip(AWeapon*);

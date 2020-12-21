@@ -11,7 +11,7 @@ class RadScorpion : public Enemy
 
 	public:
 	RadScorpion();
-	~RadScorpion();
+	virtual ~RadScorpion();
 	RadScorpion(RadScorpion const &copied);
 	RadScorpion& operator=(const RadScorpion &copied);
 	virtual void takeDamage(int);

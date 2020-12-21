@@ -8,7 +8,7 @@ class PlasmaRifle : public AWeapon
 	public:
 		PlasmaRifle();
 		PlasmaRifle(PlasmaRifle const &copied);
-		~PlasmaRifle();
+		virtual ~PlasmaRifle();
 		PlasmaRifle& operator=(const PlasmaRifle &copied);
 		void attack() const;
 };

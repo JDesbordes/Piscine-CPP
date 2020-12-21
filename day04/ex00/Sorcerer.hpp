@@ -20,7 +20,7 @@ class Sorcerer
 	public :
 	Sorcerer(const Sorcerer &copied);
 	Sorcerer(std::string name, std::string title);
-	~Sorcerer();
+	virtual ~Sorcerer();
 	void polymorph(Victim const &a) const;
 	void setName(std::string name);
 	void setTitle(std::string title);

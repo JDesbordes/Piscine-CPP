@@ -8,7 +8,7 @@ class PowerFist : public AWeapon
 	public:
 		PowerFist();
 		PowerFist(PowerFist const &copied);
-		~PowerFist();
+		virtual ~PowerFist();
 		PowerFist& operator=(const PowerFist &copied);
 		void attack() const;
 };
