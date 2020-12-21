@@ -15,19 +15,15 @@ typedef struct		s_isquad
 class Squad : public ISquad
 {
 	s_isquad* team;
+	
 	public:
 		int getCount() const;
 		ISpaceMarine* getUnit(int target) const;
 		int push(ISpaceMarine* newbie);
 		Squad();
 		Squad( Squad const & src );
-		~Squad();
-
+		virtual ~Squad();
 		Squad &		operator=( Squad const & rhs );
-	private:
-		
 };
-
-std::ostream &			operator<<( std::ostream & o, Squad const & i );
 
 #endif /* *********************************************************** SQUAD_H */

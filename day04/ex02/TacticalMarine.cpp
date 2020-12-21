@@ -31,19 +31,9 @@ TacticalMarine::~TacticalMarine()
 
 TacticalMarine &				TacticalMarine::operator=( TacticalMarine const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	(void)rhs;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, TacticalMarine const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------

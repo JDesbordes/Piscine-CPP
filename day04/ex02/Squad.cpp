@@ -57,19 +57,10 @@ Squad::~Squad()
 
 Squad &				Squad::operator=( Squad const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+		this->team = rhs.team;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Squad const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -119,8 +110,6 @@ ISpaceMarine* Squad::getUnit(int target) const
 	return (temp_lst->content);
 }
 
-/* ************************************************************************** */
-
 int		Squad::getCount() const
 {
 	int		size;
@@ -137,3 +126,5 @@ int		Squad::getCount() const
 	}
 	return (size);
 }
+
+/* ************************************************************************** */

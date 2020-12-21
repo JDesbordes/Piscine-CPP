@@ -10,6 +10,7 @@ int main2()
 {
 	Character* me = new Character("me");
 	std::cout << *me;
+	std::cout << std::endl;
 
 	std::cout << "-- crating weapon --" << std::endl;
 	Enemy* b = new RadScorpion();
@@ -20,6 +21,7 @@ int main2()
 	AWeapon* pf = new PowerFist();
 	AWeapon* bl;
 	bl = pf;
+	std::cout << std::endl;
 
 	std::cout << "-- testing equip / attack --" << std::endl;
 	me->equip(z);
@@ -43,6 +45,7 @@ int main2()
 	if (b)
         std::cout << b->getType() << " has " << b->getHP() << " HP." << std::endl;
 	std::cout << *me;
+	std::cout << std::endl;
 
 	std::cout << "-- testing ap --" << std::endl;
 	me->attack(c);
@@ -56,12 +59,14 @@ int main2()
 	me->attack(c);
 	me->attack(c);
 	std::cout << *me;
+	std::cout << std::endl;
 
 	std::cout << "-- recovery ap --" << std::endl;
 	std::cout << *me;
 	me->recoverAP();
 	std::cout << *me;
 	me->attack(c);
+	std::cout << std::endl;
 
 	std::cout << "-- recovery ap max --" << std::endl;
 	std::cout << *me;
@@ -78,6 +83,7 @@ int main2()
 	me->recoverAP();
 	me->recoverAP();
 	std::cout << *me;
+	std::cout << std::endl;
 
 	std::cout << "-- testing ennemy resistance --" << std::endl;
 	std::cout << *me;
@@ -97,6 +103,7 @@ int main2()
 	me->attack(d);
 	if (d)
         std::cout << d->getType() << " has " << d->getHP() << " HP. (after)" << std::endl;
+	std::cout << std::endl;
 
 	std::cout << "-- killing ennemy --" << std::endl;
 	me->equip(z);
