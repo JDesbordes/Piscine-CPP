@@ -9,10 +9,10 @@ void	*serialize(void)
 	DataPre *temp = new DataPre;
 	char alphanum[] = "0123456789ABCDEFHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	for (int i = 0; i <8; i++)
-		temp->first[i] = alphanum[std::rand() % (sizeof(alphanum) - 1)];
-	temp->second = std::rand();
+		temp->first[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
+	temp->second = rand();
 	for (int i = 0; i <8; i++)
-		temp->third[i] = alphanum[std::rand() % (sizeof(alphanum) - 1)];
+		temp->third[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
 	//std::cout << std::string(temp->first,8) <<"\nnum = " << temp->second << "\nsecond string = "<< std::string(temp->third,8) << std::endl;
 	return (reinterpret_cast<void *>(temp));
 }
@@ -33,9 +33,9 @@ int main(void)
 	void *temp;
 	Data *deserialized;
 <<<<<<< HEAD
-	std::srand(std::time(NULL));
+	srand(time(NULL));
 =======
-	std::srand(std::time(NULL));
+	srand(time(NULL));
 >>>>>>> 69b380d0ee4ec1c536b124aaa5b7ab528d247861
 	temp = serialize();
 	deserialized = deserialize(temp);

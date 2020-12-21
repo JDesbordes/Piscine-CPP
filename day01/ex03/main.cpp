@@ -3,7 +3,7 @@
 int main()
 {
 	int i(-1);
-	std::srand(std::time(NULL));
+	srand(time(NULL));
 	std::cout << "How many Z's do you want ?\n";
 	std::cin >> i;
 	while (i < 0)

@@ -2,7 +2,7 @@
 
 int main()
 {
-    std::srand(std::time(NULL));
+    srand(time(NULL));
     FragTrap a("CL4P-TP");
 	FragTrap b(a);
 	FragTrap c = b;

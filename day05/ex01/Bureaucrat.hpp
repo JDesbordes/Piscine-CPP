@@ -11,10 +11,9 @@ class Bureaucrat
 {
 
 	public:
-		Bureaucrat();
 		Bureaucrat(std::string n, int g);
 		Bureaucrat( Bureaucrat const & src );
-		~Bureaucrat();
+		virtual ~Bureaucrat();
 
 		void signForm(Form *form);
 		void incrementGrade();
@@ -42,6 +41,7 @@ class Bureaucrat
 		};
 
 	private:
+		Bureaucrat();
 		std::string name;
 		int grade;
 };

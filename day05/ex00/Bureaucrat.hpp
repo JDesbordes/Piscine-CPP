@@ -9,10 +9,9 @@ class Bureaucrat
 {
 
 	public:
-		Bureaucrat();
 		Bureaucrat(std::string n, int g);
 		Bureaucrat( Bureaucrat const & src );
-		~Bureaucrat();
+		virtual ~Bureaucrat();
 		void incrementGrade();
 		void decrementGrade();
 		int getGrade() const;
@@ -38,6 +37,7 @@ class Bureaucrat
 		};
 
 	private:
+		Bureaucrat();
 		std::string name;
 		int grade;
 };

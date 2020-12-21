@@ -38,7 +38,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 		return ;
 	}
 	Energy_points -= 25;
-	switch(std::rand() % 5)
+	switch(rand() % 5)
 	{
 		case 0:
 			std::cout << "This time it'll be awesome, I promise!" << std::endl << "Ratattattattatta! Powpowpowpow! Powpowpowpow! Pew-pew, pew-pew-pewpew!" << std::endl;

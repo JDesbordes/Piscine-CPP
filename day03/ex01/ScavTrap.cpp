@@ -38,7 +38,7 @@ void ScavTrap::challengNewcomer(std::string const & target)
 		return ;
 	}
 	Energy_points -= 25;
-	switch(std::rand() % 5)
+	switch(rand() % 5)
 	{
 		case 0:
 			std::cout << "SC4V-TP challenges " << target << " to a kickboxing match !" << std::endl;

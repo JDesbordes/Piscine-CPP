@@ -16,7 +16,7 @@ void 	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	Form::execute(executor);
 	int i;
-	i = std::rand() % 4;
+	i = rand() % 4;
 	if (i == 0)
 	{
 		std::cout << "brbrbrbrbrbbrbrbrbr" << std::endl;

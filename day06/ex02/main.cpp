@@ -7,7 +7,7 @@
 Base	*generate(void)
 {
 	Base *ret;
-	int i = std::rand() % 3;
+	int i = rand() % 3;
 
 	if (!i)
 	{
@@ -52,9 +52,9 @@ int main2(void)
 	B *b = new B();
 	C *c = new C();
 <<<<<<< HEAD
-	std::srand(std::time(NULL));
+	srand(time(NULL));
 =======
-	std::srand(std::time(NULL));
+	srand(time(NULL));
 >>>>>>> 69b380d0ee4ec1c536b124aaa5b7ab528d247861
 
 	special = generate();

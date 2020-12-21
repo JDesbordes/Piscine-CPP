@@ -4,9 +4,9 @@
 int main2()
 {
 <<<<<<< HEAD
-	std::srand(std::time(NULL));
+	srand(time(NULL));
 =======
-	std::srand(std::time(NULL));
+	srand(time(NULL));
 >>>>>>> 69b380d0ee4ec1c536b124aaa5b7ab528d247861
 	Bureaucrat* bob = new Bureaucrat;
 	Bureaucrat* jimmy = new Bureaucrat("jimmy", 1);

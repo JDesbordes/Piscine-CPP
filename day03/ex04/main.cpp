@@ -3,7 +3,7 @@
 
 int main()
 {
-	std::srand(std::time(NULL));
+	srand(time(NULL));
 	SuperTrap a("SUP-TP");
 	SuperTrap b = a;
 	SuperTrap c(a);

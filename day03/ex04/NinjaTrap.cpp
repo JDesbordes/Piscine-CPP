@@ -39,7 +39,7 @@ void NinjaTrap::ninjaShoebox(std::string const & target)
 		return ;
 	}
 	setEnergy_points(getEnergy_points() - 25);
-	switch(std::rand() % 5)
+	switch(rand() % 5)
 	{
 		case 0:
 			std::cout << "See how our enemies crumble beneath the wheel of the claptrap Robolution! " << "-IN4C-TP " << getName() << " to " << target << std::endl;
