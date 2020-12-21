@@ -22,8 +22,7 @@ void Peon::getPolymorphed() const
 
 MairiePlayer & operator=(const MairiePlayer &rhs)
 {
-	if (this == &rhs)
-		return (*this);
-	Victim::operator=(rhs);
+	if (this != &rhs)
+		Victim::operator=(rhs);
 	return (*this);
 }

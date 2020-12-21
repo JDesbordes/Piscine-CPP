@@ -22,8 +22,7 @@ void Peon::getPolymorphed() const
 
 Peon & operator=(const Peon &rhs)
 {
-	if (this == &rhs)
-		return (*this);
-	Victim::operator=(rhs);
+	if (this != &rhs)
+		Victim::operator=(rhs);
 	return (*this);
 }
