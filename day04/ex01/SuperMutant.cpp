@@ -1,26 +1,26 @@
-#include "SheetOfPaper.hpp"
+#include "SuperMutant.hpp"
 
-SheetOfPaper::SheetOfPaper(): Enemy(800, "Sheet Of Paper")
+SuperMutant::SuperMutant(): Enemy(170, "Super Mutant")
 {
-	std::cout << "Gaaah. Going to make you be ecolo!" << std::endl;
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
-SheetOfPaper::~SheetOfPaper()
+SuperMutant::~SuperMutant()
 {
-	std::cout << "Paper mario..." << std::endl;
+	std::cout << "Aaargh..." << std::endl;
 }
 
-SheetOfPaper::SheetOfPaper(SheetOfPaper const &copied) : Enemy(copied)
+SuperMutant::SuperMutant(SuperMutant const &copied) : Enemy(copied)
 {
-	std::cout << "Gaaah. Me want smash mario heads!" << std::endl;
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
-void	SheetOfPaper::takeDamage(int i)
+void	SuperMutant::takeDamage(int i)
 {
 	Enemy::takeDamage(i > 3 ? i - 3 : 0);
 }
 
-SheetOfPaper& SheetOfPaper::operator=(const SuperMutant &copied)
+SuperMutant& SuperMutant::operator=(const SuperMutant &copied)
 {
 	setHP(copied.getHP());
 	setType(copied.getType());
