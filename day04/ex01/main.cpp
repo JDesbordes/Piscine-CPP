@@ -36,7 +36,7 @@ int main2()
 	if (b)
         std::cout << b->getType() << " has " << b->getHP() << " HP." << std::endl;
 	std::cout << *me;
-	
+
 	std::cout << "-- testing ap --" << std::endl;
 	me->attack(c);
 	me->attack(c);
@@ -69,27 +69,41 @@ int main2()
 	me->recoverAP();
 	std::cout << *me;
 
+	std::cout << "-- testing ennemy resistance --" << std::endl;
+	std::cout << *me;
+	std::cout << pr->getDamage() << std::endl;
+	if (b)
+        std::cout << b->getType() << " has " << b->getHP() << " HP. (before)" << std::endl;
+	me->attack(b);
+	if (b)
+        std::cout << b->getType() << " has " << b->getHP() << " HP. (after)" << std::endl;
+	if (c)
+        std::cout << c->getType() << " has " << c->getHP() << " HP. (before)" << std::endl;
+	me->attack(c);
+	if (c)
+        std::cout << c->getType() << " has " << c->getHP() << " HP. (after)" << std::endl;
+
 	std::cout << "-- killing ennemy --" << std::endl;
 	if (c)
-        std::cout << c->getType() << " has " << c->getHP() << " HP." << std::endl;
+        std::cout << c->getType() << " has " << c->getHP() << " HP. 1" << std::endl;
 	me->recoverAP();
 	me->recoverAP();
 	me->attack(c);
 	me->attack(c);
 	if (c)
-        std::cout << c->getType() << " has " << c->getHP() << " HP." << std::endl;
+        std::cout << c->getType() << " has " << c->getHP() << " HP. 2" << std::endl;
 	me->recoverAP();
 	me->recoverAP();
 	me->attack(c);
 	me->attack(c);
 	if (c)
-        std::cout << c->getType() << " has " << c->getHP() << " HP." << std::endl;
+        std::cout << c->getType() << " has " << c->getHP() << " HP. 3" << std::endl;
 	me->recoverAP();
 	me->recoverAP();
 	me->attack(c);
 	me->attack(c);
 	if (c)
-        std::cout << c->getType() << " has " << c->getHP() << " HP." << std::endl;
+        std::cout << c->getType() << " has " << c->getHP() << " HP. 4" << std::endl;
 	std::cout << *me;
 
 	delete pf;
