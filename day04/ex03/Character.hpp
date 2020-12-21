@@ -13,7 +13,7 @@ class Character : public ICharacter
 	public:
 		Character( Character const & src );
 		Character(std::string const & name);
-		~Character();
+		virtual ~Character();
 
 		std::string const & getName() const{return (name);}
 		void equip(AMateria* m);
