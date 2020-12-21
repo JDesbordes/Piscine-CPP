@@ -15,12 +15,10 @@ class Sorcerer
 	private :
 	std::string Name;
 	std::string Title;
-
-	protected:
 	Sorcerer();
-	Sorcerer(const Sorcerer &copied);
 
 	public :
+	Sorcerer(const Sorcerer &copied);
 	Sorcerer(std::string name, std::string title);
 	~Sorcerer();
 	void polymorph(Victim const &a) const;

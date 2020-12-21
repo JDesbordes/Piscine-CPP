@@ -22,10 +22,10 @@ int main()
 	robert.polymorph(joe);
 	robert.polymorph(bob);
 
-	// std::cout << "Victim get polymorphed" << std::endl;
-	// jim.getPolymorphed();
-	// joe.getPolymorphed();
-	// bob.getPolymorphed();
+	std::cout << "Victim get polymorphed" << std::endl;
+	jim.getPolymorphed();
+	joe.getPolymorphed();
+	bob.getPolymorphed();
 	
 	return 0;
 }
