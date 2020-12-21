@@ -66,10 +66,13 @@ int main2()
 	std::cout << "-- recovery ap max --" << std::endl;
 	std::cout << *me;
 	me->recoverAP();
+	std::cout << *me;
 	me->recoverAP();
 	std::cout << *me;
 	me->recoverAP();
+	std::cout << *me;
 	me->recoverAP();
+	std::cout << *me;
 	me->recoverAP();
 	std::cout << *me;
 	me->recoverAP();
@@ -78,7 +81,7 @@ int main2()
 
 	std::cout << "-- testing ennemy resistance --" << std::endl;
 	std::cout << *me;
-	std::cout << pr->getDamage() << std::endl;
+	std::cout << "The weapon do " << pr->getDamage() << " dmg." << std::endl;
 	if (b)
         std::cout << b->getType() << " has " << b->getHP() << " HP. (before)" << std::endl;
 	me->attack(b);
