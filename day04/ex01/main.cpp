@@ -1,8 +1,10 @@
 #include "Character.hpp"
 #include "RadScorpion.hpp"
+#include "SheetOfPaper.hpp"
 #include "SuperMutant.hpp"
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
+#include "ZeusSpear.hpp"
 
 int main2()
 {
@@ -12,12 +14,16 @@ int main2()
 	std::cout << "-- crating weapon --" << std::endl;
 	Enemy* b = new RadScorpion();
 	Enemy* c = new SuperMutant();
+	Enemy* d = new SheetOfPaper();
+	AWeapon* z = new ZeusSpear();
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
 	AWeapon* bl;
 	bl = pf;
 
 	std::cout << "-- testing equip / attack --" << std::endl;
+	me->equip(z);
+
 	me->equip(bl);
 	me->attack(b);
 	std::cout << *me;
@@ -26,7 +32,7 @@ int main2()
 	std::cout << *me;
 
 	me->equip(pf);
-	me->attack(b);
+	me->attack(d);
 	std::cout << *me;
 
 	me->equip(pr);
@@ -82,8 +88,14 @@ int main2()
 	me->attack(c);
 	if (c)
         std::cout << c->getType() << " has " << c->getHP() << " HP. (after)" << std::endl;
+	if (d)
+        std::cout << d->getType() << " has " << d->getHP() << " HP. (before)" << std::endl;
+	me->attack(d);
+	if (d)
+        std::cout << d->getType() << " has " << d->getHP() << " HP. (after)" << std::endl;
 
 	std::cout << "-- killing ennemy --" << std::endl;
+	me->equip(z);
 	if (c)
         std::cout << c->getType() << " has " << c->getHP() << " HP. 1" << std::endl;
 	me->recoverAP();
@@ -98,16 +110,11 @@ int main2()
 	me->attack(c);
 	if (c)
         std::cout << c->getType() << " has " << c->getHP() << " HP. 3" << std::endl;
-	me->recoverAP();
-	me->recoverAP();
-	me->attack(c);
-	me->attack(c);
-	if (c)
-        std::cout << c->getType() << " has " << c->getHP() << " HP. 4" << std::endl;
 	std::cout << *me;
 
 	delete pf;
 	delete pr;
+	delete z;
 	delete me;
 	return 0;
 }
