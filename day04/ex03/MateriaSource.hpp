@@ -3,13 +3,13 @@
 
 # include <iostream>
 # include <string>
+
 # include "IMateriaSource.hpp"
-# include "Cure.hpp"
-# include "Ice.hpp"
+# include "AMateria.hpp"
 
 class MateriaSource : public IMateriaSource
 {
-	s_amateria* amateria;
+	AMateria* materia[4];
 	public:
 
 		MateriaSource();
@@ -24,7 +24,5 @@ class MateriaSource : public IMateriaSource
 	private:
 
 };
-
-std::ostream &			operator<<( std::ostream & o, MateriaSource const & i );
 
 #endif /* *************************************************** MATERIASOURCE_H */

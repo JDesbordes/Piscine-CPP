@@ -6,39 +6,26 @@
 
 Character::Character()
 {
-	amateria = new t_amateria;
-	amateria->next = NULL;
-	amateria->content = NULL;
+	for (int i = 0; i < 4; i++)
+		this->inv[i] = NULL;
 }
 
 Character::Character(std::string const & name)
 {
-	amateria = new t_amateria;
-	amateria->next = NULL;
-	amateria->content = NULL;
+	for (int i = 0; i < 4; i++)
+		this->inv[i] = NULL;
 	this->name = name;
 }
 
 Character::Character( const Character & src )
 {
-	amateria = new t_amateria;
-	t_amateria	*temp;
-
-	while(amateria)
-	{
-		temp = amateria;
-		amateria = amateria->next;
-		delete temp->content;
-		delete temp;
-	}
-	amateria->next = NULL;
-	amateria->content = NULL;
-	temp = src.amateria;
-	while (temp)
-	{
-		equip(temp->content->clone());
-		temp = temp->next;
-	}
+	for (int i = 0; i < 4; i++)
+		if (this->inv[i])
+			delete this->inv[i];
+	for (int i = 0; i < 4; i++)
+		this->inv[i] = NULL;
+	for (int i = 0; i < 4 && src.inv[i] ; i++)
+		this->inv[i] = src.inv[i]->clone();
 	this->name = src.getName();
 }
 
@@ -49,15 +36,7 @@ Character::Character( const Character & src )
 
 Character::~Character()
 {
-	t_amateria	*temp;
-
-	while(amateria)
-	{
-		temp = amateria;
-		amateria = amateria->next;
-		delete temp->content;
-		delete temp;
-	}
+	delete[] inv;
 }
 
 
@@ -67,19 +46,17 @@ Character::~Character()
 
 Character &				Character::operator=( Character const & rhs )
 {
-	name = rhs.getName();
-	amateria = new t_amateria;
-	amateria->next = NULL;
-	amateria->content = NULL;
+	if ( this != &rhs )
+	{
+		this->name = src.getName();
+		for (int i = 0; i < 4; i++)
+			if (rhs.inv[i])
+				this->inv[i] = rhs.inv[i];
+			else
+				this->inv[i] = NULL;
+	}
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Character const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -87,69 +64,27 @@ std::ostream &			operator<<( std::ostream & o, Character const & i )
 
 void Character::equip(AMateria* m)
 {
-	if (m)
-	{
-		if (!amateria->content)
-			amateria->content = m;
-		else if (!amateria->next)
-		{
-			amateria->next = new t_amateria;
-			amateria->next->content = m;
-			amateria->next->next = NULL;
-		}
-		else if (!amateria->next->next)
-		{
-			amateria->next->next = new t_amateria;
-			amateria->next->next->content = m;
-			amateria->next->next->next = NULL;
-		}
-		else if (!amateria->next->next->next)
-		{
-			amateria->next->next->next = new t_amateria;
-			amateria->next->next->next->content = m;
-			amateria->next->next->next->next = NULL;
-		}
-		else
-			delete m;
-	}
+	int i = 0;
+
+	for (i = 0; i < 4 && this->inv[i] != NULL; i++);
+
+	if (i < 4)
+		this->_inv[i] = m;
+	else
+		delete m;
 }
+	
 
 void Character::unequip(int idx)
 {
-	t_amateria *tmp;
-	t_amateria *tmp_prev;
-
-	if (amateria->content)
-	{
-		tmp = amateria;
-		while (--idx < -1 && tmp->next)
-		{
-			tmp_prev = tmp;
-			tmp = tmp->next;
-		}
-		if (idx == -1 && tmp_prev != tmp && tmp->content)
-		{
-			tmp_prev->next = tmp->next;
-			tmp->next = NULL;
-			tmp->content = NULL;
-			delete tmp;
-		}
-		else if (idx == -1 && tmp->content)
-			tmp->content = NULL;
-	}
+	if (idx >= 0 && idx < 4)
+		this->_inv[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	int			i;
-	t_amateria	*tmp;
-
-	tmp = amateria;
-	i = -1;
-	while (++i < idx && tmp->next)
-		tmp = tmp->next;
-	if (i == idx && tmp->content)
-		tmp->content->use(target);
+	if (idx >= 0 && idx < 4 && this->inv[idx])
+		this->inv[idx]->use(target);
 }
 
 

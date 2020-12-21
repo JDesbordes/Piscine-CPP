@@ -6,20 +6,11 @@
 # include "ICharacter.hpp"
 # include "AMateria.hpp"
 
-typedef struct			s_amateria
-{
-	AMateria*			content;
-	struct s_amateria	*next;
-}						t_amateria;
-
 class ICharacter;
 
 class Character : public ICharacter
 {
-	s_amateria* amateria;
 	public:
-
-		Character();
 		Character( Character const & src );
 		Character(std::string const & name);
 		~Character();
@@ -32,9 +23,9 @@ class Character : public ICharacter
 		Character &		operator=( Character const & rhs );
 
 	private:
+		Character();
 		std::string name;
+		AMateria* inv[4];
 };
-
-std::ostream &			operator<<( std::ostream & o, Character const & i );
 
 #endif /* ******************************************************* CHARACTER_H */

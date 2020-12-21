@@ -18,6 +18,4 @@ class ICharacter
 	private:
 };
 
-std::ostream &			operator<<( std::ostream & o, ICharacter const & i );
-
 #endif /* ****************************************************** ICHARACTER_H */
