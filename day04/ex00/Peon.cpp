@@ -20,7 +20,7 @@ void Peon::getPolymorphed() const
 	std::cout << getName() << " has been turned into a pink pony!" << std::endl;
 }
 
-Peon & operator=(const Peon &rhs)
+Peon & Peon::operator=(const Peon &rhs)
 {
 	if (this != &rhs)
 		Victim::operator=(rhs);

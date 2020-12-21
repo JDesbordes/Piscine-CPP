@@ -10,7 +10,7 @@ int main()
 	std::cout << bib << bib.getName() << " " << bib.getTitle() << " uses Doppelganger" << std::endl;
 	bib = robert;
 	std::cout << bib;
-	std::cout << &bib << " <= bib | robert => " << &robert << endl;
+	std::cout << &bib << " <= bib | robert => " << &robert << std::endl;
 
 	Victim jim("Jimmy");
 	Peon joe("Joe");
@@ -18,15 +18,16 @@ int main()
 
 	std::cout << robert << jim << joe << bob;
 
-	std::cout << "Rober polymorph" << std::endl;
+	std::cout << "--- Rober polymorph ---" << std::endl;
 	robert.polymorph(jim);
 	robert.polymorph(joe);
 	robert.polymorph(bob);
 
-	std::cout << "Victim get polymorphed" << std::endl;
+	std::cout << "--- Victim get polymorphed ---" << std::endl;
 	jim.getPolymorphed();
 	joe.getPolymorphed();
 	bob.getPolymorphed();
+	std::cout << "---  ---" << std::endl;
 	
 	return 0;
 }

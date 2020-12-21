@@ -37,9 +37,9 @@ std::ostream &operator<<(std::ostream &o, Victim const &rhs)
 	return o;
 }
 
-Victim & operator=(const Victim &rhs)
+Victim & Victim::operator=(const Victim &rhs)
 {
 	if (this != &rhs)
-		this->name = rhs.getName();
+		this->Name = rhs.getName();
 	return (*this);
 }
