@@ -36,7 +36,9 @@ Character::Character( const Character & src )
 
 Character::~Character()
 {
-	delete[] inv;
+	for (int i = 0; i < 4 ; i++)
+		if (this->inv[i])
+			delete this->inv[i];
 }
 
 
@@ -48,7 +50,7 @@ Character &				Character::operator=( Character const & rhs )
 {
 	if ( this != &rhs )
 	{
-		this->name = src.getName();
+		this->name = rhs.getName();
 		for (int i = 0; i < 4; i++)
 			if (rhs.inv[i])
 				this->inv[i] = rhs.inv[i];
@@ -69,7 +71,7 @@ void Character::equip(AMateria* m)
 	for (i = 0; i < 4 && this->inv[i] != NULL; i++);
 
 	if (i < 4)
-		this->_inv[i] = m;
+		this->inv[i] = m;
 	else
 		delete m;
 }
@@ -78,7 +80,7 @@ void Character::equip(AMateria* m)
 void Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
-		this->_inv[idx] = NULL;
+		this->inv[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)

@@ -28,6 +28,7 @@ class AMateria
 		}
 		virtual void use(ICharacter& target)
 		{
+			(void)target;
 			set_xp(getXP() + 10);
 		}
 		void set_xp(unsigned int x) 

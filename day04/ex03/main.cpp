@@ -6,7 +6,7 @@
 #include "ICharacter.hpp"
 #include "Character.hpp"
 
-int main()
+int main2()
 {
 	std::cout << "Learn materia" << std::endl;
 	IMateriaSource* src = new MateriaSource();
@@ -39,50 +39,28 @@ int main()
 	tmp5 = src->createMateria("cure");
 	moi->equip(tmp5);
 
-	if (tmp)
-		std::cout << "tmp equiped" << std::endl;
-	else
-		std::cout << "tmp deleted" << std::endl;
-
-	if (tmp1)
-		std::cout << "tmp1 equiped" << std::endl;
-	else
-		std::cout << "tmp1 deleted" << std::endl;
-
-	if (tmp2)
-		std::cout << "tmp2 equiped" << std::endl;
-	else
-		std::cout << "tmp2 deleted" << std::endl;
-
-	if (tmp3)
-		std::cout << "tmp3 equiped" << std::endl;
-	else
-		std::cout << "tmp3 deleted" << std::endl;
-
-	if (tmp4)
-		std::cout << "tmp4 equiped" << std::endl;
-	else
-		std::cout << "tmp4 deleted" << std::endl;
-
-	if (tmp5)
-		std::cout << "tmp5 equiped" << std::endl;
-	else
-		std::cout << "tmp5 deleted" << std::endl;
-
 	ICharacter* bob = new Character("bob");
 
 	std::cout << std::endl << "Testing use and see xp" << std::endl;
 	moi->use(0, *bob);
 	moi->use(1, *bob);
-
 	std::cout << tmp->getXP() << " xp from tmp" << std::endl;
+	std::cout << tmp1->getXP() << " xp from tmp1" << std::endl;
 	moi->use(0, *bob);
 	moi->use(0, *bob);
 	moi->use(0, *bob);
 	moi->use(0, *bob);
-	std::cout << tmp->getXP() << " xp from tmp" << std::endl;
+	moi->use(3, *bob);
+	moi->use(-3, *bob);
+	moi->use(33, *bob);
+	moi->use(4, *bob);
+	std::cout << tmp->getXP() << " xp from tmp -> use(0, ...)" << std::endl;
+	std::cout << tmp1->getXP() << " xp from tmp1 -> use(1, ...)" << std::endl;
+	std::cout << tmp2->getXP() << " xp from tmp2 -> use(2, ...)" << std::endl;
+	std::cout << tmp3->getXP() << " xp from tmp3 -> use(3, ...)" << std::endl;
 
 	std::cout << std::endl << "Testing equip / unequip" << std::endl;
+	std::cout << tmp3->getXP() << " xp from tmp3" << std::endl;
 	moi->unequip(3);
 	moi->unequip(8);
 	moi->unequip(-3);
@@ -95,4 +73,12 @@ int main()
 	delete src;
 
 	return 0;
+}
+
+int main()
+{
+	main2();
+	while (1)
+	{ }
+	return 1;
 }

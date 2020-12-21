@@ -26,7 +26,9 @@ MateriaSource::MateriaSource( const MateriaSource & src )
 
 MateriaSource::~MateriaSource()
 {
-	delete[] materia;
+	for (int i = 0; i < 4 ; i++)
+		if (this->materia[i])
+			delete this->materia[i];
 }
 
 
