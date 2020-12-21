@@ -2,13 +2,7 @@
 
 Peon::Peon()
 {
-	try
-	{
-		throw 20;
-	}
-	catch(int a) {
-		std::cout << "Some random peon called " << Name << " just appeared!" << std::endl;
-   	}
+	std::cout << "Zog zog." << std::endl;
 }
 
 Peon::Peon(std::string name): Victim(name)

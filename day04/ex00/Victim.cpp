@@ -2,13 +2,7 @@
 
 Victim::Victim()
 {
-	try
-	{
-		throw 20;
-	}
-	catch(int a) {
-		std::cout << "Some random victim called " << Name << " just appeared!" << std::endl;
-   	}
+	std::cout << "Some random victim called " << Name << " just appeared!" << std::endl;
 }
 
 Victim::Victim(std::string name)
