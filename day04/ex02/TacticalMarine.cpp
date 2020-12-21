@@ -11,6 +11,7 @@ TacticalMarine::TacticalMarine()
 
 TacticalMarine::TacticalMarine( const TacticalMarine & src )
 {
+	(void)src;
 	std::cout << "Tactical Marine ready for battle!" << std::endl;
 }
 
