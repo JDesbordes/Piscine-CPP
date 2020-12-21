@@ -7,7 +7,7 @@
 int main2()
 {
 	srand(time(NULL));
-	Bureaucrat* bob = new Bureaucrat;
+	Bureaucrat* bob = new Bureaucrat("bob", 150);
 	Bureaucrat* jimmy = new Bureaucrat("jimmy", 1);
 	PresidentialPardonForm* form;
 	ShrubberyCreationForm* shrubForm = new ShrubberyCreationForm("forest");

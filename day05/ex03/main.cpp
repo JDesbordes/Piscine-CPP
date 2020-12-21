@@ -3,12 +3,8 @@
 
 int main2()
 {
-<<<<<<< HEAD
 	srand(time(NULL));
-=======
-	srand(time(NULL));
->>>>>>> 69b380d0ee4ec1c536b124aaa5b7ab528d247861
-	Bureaucrat* bob = new Bureaucrat;
+	Bureaucrat* bob = new Bureaucrat("bob", 150);
 	Bureaucrat* jimmy = new Bureaucrat("jimmy", 1);
 	PresidentialPardonForm* form;
 	ShrubberyCreationForm* shrubForm = new ShrubberyCreationForm("forest");

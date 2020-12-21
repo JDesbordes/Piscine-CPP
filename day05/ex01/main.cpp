@@ -3,7 +3,7 @@
 
 int main2()
 {
-	Bureaucrat* bob = new Bureaucrat;
+	Bureaucrat* bob = new Bureaucrat("bob", 150);
 	Bureaucrat* jimmy = new Bureaucrat("jimmy", 1);
 	Form* form;
 	try
