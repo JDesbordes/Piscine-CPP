@@ -5,7 +5,7 @@ MairePlayer::MairePlayer()
 	std::cout << "Bwark bwark. Gneu gneu." << std::endl;
 }
 
-MairePlayer::MairePlayer(std::string name): Victim(name)
+MairePlayer::MairePlayer(std::string name) : Victim(name)
 {
 	std::cout << "Bwark bwark. Gneu gneu." << std::endl;
 }
