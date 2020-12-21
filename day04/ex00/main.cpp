@@ -2,7 +2,7 @@
 #include "Peon.hpp"
 #include "MairiePlayer.hpp"
 
-int main()
+int main2()
 {
 	Sorcerer robert("Robert", "the Magnificent");
 	Sorcerer bib("Gandalf", "the Grey");
@@ -30,4 +30,12 @@ int main()
 	std::cout << "---  ---" << std::endl;
 	
 	return 0;
+}
+
+int main()
+{
+	main2();
+	while (1)
+	{ }
+	return 1;
 }
