@@ -4,12 +4,8 @@
 # include <iostream>
 # include <string>
 # include "ICharacter.hpp"
-// # include "Cure.hpp"
-// # include "Ice.hpp"
 
 class ICharacter;
-
-// class Cure;
 
 class AMateria
 {
@@ -25,7 +21,6 @@ class AMateria
 		std::string const & getType() const { return (type); };
 		unsigned int getXP() const { return (_xp); };
 		virtual AMateria* clone() const = 0;
-		// virtual AMateria* clone() const { return new AMateria(*this);}
 
 		void	setType(std::string temp)
 		{
