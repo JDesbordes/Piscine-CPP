@@ -16,7 +16,7 @@ class ScavTrap
   	ScavTrap();
   	ScavTrap(std::string name);
   	ScavTrap(const ScavTrap &src);
-	~ScavTrap();
+	virtual ~ScavTrap();
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);

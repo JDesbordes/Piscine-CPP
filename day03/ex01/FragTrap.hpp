@@ -16,7 +16,7 @@ class FragTrap
   	FragTrap();
   	FragTrap(std::string name);
 	FragTrap(const FragTrap &src);
-	~FragTrap();
+	virtual ~FragTrap();
 	void operator=(const FragTrap &copied);
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);

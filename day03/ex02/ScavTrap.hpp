@@ -11,7 +11,7 @@ class ScavTrap : public ClapTrap
   	ScavTrap(std::string name);
   	ScavTrap(const ScavTrap &src);
 	ScavTrap &	operator=( ScavTrap const & rhs );
-	~ScavTrap();
+	virtual ~ScavTrap();
 	void challengNewcomer(std::string const & target);
 };
 
