@@ -6,6 +6,7 @@ int main2()
 	Bureaucrat* bob = new Bureaucrat("bob", 150);
 	Bureaucrat* jimmy = new Bureaucrat("jimmy", 1);
 	Form* form;
+
 	try
 	{
 		form = new Form("B_24", 150, 80);
@@ -14,17 +15,47 @@ int main2()
 	{
 		std::cerr << "Exception " << e.what() << std::endl;
 	}
+
 	try
 	{
 		form = new Form("B_23", 160, 70);
 	}
 	catch (std::exception & e)
 	{
-		std::cout << "Exception " << e.what() << std::endl;
+		std::cerr << "Exception " << e.what() << std::endl;
 	}
+
+	try
+	{
+		form = new Form("B_22", 0, 70);
+	}
+	catch (std::exception & e)
+	{
+		std::cerr << "Exception " << e.what() << std::endl;
+	}
+
+	try
+	{
+		form = new Form("B_21", 80, 0);
+	}
+	catch (std::exception & e)
+	{
+		std::cerr << "Exception " << e.what() << std::endl;
+	}
+
+	try
+	{
+		form = new Form("B_20", 70, 151);
+	}
+	catch (std::exception & e)
+	{
+		std::cerr << "Exception " << e.what() << std::endl;
+	}
+
 	std::cout << *form << std::endl;
 	std::cout << *bob << std::endl;
 	std::cout << *jimmy << std::endl;
+
 	try
 	{
 		bob->incrementGrade();
@@ -36,6 +67,7 @@ int main2()
 	}
 	std::cout << *bob << std::endl;
 	std::cout << *jimmy << std::endl;
+
 	try
 	{
 		jimmy->decrementGrade();
@@ -48,9 +80,11 @@ int main2()
 	}
 	std::cout << *bob << std::endl;
 	std::cout << *jimmy << std::endl;
+
 	bob->signForm(form);
 	jimmy->signForm(form);
 	std::cout << *form << std::endl;
+
 	delete (bob);
 	delete (jimmy);
 	delete(form);
