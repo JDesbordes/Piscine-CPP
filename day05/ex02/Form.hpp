@@ -64,9 +64,9 @@ class Form
 	private:
 		bool _signed;
 		std::string target;
-		std::string const name;
-		int const signGrade;
-		int const exeGrade;
+		std::string name;
+		int signGrade;
+		int exeGrade;
 };
 
 std::ostream &			operator<<( std::ostream & o, Form const & i );

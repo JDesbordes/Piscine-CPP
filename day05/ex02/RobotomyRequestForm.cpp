@@ -43,7 +43,7 @@ void 	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs )
+RobotomyRequestForm &		RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
 	if ( this != &rhs )
 		Form::operator=(rhs);

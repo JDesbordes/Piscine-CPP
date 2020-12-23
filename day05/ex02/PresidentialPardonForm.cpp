@@ -22,7 +22,7 @@ void 	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs )
+PresidentialPardonForm &		PresidentialPardonForm::operator=( PresidentialPardonForm const & rhs )
 {
 	if ( this != &rhs )
 		Form::operator=(rhs);

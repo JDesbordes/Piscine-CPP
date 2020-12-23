@@ -13,14 +13,18 @@ Form::~Form()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Form &		operator=( Form const & rhs )
+Form &		Form::operator=( Form const & rhs )
 {
 	if ( this != &rhs )
 	{
+		if (_signGrade > 150 || _exeGrade > 150)
+			throw Form::GradeTooLowException();
+		if (_signGrade < 1 || _exeGrade < 1)
+			throw Form::GradeTooHighException();
 		this->name = rhs.getName();
 		this->_signed = rhs.getIsSigned();
-		this->exeGrade =rhs.getExeGrade();
-		this->signGrade =rhs.getSignGrade();
+		this->exeGrade = rhs.getExeGrade();
+		this->signGrade = rhs.getSignGrade();
 	}
 	return *this;
 }

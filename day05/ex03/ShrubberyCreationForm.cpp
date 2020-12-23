@@ -41,7 +41,7 @@ void 	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs )
+ShrubberyCreationForm &		ShrubberyCreationForm::operator=( ShrubberyCreationForm const & rhs )
 {
 	if ( this != &rhs )
 		Form::operator=(rhs);
