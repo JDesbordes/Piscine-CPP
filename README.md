@@ -1,4 +1,4 @@
-# Piscine-CPP
+#  Piscine-CPP <img alt="C++ icon" src="https://img.icons8.com/color/452/c-plus-plus-logo.png" width="50" height="50">
 
 ## ✅ Module 00 :
 
