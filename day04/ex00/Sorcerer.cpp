@@ -2,13 +2,13 @@
 
 Sorcerer::Sorcerer()
 {
-	try
-	{
-		throw 20;
-	}
-	catch(int a) {
-        std::cout << "BORN "; 
-   	}
+// 	try
+// 	{
+// 		throw 20;
+// 	}
+// 	catch(int a) {
+//         std::cout << "BORN "; 
+//    	}
 }
 
 Sorcerer::Sorcerer(const Sorcerer &copied)
