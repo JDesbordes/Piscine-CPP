@@ -18,5 +18,15 @@ void 	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	std::cout << getTarget() << " has been pardoned by Zafod Beeblebrox" << std::endl;
 }
 
+/*
+** --------------------------------- OVERLOAD ---------------------------------
+*/
+
+PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs )
+{
+	if ( this != &rhs )
+		Form::operator=(rhs);
+	return *this;
+}
 
 /* ************************************************************************** */

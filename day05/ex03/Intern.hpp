@@ -14,8 +14,7 @@ class Intern
 
 		Intern();
 		Intern( Intern const & src );
-		~Intern();
-
+		virtual ~Intern();
 		Intern &		operator=( Intern const & rhs );
 
 		Form* makeForm(std::string type, std::string name);

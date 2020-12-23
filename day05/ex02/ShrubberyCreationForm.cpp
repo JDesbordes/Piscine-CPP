@@ -36,4 +36,16 @@ void 	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
        .         .   .   000     .        .       .\n\
 .. .. ..................O000O........................ ......\n" << executor.getName() << std::endl;
 }
+
+/*
+** --------------------------------- OVERLOAD ---------------------------------
+*/
+
+ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs )
+{
+	if ( this != &rhs )
+		Form::operator=(rhs);
+	return *this;
+}
+
 /* ************************************************************************** */

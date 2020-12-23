@@ -18,7 +18,8 @@ class RobotomyRequestForm : public Form
 		{
 			setTarget(src.getTarget());
 		}
-		~RobotomyRequestForm();
+		virtual ~RobotomyRequestForm();
+		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 
 		void 	execute(Bureaucrat const & executor) const;
 	private:

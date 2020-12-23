@@ -19,7 +19,8 @@ class ShrubberyCreationForm : public Form
 		{
 			setTarget(src.getTarget());
 		}
-		~ShrubberyCreationForm();
+		virtual ~ShrubberyCreationForm();
+		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 
 		void 	execute(Bureaucrat const & executor) const;
 	private:

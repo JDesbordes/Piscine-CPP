@@ -11,6 +11,19 @@ Form::~Form(){};
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
+Form &		operator=( Form const & rhs )
+{
+	if ( this != &rhs )
+	{
+		this->name = rhs.getName();
+		this->_signed = rhs.getIsSigned();
+		this->exeGrade =rhs.getExeGrade();
+		this->signGrade =rhs.getSignGrade();
+		this->target =rhs.getTarget();
+	}
+	return *this;
+}
+
 std::ostream &			operator<<( std::ostream & o, Form const & i )
 {
 	o << "Form " << i.getName() << " Requires grade " << i.getSignGrade() << " to sign, grade " <<

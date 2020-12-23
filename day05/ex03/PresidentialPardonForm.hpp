@@ -18,7 +18,8 @@ class PresidentialPardonForm : public Form
 		{
 			setTarget(src.getTarget());
 		}
-		~PresidentialPardonForm();
+		virtual ~PresidentialPardonForm();
+		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
 
 		void 	execute(Bureaucrat const & executor) const;
 	private:

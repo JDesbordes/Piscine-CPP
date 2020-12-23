@@ -20,7 +20,7 @@ class Form
 			this->_signed = false;
 		}
 		Form( Form const & src ): name(src.name), signGrade(src.signGrade), exeGrade(src.exeGrade){}
-		~Form();
+		virtual ~Form();
 
 		void beSigned(Bureaucrat *b);
 
