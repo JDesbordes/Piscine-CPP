@@ -17,14 +17,17 @@ Form &		Form::operator=( Form const & rhs )
 {
 	if ( this != &rhs )
 	{
-		if (_signGrade > 150 || _exeGrade > 150)
+		if (signGrade > 150 || exeGrade > 150)
 			throw Form::GradeTooLowException();
-		if (_signGrade < 1 || _exeGrade < 1)
+		if (signGrade < 1 || exeGrade < 1)
 			throw Form::GradeTooHighException();
-		this->name = rhs.getName();
+		std::string& str = const_cast<std::string&>(this->name);
+		str = rhs.getName();
 		this->_signed = rhs.getIsSigned();
-		this->exeGrade = rhs.getExeGrade();
-		this->signGrade = rhs.getSignGrade();
+		int& n = const_cast<int&>(this->signGrade);
+		n = rhs.getSignGrade();
+		n = const_cast<int&>(this->exeGrade);
+		n = rhs.getExeGrade();
 	}
 	return *this;
 }
