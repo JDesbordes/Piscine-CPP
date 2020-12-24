@@ -63,9 +63,9 @@ class Form
 
 	private:
 		bool _signed;
-		std::string target;
-		std::string name;
-		int signGrade;
+		std::string const name;
+		int const signGrade;
+		int const exeGrade;
 		int exeGrade;
 };
 
