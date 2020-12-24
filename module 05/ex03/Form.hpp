@@ -22,6 +22,7 @@ class Form
 		}
 		Form( Form const & src ): name(src.name), signGrade(src.signGrade), exeGrade(src.exeGrade){}
 		virtual ~Form() = 0;
+		Form &		operator=( Form const & rhs );
 
 		void beSigned(Bureaucrat *b);
 
@@ -67,6 +68,7 @@ class Form
 		std::string const name;
 		int const signGrade;
 		int const exeGrade;
+};
 
 std::ostream &			operator<<( std::ostream & o, Form const & i );
 
