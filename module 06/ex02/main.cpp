@@ -51,11 +51,7 @@ int main2(void)
 	A *a = new A();
 	B *b = new B();
 	C *c = new C();
-<<<<<<< HEAD
 	srand(time(NULL));
-=======
-	srand(time(NULL));
->>>>>>> 69b380d0ee4ec1c536b124aaa5b7ab528d247861
 
 	special = generate();
 	identify_from_pointer(special);
@@ -70,17 +66,10 @@ int main2(void)
 int	main(void)
 {
 	main2();
-<<<<<<< HEAD
-	/*while (1)
-	{
-
-	}*/
-=======
 	while (1)
 	{
 
 	}
 
->>>>>>> 69b380d0ee4ec1c536b124aaa5b7ab528d247861
 	return (0);
 }
