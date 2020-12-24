@@ -44,7 +44,8 @@ Scalarc &				Scalarc::operator=( Scalarc const & rhs )
 {
 	if ( this != &rhs )
 	{
-		//this->_value = rhs.getValue();
+		this->base = rhs.getBase();
+		this->converted = rhs.getConverted();
 	}
 	return *this;
 }
