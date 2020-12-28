@@ -15,16 +15,18 @@ void ClapTrap::meleeAttack(std::string const & target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "Protect me Squire" << std::endl;
-	Hit_points -= amount - Armor_damage_reduction;
-	if (Hit_points < 0)
+	if (amount > Hit_points)
+		Hit_points -= amount;
+	else
 		Hit_points = 0;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "Here you go, chum!" << std::endl;
-	Hit_points += amount;
-	if (Hit_points > Max_hit_points)
+	if (amount < Max_hit_points - Hit_points)
+		Hit_points += amount;
+	else
 		Hit_points = Max_hit_points;
 }
 

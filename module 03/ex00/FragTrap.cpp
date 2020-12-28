@@ -24,7 +24,7 @@ void FragTrap::takeDamage(unsigned int amount)
 void FragTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "Here you go, chum!" << std::endl;
-	if (amount > Max_hit_points - Hit_points)
+	if (amount < Max_hit_points - Hit_points)
 		Hit_points += amount;
 	else
 		Hit_points = Max_hit_points;
