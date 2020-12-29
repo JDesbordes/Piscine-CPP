@@ -15,7 +15,7 @@ void ScavTrap::meleeAttack(std::string const & target)
 void ScavTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "SAVE ME!!" << std::endl;
-	if (amount > Hit_points)
+	if (amount < Hit_points)
 		Hit_points -= amount;
 	else
 		Hit_points = 0;

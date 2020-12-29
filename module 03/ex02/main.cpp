@@ -23,8 +23,15 @@ int main()
 	std::cout << "TEST B" << std::endl;
 	b.meleeAttack("Rat");
 	b.rangedAttack("Badass Psycho");
+	std::cout << "before attack : " << b.getHit_points() << "hp and you can get max : " << b.getMax_hit_points() << std::endl;
 	b.takeDamage(45);
+	std::cout << "after attack : " << b.getHit_points() << "hp and you can get max : " << b.getMax_hit_points() << std::endl;
 	b.beRepaired(50);
+	std::cout << "after heal : " << b.getHit_points() << "hp and you can get max : " << b.getMax_hit_points() << std::endl;
+	b.beRepaired(50);
+	std::cout << b.getHit_points() << "hp and you can get max : " << b.getMax_hit_points() << std::endl;
+	b.beRepaired(50);
+	std::cout << b.getHit_points() << "hp and you can get max : " << b.getMax_hit_points() << std::endl;
 	b.challengNewcomer("Handsome Jack");
 	b.challengNewcomer("Handsome Jack");
 	b.challengNewcomer("Handsome Jack");

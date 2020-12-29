@@ -21,8 +21,15 @@ int main()
 	std::cout << "TEST A" << std::endl;
 	a.meleeAttack("Rat");
 	a.rangedAttack("Badass Psycho");
+	std::cout << "before attack : " << a.getHit_points() << "hp and you can get max : " << a.getMax_hit_points() << std::endl;
 	a.takeDamage(45);
+	std::cout << "after attack : " << a.getHit_points() << "hp and you can get max : " << a.getMax_hit_points() << std::endl;
 	a.beRepaired(50);
+	std::cout << "after heal : " << a.getHit_points() << "hp and you can get max : " << a.getMax_hit_points() << std::endl;
+	a.beRepaired(50);
+	std::cout << a.getHit_points() << "hp and you can get max : " << a.getMax_hit_points() << std::endl;
+	a.beRepaired(50);
+	std::cout << a.getHit_points() << "hp and you can get max : " << a.getMax_hit_points() << std::endl;
 	a.vaulthunter_dot_exe("Handsome Jack");
 	a.vaulthunter_dot_exe("Handsome Jack");
 	a.ninjaShoebox("Handsome Jack");

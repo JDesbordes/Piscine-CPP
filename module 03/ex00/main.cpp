@@ -10,8 +10,18 @@ int main()
 	std::cout << "TEST A" << std::endl;
 	a.meleeAttack("Rat");
 	a.rangedAttack("Badass Psycho");
+	std::cout << "before attack : " << a.get_Hit_points() << "hp and you can get max : " << a.get_Max_hit_points() << std::endl;
 	a.takeDamage(45);
+	std::cout << "after attack : " << a.get_Hit_points() << "hp and you can get max : " << a.get_Max_hit_points() << std::endl;
+	std::cout << "before attack : " << a.get_Hit_points() << "hp and you can get max : " << a.get_Max_hit_points() << std::endl;
+	a.takeDamage(145);
+	std::cout << "after attack : " << a.get_Hit_points() << "hp and you can get max : " << a.get_Max_hit_points() << std::endl;
 	a.beRepaired(50);
+	std::cout << "after heal : " << a.get_Hit_points() << "hp and you can get max : " << a.get_Max_hit_points() << std::endl;
+	a.beRepaired(50);
+	std::cout << a.get_Hit_points() << "hp and you can get max : " << a.get_Max_hit_points() << std::endl;
+	a.beRepaired(50);
+	std::cout << a.get_Hit_points() << "hp and you can get max : " << a.get_Max_hit_points() << std::endl;
 	a.vaulthunter_dot_exe("Handsome Jack");
 	a.vaulthunter_dot_exe("Handsome Jack");
 	a.vaulthunter_dot_exe("Handsome Jack");
