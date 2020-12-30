@@ -14,7 +14,7 @@ int main(int ac, char *av[])
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	try
@@ -23,7 +23,7 @@ int main(int ac, char *av[])
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	try
@@ -32,7 +32,7 @@ int main(int ac, char *av[])
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	try
@@ -41,7 +41,7 @@ int main(int ac, char *av[])
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	return (0);
 }

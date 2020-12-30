@@ -19,7 +19,7 @@ int main2()
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << "Exception " << e.what() << std::endl;
+		std::cout << "Exception " << e.what() << std::endl;
 	}
 	std::cout << *form << std::endl;
 	std::cout << *shrubForm << std::endl;
@@ -34,7 +34,7 @@ int main2()
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << "Exception " << e.what() << std::endl;
+		std::cout << "Exception " << e.what() << std::endl;
 	}
 	std::cout << *bob << std::endl;
 	std::cout << *jimmy << std::endl;
@@ -47,7 +47,7 @@ int main2()
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << "Exception " << e.what() << std::endl;
+		std::cout << "Exception " << e.what() << std::endl;
 	}
 	std::cout << *bob << std::endl;
 	std::cout << *jimmy << std::endl;
@@ -77,7 +77,7 @@ int main2()
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << "Exception " << e.what() << std::endl;
+		std::cout << "Exception " << e.what() << std::endl;
 	}
 
 	bob->executeForm(*shrubForm);

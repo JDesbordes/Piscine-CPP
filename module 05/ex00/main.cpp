@@ -15,7 +15,7 @@ int main2()
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << "Exception " << e.what() << std::endl;
+		std::cout << "Exception " << e.what() << std::endl;
 	}
 	std::cout << *bob << std::endl;
 	std::cout << *jimmy << std::endl;
@@ -28,7 +28,7 @@ int main2()
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << "Exception " << e.what() << std::endl;
+		std::cout << "Exception " << e.what() << std::endl;
 	}
 	std::cout << *bob << std::endl;
 	std::cout << *jimmy << std::endl;
@@ -41,7 +41,7 @@ int main2()
     }
     catch (std::exception & e)
     {
-        std::cerr << "Exception : " << e.what() << std::endl;
+        std::cout << "Exception : " << e.what() << std::endl;
     }
     
     try
@@ -50,7 +50,7 @@ int main2()
     }
     catch (std::exception & e)
     {
-        std::cerr << "Exception : " << e.what() << std::endl;
+        std::cout << "Exception : " << e.what() << std::endl;
     }
 
 	delete (bob);
