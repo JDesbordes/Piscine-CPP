@@ -5,10 +5,9 @@ int main(void) {
 	int b = 3;
 	// double d1(-5.2), d2(5.2);
 	// int i1(2), i2(5);
-	// char c1("marie"), c2("pacman");
 	// const int ci1(2), ci2(-5);
 	// const double cd1(-2.5), cd2(-5.6);
-	// const char cc1("marie"), cc2("pacman");
+	// const std::string cc1("marie"), cc2("pacman");
 	// const char * cp1("marie"), cp2("pacman");
 
 	::swap( a, b );
