@@ -6,15 +6,10 @@
 # include <iomanip>
 
 template <typename T>
-void iter(T *a, int b, void (*f)(T &))
+void iter(T *a, int size, void (*f)(T &))
 {
-	int i = 0;
-
-	while (i < b)
-	{
+	for (int i = 0; i < size; i++)
 		f(a[i]);
-		i++;
-	}
 }
 
 #endif
