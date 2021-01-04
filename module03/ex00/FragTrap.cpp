@@ -15,8 +15,8 @@ void FragTrap::meleeAttack(std::string const & target)
 void FragTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "Protect me Squire" << std::endl;
-	if (amount < Hit_points)
-		Hit_points -= amount;
+	if (amount - Armor_damage_reduction < Hit_points)
+		Hit_points -= amount - Armor_damage_reduction;
 	else
 		Hit_points = 0;
 }
