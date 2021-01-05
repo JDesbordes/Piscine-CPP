@@ -33,11 +33,11 @@ int main2()
 	std::cout << *bob << std::endl;
 	std::cout << *jimmy << std::endl;
 
-	Bureaucrat* toHigh;
-    Bureaucrat* toLow;
+	Bureaucrat* tooHigh;
+    Bureaucrat* tooLow;
     try
     {
-        toHigh = new Bureaucrat("ToHigh", 0);
+        tooHigh = new Bureaucrat("TooHigh", 0);
     }
     catch (std::exception & e)
     {
@@ -46,7 +46,7 @@ int main2()
     
     try
     {
-        toLow = new Bureaucrat("ToLow", 151);
+        tooLow = new Bureaucrat("TooLow", 151);
     }
     catch (std::exception & e)
     {
@@ -61,7 +61,9 @@ int main2()
 int main()
 {
 	main2();
-	while (1)
-	{ }
+	/*while (1)
+	{
+		
+	}*/
 	return 1;
 }

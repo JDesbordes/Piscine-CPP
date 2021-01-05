@@ -1,5 +1,20 @@
 #include "Form.hpp"
 
+
+Form::Form(std::string const &_name, int const _exeGrade, int const _signGrade): name(_name), signGrade(_signGrade), exeGrade(_exeGrade)
+{
+	if (_signGrade > 150 || _exeGrade > 150)
+		throw Form::GradeTooLowException();
+	if (_signGrade < 1 || _exeGrade < 1)
+		throw Form::GradeTooHighException();
+	this->_signed = false;
+}
+
+Form::Form( Form const & src ): name(src.name), signGrade(src.signGrade), exeGrade(src.exeGrade)
+{
+	static_cast<void>(src);
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -65,7 +80,7 @@ std::string Form::getName() const
 
 void 	Form::beSigned(Bureaucrat *b)
 {
-	if (b->getGrade() < getSignGrade())
+	if (b->getGrade() <= getSignGrade())
 	{
 		_signed = true;
 	}
@@ -79,17 +94,14 @@ void 	Form::beSigned(Bureaucrat *b)
 ** --------------------------------- EXCEPTIONS ----------------------------------
 */
 
-Form::GradeTooHighException::GradeTooHighException() throw(){};
-
-const char* Form::GradeTooHighException::what() const throw () {
-       return ("grade is too high");
+const char* Form::GradeTooHighException::what() const throw ()
+{
+    return ("grade is too high");
 }
 
-Form::GradeTooLowException::GradeTooLowException() throw(){};
-
-
-const char* Form::GradeTooLowException::what() const throw () {
-       return ("grade is too low");
+const char* Form::GradeTooLowException::what() const throw ()
+{
+    return ("grade is too low");
 }
 
 /* ************************************************************************** */

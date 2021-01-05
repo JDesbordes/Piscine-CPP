@@ -1,5 +1,16 @@
 #include "RobotomyRequestForm.hpp"
 
+
+RobotomyRequestForm::RobotomyRequestForm(std::string _target) : Form("RobotomyRequestForm", 45, 72)
+{
+	setTarget(_target);
+}
+
+RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ) : Form(src.getName(), src.getExeGrade(), src.getSignGrade())
+{
+	setTarget(src.getTarget());
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */

@@ -1,5 +1,16 @@
 #include "PresidentialPardonForm.hpp"
 
+
+PresidentialPardonForm::PresidentialPardonForm(std::string _target) : Form("PresidentialPardonForm", 5, 25)
+{
+	setTarget(_target);
+}
+
+PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src ) : Form(src.getName(), src.getExeGrade(), src.getSignGrade())
+{
+	setTarget(src.getTarget());
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */

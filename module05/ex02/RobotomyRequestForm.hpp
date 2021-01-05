@@ -10,14 +10,8 @@ class RobotomyRequestForm : public Form
 
 	public:
 
-		RobotomyRequestForm(std::string _target) : Form("RobotomyRequestForm", 45, 72)
-		{
-			setTarget(_target);
-		}
-		RobotomyRequestForm( const RobotomyRequestForm & src ) : Form(src.getName(), src.getExeGrade(), src.getSignGrade())
-		{
-			setTarget(src.getTarget());
-		}
+		RobotomyRequestForm(std::string _target);
+		RobotomyRequestForm( const RobotomyRequestForm & src );
 		virtual ~RobotomyRequestForm();
 		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 

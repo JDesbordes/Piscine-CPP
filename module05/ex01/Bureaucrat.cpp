@@ -4,26 +4,24 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : name("bob")
 {
 	grade = 150;
-	name = "bob";
 }
 
-Bureaucrat::Bureaucrat(std::string n, int g)
+Bureaucrat::Bureaucrat(std::string n, int g) : name(n)
 {
 	if (g > 150)
 		throw Bureaucrat::GradeTooLowException();
 	if (g < 1)
 		throw Bureaucrat::GradeTooHighException();
 	grade = g;
-	name = n;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat & src )
+
+Bureaucrat::Bureaucrat( const Bureaucrat & src ) : name(src.getName())
 {
 	grade = src.grade;
-	name = src.name;
 }
 
 
@@ -33,6 +31,7 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src )
 
 Bureaucrat::~Bureaucrat()
 {
+
 }
 
 
@@ -42,12 +41,9 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->name = rhs.getName();
-		this->grade = rhs.getGrade();
-	}
-	return *this;
+	if (this == &rhs) return(*this);
+	this->~Bureaucrat();
+	return *new(this) Bureaucrat(rhs);
 }
 
 /*
@@ -97,16 +93,13 @@ void 	Bureaucrat::signForm(Form *form)
 ** --------------------------------- EXCEPTIONS ----------------------------------
 */
 
-Bureaucrat::GradeTooHighException::GradeTooHighException() throw(){};
-
-const char* Bureaucrat::GradeTooHighException::what() const throw () {
+const char* Bureaucrat::GradeTooHighException::what() const throw ()
+{
        return ("Bureaucrat grade is too high");
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException() throw(){};
-
-
-const char* Bureaucrat::GradeTooLowException::what() const throw () {
+const char* Bureaucrat::GradeTooLowException::what() const throw ()
+{
        return ("Bureaucrat grade is too low");
 }
 

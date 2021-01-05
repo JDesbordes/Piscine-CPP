@@ -29,13 +29,13 @@ Intern::~Intern()
 
 Intern &				Intern::operator=( Intern const & rhs )
 {
-	(void)rhs;
+	static_cast<void>(rhs);
 	return *this;
 }
 
 std::ostream &			operator<<( std::ostream & o, Intern const & i )
 {
-	(void)i;
+	static_cast<void>(i);
 	o << "Intern address -> " << &i;
 	return o;
 }
