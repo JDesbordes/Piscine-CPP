@@ -30,7 +30,7 @@ Ce module aborde la notion de polymorphisme, et les opérateurs
 - Polymorphisme ad-hoc, overloads et classes canoniques
 
 
-## Module 03 :
+## ✅ Module 03 :
 
 <strong>Description</strong>
 
