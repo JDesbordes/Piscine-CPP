@@ -10,7 +10,7 @@ Intern::Intern()
 
 Intern::Intern( const Intern & src )
 {
-	(void)src;
+	static_cast<void>(src);
 }
 
 
