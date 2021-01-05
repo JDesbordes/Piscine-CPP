@@ -19,6 +19,7 @@ class Victim
 
 	public :
 	Victim(std::string name);
+	Victim(const Victim &src);
 	virtual ~Victim();
 	virtual void getPolymorphed() const;
 	Victim & operator=(const Victim &rhs);

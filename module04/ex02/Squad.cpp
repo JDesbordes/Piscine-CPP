@@ -95,18 +95,15 @@ int	Squad::push(ISpaceMarine* newbie)
 
 ISpaceMarine* Squad::getUnit(int target) const
 {
-	int			i = 0;
+	int			i = -1;
 	t_isquad	*temp_lst;
 
 	temp_lst = team;
-	while (i < target)
-	{
+	while (++i < target)
 		if (temp_lst->next)
 			temp_lst = temp_lst->next;
 		else
 			return (NULL);
-		i++;
-	}
 	return (temp_lst->content);
 }
 

@@ -8,6 +8,7 @@ class MairiePlayer: virtual public Victim
 	public :
 	MairiePlayer();
 	MairiePlayer(std::string name);
+	MairiePlayer(const MairiePlayer &src);
 	virtual ~MairiePlayer();
 	void getPolymorphed() const;
 	MairiePlayer & operator=(const MairiePlayer &rhs);

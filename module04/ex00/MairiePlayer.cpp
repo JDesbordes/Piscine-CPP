@@ -10,6 +10,11 @@ MairiePlayer::MairiePlayer(std::string name) : Victim(name)
 	std::cout << "Bwark bwark. Gneu gneu." << std::endl;
 }
 
+MairiePlayer::MairiePlayer(const MairiePlayer &src): Victim(src.getName())
+{
+	std::cout << "Bwark bwark. Gneu gneu." << std::endl;
+}
+
 MairiePlayer::~MairiePlayer()
 {
 	std::cout << "Pacman to op..." << std::endl;

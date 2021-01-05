@@ -76,12 +76,8 @@ Character& Character::operator=(const Character &copied)
 std::ostream &operator<<(std::ostream &o, Character const &rhs)
 {
 	if (rhs.getWeapon())
-	{
 		o << rhs.getName() << " has " << rhs.getAP() << " AP and wields a " << rhs.getWeapon()->getName() << std::endl;
-	}
 	else
-	{
-		o << rhs.getName() << " has " << rhs.getAP() << " AP and is unarmed" << std::endl;
-	}
+		o << rhs.getName() << " has " << rhs.getAP() << " AP and is unarmed" << std::endl
 	return o;
 }

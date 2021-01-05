@@ -11,6 +11,12 @@ Victim::Victim(std::string name)
 	setName(name);
 }
 
+Victim::Victim(const Victim &src)
+{
+	std::cout << "Some random victim called " << src.getName() << " just appeared!" << std::endl;
+	setName(src.getName());
+}
+
 Victim::~Victim()
 {
 	std::cout << "Victim " << Name << " just died for no apparent reason!" << std::endl;
