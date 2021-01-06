@@ -26,18 +26,12 @@ class Scalarc
 		class NonDisplayableException : public std::exception
 		{
 			public:
-				NonDisplayableException () throw();
-				NonDisplayableException (const NonDisplayableException&) throw();
-				NonDisplayableException& operator= (const NonDisplayableException&) throw();
 				virtual const char* what () const throw();
 		};
 
 		class ImpossibleConversionException : public std::exception
 		{
 			public:
-				ImpossibleConversionException () throw();
-				ImpossibleConversionException (const ImpossibleConversionException&) throw();
-				ImpossibleConversionException& operator= (const ImpossibleConversionException&) throw();
 				virtual const char* what () const throw();
 		};
 

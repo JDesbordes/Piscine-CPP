@@ -13,7 +13,7 @@ Scalarc::Scalarc( const Scalarc & src )
 {
 	this->notint = false;
 	this->base = src.getBase();
-	this->converted = src.getConverted();
+	this->converted = convertToDouble(base, 1);
 }
 
 Scalarc::Scalarc(char *str)
@@ -41,8 +41,9 @@ Scalarc &				Scalarc::operator=( Scalarc const & rhs )
 {
 	if ( this != &rhs )
 	{
+		this->notint = false;
 		this->base = rhs.getBase();
-		this->converted = rhs.getConverted();
+		this->converted = convertToDouble(base, 1);
 	}
 	return *this;
 }
@@ -165,16 +166,14 @@ int		Scalarc::convertToInt()
 /*
 ** --------------------------------- EXCEPTION ---------------------------------
 */
-Scalarc::NonDisplayableException::NonDisplayableException() throw(){};
 
-const char* Scalarc::NonDisplayableException::what() const throw () {
+const char* Scalarc::NonDisplayableException::what() const throw ()
+{
        return ("Non displayable");
 }
 
-Scalarc::ImpossibleConversionException::ImpossibleConversionException() throw(){};
-
-
-const char* Scalarc::ImpossibleConversionException::what() const throw () {
+const char* Scalarc::ImpossibleConversionException::what() const throw ()
+{
        return ("impossible");
 }
 
