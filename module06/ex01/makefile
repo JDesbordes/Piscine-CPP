@@ -6,7 +6,7 @@ LFLAGS  =   -I
 
 all:		$(NAME)
 
-$(NAME):
+$(NAME): $(SRCS)
 	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:

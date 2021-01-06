@@ -4,6 +4,7 @@
 struct DataPre {char first[8]; int second; char third[8];};
 struct Data {std::string s1; int n; std::string s2;};
 
+
 void	*serialize(void)
 {
 	DataPre *temp = new DataPre;
@@ -13,7 +14,7 @@ void	*serialize(void)
 	temp->second = rand();
 	for (int i = 0; i < 8; i++)
 		temp->third[i] = alphanum[static_cast<unsigned long>(rand()) % (sizeof(alphanum) - 1)];
-	std::cout << std::string(temp->first,8) <<"\nnum = " << temp->second << "\nsecond string = "<< std::string(temp->third,8) << std::endl;
+	//std::cout << std::string(temp->first,8) <<"\nnum = " << temp->second << "\nsecond string = "<< std::string(temp->third,8) << std::endl;
 	return (reinterpret_cast<void *>(temp));
 }
 
@@ -30,6 +31,7 @@ Data * deserialize(void * raw)
 
 int main(void)
 {
+	std::cout << sizeof(DataPre) << " or " << sizeof(Data) << std::endl;
 	void *temp;
 	Data *deserialized;
 	srand(static_cast<unsigned int>(time(NULL)));

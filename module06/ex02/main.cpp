@@ -35,14 +35,24 @@ void identify_from_pointer(Base * p)
 
 }
 
-void identify_from_reference( Base & p)
+void    identify_from_reference(Base &p)
 {
-	if (dynamic_cast<A *>(&p))
-		std::cout << "A" << std::endl;
-	else if (dynamic_cast<B *>(&p))
-		std::cout << "B" << std::endl;
-	else if (dynamic_cast<C *>(&p))
-		std::cout << "C" << std::endl;
+    try {
+        Base test = dynamic_cast<A&>(p);
+        std::cout << "A" << std::endl; }
+    catch (const std::exception &) {
+        try {
+            Base test = dynamic_cast<B&>(p);
+            std::cout << "B" << std::endl; }
+        catch (const std::exception &) {
+            try {
+                Base test = dynamic_cast<C&>(p);
+                std::cout << "C" << std::endl; }
+            catch (const std::exception &) {
+                std::cerr << "Unkown" << std::endl;
+            }
+        }
+    }
 }
 
 int main2(void)
@@ -51,7 +61,7 @@ int main2(void)
 	A *a = new A();
 	B *b = new B();
 	C *c = new C();
-	srand(time(NULL));
+	srand(static_cast<unsigned int>(time(NULL)));
 
 	special = generate();
 	identify_from_pointer(special);
@@ -59,17 +69,20 @@ int main2(void)
 	identify_from_reference(*a);
 	identify_from_reference(*b);
 	identify_from_reference(*c);
+	delete (special);
 	delete (a);
+	delete (b);
+	delete (c);
 	return (1);
 }
 
 int	main(void)
 {
 	main2();
-	while (1)
+	/*while (1)
 	{
 
-	}
+	}*/
 
 	return (0);
 }
