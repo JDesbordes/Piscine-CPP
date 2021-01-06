@@ -2,18 +2,18 @@
 # include <string>
 
 struct DataPre {char first[8]; int second; char third[8];};
-struct Data { std::string s1; int n; std::string s2;};
+struct Data {std::string s1; int n; std::string s2;};
 
 void	*serialize(void)
 {
 	DataPre *temp = new DataPre;
 	char alphanum[] = "0123456789ABCDEFHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	for (int i = 0; i <8; i++)
-		temp->first[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
+	for (int i = 0; i < 8; i++)
+		temp->first[i] = alphanum[static_cast<unsigned long>(rand()) % (sizeof(alphanum) - 1)];
 	temp->second = rand();
-	for (int i = 0; i <8; i++)
-		temp->third[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
-	//std::cout << std::string(temp->first,8) <<"\nnum = " << temp->second << "\nsecond string = "<< std::string(temp->third,8) << std::endl;
+	for (int i = 0; i < 8; i++)
+		temp->third[i] = alphanum[static_cast<unsigned long>(rand()) % (sizeof(alphanum) - 1)];
+	std::cout << std::string(temp->first,8) <<"\nnum = " << temp->second << "\nsecond string = "<< std::string(temp->third,8) << std::endl;
 	return (reinterpret_cast<void *>(temp));
 }
 
@@ -32,12 +32,12 @@ int main(void)
 {
 	void *temp;
 	Data *deserialized;
-	srand(time(NULL));
+	srand(static_cast<unsigned int>(time(NULL)));
 	temp = serialize();
 	deserialized = deserialize(temp);
 	std::cout << temp << std::endl;
 	std::cout << "first string = "<< deserialized->s1 << "\nnum = " << deserialized->n << "\nsecond string = "<< deserialized->s2 <<std::endl;
-	delete (temp);
-	delete (deserialize);
+	delete (static_cast<DataPre *>(temp));
+	delete (deserialized);
 	return (0);
 }
