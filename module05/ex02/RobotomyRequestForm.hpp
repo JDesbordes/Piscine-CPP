@@ -9,6 +9,7 @@ class RobotomyRequestForm : public Form
 {
 
 	public:
+		RobotomyRequestForm();
 		RobotomyRequestForm(std::string _target);
 		RobotomyRequestForm( const RobotomyRequestForm & src );
 		virtual ~RobotomyRequestForm();
@@ -17,7 +18,6 @@ class RobotomyRequestForm : public Form
 		void 	execute(Bureaucrat const & executor) const;
 
 	private:
-		RobotomyRequestForm();
 
 };
 

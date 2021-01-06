@@ -2,7 +2,7 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 45, 72)
 {
-	setTarget(NULL);
+	setTarget("Bill Potts");
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string _target) : Form("RobotomyRequestForm", 45, 72)

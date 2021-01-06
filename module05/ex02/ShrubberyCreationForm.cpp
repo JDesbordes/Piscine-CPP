@@ -2,7 +2,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 137, 145)
 {
-	setTarget(NULL);
+	setTarget("forest");
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string _target) : Form("ShrubberyCreationForm", 137, 145)

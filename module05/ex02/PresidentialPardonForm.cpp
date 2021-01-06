@@ -2,7 +2,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 5, 25)
 {
-	setTarget(NULL);
+	setTarget("Daphne");
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string _target) : Form("PresidentialPardonForm", 5, 25)
