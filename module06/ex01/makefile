@@ -1,19 +1,13 @@
 NAME	=	serial
 SRCS	=	main.cpp
-HEADER  =   ./
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
-OBJS	=	$(SRCS:.cpp=.o)
-
-LFLAGS  =   -I $(HEADER)
-
-%.o:		%.cpp $(HEADER)
-	$(CC) $(CFLAGS) $(LFLAGS) -c $< -o $@
+CFLAGS	=	-Wall -Wextra -Werror -Wconversion
+LFLAGS  =   -I
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME):
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

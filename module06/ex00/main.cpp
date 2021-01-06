@@ -28,7 +28,7 @@ int main(int ac, char *av[])
 
 	try
 	{
-		std::cout << "float: " << converted.convertToFloat() << ((converted.convertToFloat() == static_cast <int>(converted.convertToFloat())) ? ".0" : "") << "f" << std::endl;
+		std::cout << "float: " << converted.convertToFloat() << (((converted.convertToFloat() == static_cast <int>(converted.convertToFloat())) && converted.convertToFloat() < 1000000) ? ".0" : "") << "f" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -37,7 +37,7 @@ int main(int ac, char *av[])
 
 	try
 	{
-		std::cout << "double: " << converted.convertToDouble(converted.getBase(), 0) << ((converted.convertToDouble(converted.getBase(), 0)  == static_cast <int>(converted.convertToDouble(converted.getBase(), 0))) ? ".0" : "") << std::endl;
+		std::cout << "double: " << converted.convertToDouble(converted.getBase(), 0) << (((converted.convertToDouble(converted.getBase(), 0)  == static_cast <int>(converted.convertToDouble(converted.getBase(), 0))) && converted.convertToFloat() < 1000000) ? ".0" : "") << std::endl;
 	}
 	catch(const std::exception& e)
 	{

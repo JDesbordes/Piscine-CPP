@@ -82,7 +82,7 @@ double Scalarc::convertToDouble(char *str, int i)
 		options = 3;
 	else if (std::strlen(str) == 3 && str[0] == '\'' && str[2] == '\'' && std::isprint(str[1]))
 	{
-		ret = (double)str[1];
+		ret = static_cast<double>(str[1]);
 	}
 	else
 	{
@@ -121,7 +121,7 @@ float	Scalarc::convertToFloat()
 	if (this->converted == 0 || (this->converted <= std::numeric_limits<float>::max() && this->converted >= std::numeric_limits<float>::min()) ||
 		(this->converted >= -std::numeric_limits<float>::max() && this->converted <= -std::numeric_limits<float>::min()))
 	{
-		return (static_cast <float>(this->converted));
+		return (static_cast<float>(this->converted));
 	}
 	else
 	{
