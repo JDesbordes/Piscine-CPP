@@ -52,6 +52,7 @@ class Form
 		std::string const name;
 		int const signGrade;
 		int const exeGrade;
+		Form();
 };
 
 std::ostream &			operator<<( std::ostream & o, Form const & i );

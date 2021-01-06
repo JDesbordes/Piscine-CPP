@@ -1,5 +1,10 @@
 #include "Form.hpp"
 
+Form::Form(): name("basic"), signGrade(150), exeGrade(150)
+{
+	this->_signed = false;
+}
+
 Form::Form(std::string const &_name, int const _exeGrade, int const _signGrade): name(_name), signGrade(_signGrade), exeGrade(_exeGrade)
 {
 	if (_signGrade > 150 || _exeGrade > 150)
