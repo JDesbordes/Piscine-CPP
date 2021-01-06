@@ -22,9 +22,6 @@ Scalarc::Scalarc(char *str)
 	this->notint = false;
 	this->base = str;
 	this->converted = convertToDouble(str, 1);
-	//std::cout << this->converted << std::endl;
-	//std::cout << "Float limits -> max : " << std::numeric_limits<float>::max() << " min : " << std::numeric_limits<float>::min() << std::endl;
-	//std::cout << "Double limits -> max : " << std::numeric_limits<double>::max() << " min : " << std::numeric_limits<double>::min() << std::endl;
 }
 
 /*
