@@ -1,5 +1,9 @@
 #include "PresidentialPardonForm.hpp"
 
+PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 5, 25)
+{
+	setTarget(NULL);
+}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string _target) : Form("PresidentialPardonForm", 5, 25)
 {

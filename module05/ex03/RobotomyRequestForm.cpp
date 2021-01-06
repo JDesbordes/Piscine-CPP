@@ -1,5 +1,9 @@
 #include "RobotomyRequestForm.hpp"
 
+RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 45, 72)
+{
+	setTarget(NULL);
+}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string _target) : Form("RobotomyRequestForm", 45, 72)
 {

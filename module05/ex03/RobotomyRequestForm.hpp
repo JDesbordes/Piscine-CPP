@@ -9,14 +9,15 @@ class RobotomyRequestForm : public Form
 {
 
 	public:
-
 		RobotomyRequestForm(std::string _target);
 		RobotomyRequestForm( const RobotomyRequestForm & src );
 		virtual ~RobotomyRequestForm();
 		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 
 		void 	execute(Bureaucrat const & executor) const;
+
 	private:
+		RobotomyRequestForm();
 
 };
 
