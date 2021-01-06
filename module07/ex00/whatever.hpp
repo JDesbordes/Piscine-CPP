@@ -6,11 +6,14 @@
 # include <iomanip>
 
 template <typename T>
-void swap(T& a, T& b)
+void swap(const T& a, const T& b)
 {
-	T temp = a;
-	a = b;
-	b = temp;
+	T & ta = const_cast<T&>(a);
+	T & tb = const_cast<T&>(b);
+	T tempa = a;
+
+	ta = tb;
+	tb = tempa;
 }
 
 template <typename T>
