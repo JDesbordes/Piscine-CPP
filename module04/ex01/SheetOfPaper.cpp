@@ -17,7 +17,7 @@ SheetOfPaper::SheetOfPaper(SheetOfPaper const &copied) : Enemy(copied)
 
 void	SheetOfPaper::takeDamage(int i)
 {
-	Enemy::takeDamage(i > 3 ? i - 3 : 0);
+	Enemy::takeDamage(i > -5 ? i + 5 : 0);
 }
 
 SheetOfPaper& SheetOfPaper::operator=(const SheetOfPaper &copied)

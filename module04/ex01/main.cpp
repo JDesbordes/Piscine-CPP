@@ -23,6 +23,8 @@ int main2()
 	bl = pf;
 	std::cout << std::endl;
 
+	std::cout << b << c << d << std::endl << std::endl;
+
 	std::cout << "-- testing equip / attack --" << std::endl;
 	me->equip(z);
 	me->attack(d);

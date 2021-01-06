@@ -17,7 +17,7 @@ RadScorpion::RadScorpion(RadScorpion const &copied) : Enemy(copied)
 
 void	RadScorpion::takeDamage(int i)
 {
-	Enemy::takeDamage(i > 3 ? i - 3 : 0);
+	Enemy::takeDamage(i);
 }
 
 RadScorpion& RadScorpion::operator=(const RadScorpion &copied)
