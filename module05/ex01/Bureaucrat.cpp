@@ -84,7 +84,6 @@ void 	Bureaucrat::signForm(Form *form)
 	}
 	catch (std::exception & e)
 	{
-		//std::cout << "Exception " << e.what() << std::endl;
 		std::cout << name << " cannot sign " << form->getName() << " because " << e.what() << std::endl;
 	}
 }
@@ -95,12 +94,12 @@ void 	Bureaucrat::signForm(Form *form)
 
 const char* Bureaucrat::GradeTooHighException::what() const throw ()
 {
-       return ("Bureaucrat grade is too high");
+	return ("Bureaucrat grade is too high");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw ()
 {
-       return ("Bureaucrat grade is too low");
+	return ("Bureaucrat grade is too low");
 }
 
 

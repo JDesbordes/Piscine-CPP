@@ -85,13 +85,9 @@ std::string Form::getName() const
 void 	Form::beSigned(Bureaucrat *b)
 {
 	if (b->getGrade() <= getSignGrade())
-	{
 		_signed = true;
-	}
 	else
-	{
 		throw Form::GradeTooLowException();
-	}
 }
 
 /*
