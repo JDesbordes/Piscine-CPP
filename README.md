@@ -39,7 +39,7 @@ Ce module aborde l'héritage en C++
 - Héritage
 
 
-## Module 04 :
+## ✅ Module 04 :
 
 <strong>Description</strong>
 
@@ -48,7 +48,7 @@ Polymorphisme de sous-type, classe abstraite et interfaces
 - Polymorphisme sous-type, classes abstraites, interfaces
 
 
-## Module 05 :
+## ✅ Module 05 :
 
 <strong>Description</strong>
 
