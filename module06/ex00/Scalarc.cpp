@@ -6,11 +6,12 @@
 
 Scalarc::Scalarc()
 {
-	options = 0;
+	this->options = 0;
 }
 
 Scalarc::Scalarc( const Scalarc & src )
 {
+	this->options = 0;
 	this->notint = false;
 	this->base = src.getBase();
 	this->converted = convertToDouble(base, 1);
@@ -18,7 +19,7 @@ Scalarc::Scalarc( const Scalarc & src )
 
 Scalarc::Scalarc(char *str)
 {
-	options = 0;
+	this->options = 0;
 	this->notint = false;
 	this->base = str;
 	this->converted = convertToDouble(str, 1);
@@ -41,9 +42,10 @@ Scalarc &				Scalarc::operator=( Scalarc const & rhs )
 {
 	if ( this != &rhs )
 	{
-		this->notint = false;
+		this->options = rhs.options;
+		this->notint = rhs.notint;
 		this->base = rhs.getBase();
-		this->converted = convertToDouble(base, 1);
+		this->converted = convertToDouble(this->base, 1);
 	}
 	return *this;
 }
@@ -73,11 +75,11 @@ double Scalarc::convertToDouble(char *str, int i)
 {
 	double ret = 0;
 	if (!std::strcmp(str, "nan") || !std::strcmp(str, "nanf"))
-		options = 1;
+		this->options = 1;
 	else if (!std::strcmp(str, "-inf") || !std::strcmp(str, "-inff"))
-		options = 2;
+		this->options = 2;
 	else if (!std::strcmp(str, "+inf") || !std::strcmp(str, "+inff"))
-		options = 3;
+		this->options = 3;
 	else if (std::strlen(str) == 3 && str[0] == '\'' && str[2] == '\'' && std::isprint(str[1]))
 	{
 		ret = static_cast<double>(str[1]);
@@ -86,10 +88,10 @@ double Scalarc::convertToDouble(char *str, int i)
 	{
 		if ((str[0] == '-' || str[0] == '+') ? !std::isdigit(str[1]) :  !std::isdigit(str[0]))
 		{
-			notint = true;
+			this->notint = true;
 		}
 		ret = std::atof(str);
-		if (notint == true && i != 1)
+		if (this->notint == true && i != 1)
 			throw Scalarc::ImpossibleConversionException();
 		if (ret != 0 && i != 1 && !((ret <= std::numeric_limits<double>::max() && ret >= std::numeric_limits<double>::min()) ||
 			(ret >= -std::numeric_limits<double>::max() && ret <= -std::numeric_limits<double>::min())))
@@ -97,24 +99,24 @@ double Scalarc::convertToDouble(char *str, int i)
 			throw Scalarc::ImpossibleConversionException();
 		}
 	}
-	if (options == 2)
+	if (this->options == 2)
 		return (-std::numeric_limits<double>::infinity());
-	if (options == 3)
+	if (this->options == 3)
 		return (std::numeric_limits<double>::infinity());
-	if (options == 1)
+	if (this->options == 1)
 		return (std::numeric_limits<double>::signaling_NaN());
 	return (ret);
 }
 
 float	Scalarc::convertToFloat()
 {
-	if (options == 2)
+	if (this->options == 2)
 		return (-std::numeric_limits<float>::infinity());
-	else if (options == 3)
+	else if (this->options == 3)
 		return (std::numeric_limits<float>::infinity());
-	else if (options == 1)
+	else if (this->options == 1)
 		return (std::numeric_limits<float>::signaling_NaN());
-	if (notint == true)
+	if (this->notint == true)
 		throw Scalarc::ImpossibleConversionException();
 	if (this->converted == 0 || (this->converted <= std::numeric_limits<float>::max() && this->converted >= std::numeric_limits<float>::min()) ||
 		(this->converted >= -std::numeric_limits<float>::max() && this->converted <= -std::numeric_limits<float>::min()))
@@ -149,11 +151,11 @@ char	Scalarc::convertToChar()
 
 int		Scalarc::convertToInt()
 {
-	if (notint == true)
+	if (this->notint == true)
 		throw Scalarc::ImpossibleConversionException();
 	if (this->converted <= std::numeric_limits<int>::max() && this->converted >= std::numeric_limits<int>::min())
 	{
-		if (options == 2)
+		if (this->options == 2)
 			throw Scalarc::ImpossibleConversionException();
 		return (static_cast <int>(this->converted));
 	}
