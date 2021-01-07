@@ -57,7 +57,7 @@ none
 - Repetition et Exceptions
 
 
-## Module 06 :
+## ✅ Module 06 :
 
 <strong>Description</strong>
 
