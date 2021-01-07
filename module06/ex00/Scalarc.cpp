@@ -171,12 +171,12 @@ int		Scalarc::convertToInt()
 
 const char* Scalarc::NonDisplayableException::what() const throw ()
 {
-       return ("Non displayable");
+	return ("Non displayable");
 }
 
 const char* Scalarc::ImpossibleConversionException::what() const throw ()
 {
-       return ("impossible");
+	return ("impossible");
 }
 
 
