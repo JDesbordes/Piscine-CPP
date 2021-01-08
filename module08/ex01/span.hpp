@@ -17,14 +17,15 @@ class Span
 		Span &		operator=( Span const & rhs );
 
 		unsigned int getSize() const;
-
-		void addNumber();
+		unsigned int getNow() const;
+		void addNumber(int nb);
 		int shortestSpan();
 		int longestSpan();
 
 	private:
 		int *array;
 		const unsigned int size;
+		unsigned int now;
 
 };
 
