@@ -90,7 +90,7 @@ long Span::shortestSpan()
 	std::vector<int> ptr = this->arr;
 	std::sort (ptr.begin(), ptr.end());
 	std::vector<int>::iterator it = ptr.begin();
-	for (size_t i = 1; i < this->arr.size(); ++i)
+	for (size_t i = this->arr.size(); i > 1; --i)
 	{
 		std::vector<int>::iterator cmp = it++;
 		if (*cmp == *it)
