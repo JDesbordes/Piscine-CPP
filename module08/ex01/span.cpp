@@ -40,8 +40,6 @@ Span &				Span::operator=( Span const & rhs )
 		unsigned int& n = const_cast<unsigned int&>(this->size);
 		n = rhs.getSize();
 		this->arr.reserve(rhs.getSize());
-		// for (int i = 0; i < rhs.arr.size(); i++) 
-        // 	arr.push_back(rhs.arr[i]); 
 		copy(rhs.arr.begin(), rhs.arr.end(), back_inserter(this->arr));
 	}
 	return *this;
@@ -70,7 +68,7 @@ void Span::addNumber(int nb)
 
 }
 
-long long Span::longestSpan()
+long Span::longestSpan()
 {
 	if (!this->arr.size())
 		throw Span::UngotValueException();
@@ -81,16 +79,27 @@ long long Span::longestSpan()
 		*ptr > ilongest ? ilongest = *ptr: 0;
 		*ptr < ishort ? ishort = *ptr: 0;
 	}
-	return (ilongest - ishort);
+	return (static_cast<long>(ilongest) - static_cast<long>(ishort));
 }
 
-long long Span::shortestSpan()
+long Span::shortestSpan()
 {
+	long ret(UINT_MAX);
 	if (!this->arr.size())
 		throw Span::UngotValueException();
 	std::vector<int> ptr = this->arr;
 	std::sort (ptr.begin(), ptr.end());
-	return (0);
+	std::vector<int>::iterator it = ptr.begin();
+	for (size_t i = 1; i < this->arr.size(); ++i)
+	{
+		std::vector<int>::iterator cmp = it++;
+		if (*cmp == *it)
+			return (0);
+		if ((static_cast<long>(*it) - static_cast<long>(*cmp)) < ret)
+			ret = (static_cast<long>(*it) - static_cast<long>(*cmp));
+	}
+	std::cout << std::endl;
+	return (ret);
 }
 
 const char* Span::MaxSizeOfVectorException::what() const throw ()

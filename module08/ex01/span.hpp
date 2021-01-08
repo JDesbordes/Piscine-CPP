@@ -20,8 +20,8 @@ class Span
 
 		unsigned int getSize() const;
 		void addNumber(int nb);
-		long long shortestSpan();
-		long long longestSpan();
+		long shortestSpan();
+		long longestSpan();
 
 	class MaxSizeOfVectorException : public std::exception
 	{

@@ -24,7 +24,6 @@ int easyfind(const T& a, const int i)
 
 	for(itr = b.begin(); itr != b.end(); itr++)  
 	{
-		//std::cout << *itr << std::endl;
 		if (*itr == i)
 			return(*itr);
 	}
