@@ -9,58 +9,69 @@ class Array
 {
 
 	public:
-		Array() : array(new T[0]), size(0){};
+		Array() : array(new T[0]), _size(0){};
 		~Array()
 		{
 			delete[](array);
 		};
-		Array( Array const & src ) : array(new T[src.getSize()]), size(src.getSize())
+		Array<T>( Array const & src ) : array(new T[src.size()]), _size(src.size())
 		{
-			for (unsigned int i = 0; i < size; i++)
+			for (unsigned int i = 0; i < _size; i++)
 			{
 				array[i] = src[i];
 			}
 		};
-		Array(unsigned int n): array(new T[n]), size(n){};
-
-		unsigned int getSize() const
+		Array(unsigned int n): array(new T[n]), _size(n)
 		{
-			return (size);
+			for (unsigned int i = 0; i < _size; i++)
+                array[i] = T();
+		};
+
+		unsigned int size() const
+		{
+			return (_size);
 		}
 
-		Array &		operator=( Array const & rhs )
+		Array<T>	&operator=( Array const & rhs )
 		{
-			Array arr(rhs);
-			return(arr);
+			if (this->array)
+                delete[] this->array;
+            array = new T[rhs.size()];
+            _size = rhs.size();
+            for (unsigned int i = 0; i < _size; i++)
+                array[i] = T(rhs[i]);
+            return (*this);
 		};
 
 		T &		operator[](unsigned int index)
 		{
-			if (index >= size)
+			if (index >= _size)
 				throw IndexOutOfBoundsException();
 			return (this->array[index]);
 		}
 
-		T &		operator[](unsigned int index) const
+		const T &	operator[](unsigned int index) const
 		{
-			if (index >= size)
+			T &temp = this->array[index];
+			if (index >= _size)
 				throw IndexOutOfBoundsException();
-			return (this->array[index]);
+			return (temp);
+		}
+
+		unsigned int size()
+		{
+			return(_size);
 		}
 
 		class IndexOutOfBoundsException : public std::exception
 		{
 			public:
-				IndexOutOfBoundsException () throw() {} ;
-				IndexOutOfBoundsException (const IndexOutOfBoundsException&) throw() {} ;
-				IndexOutOfBoundsException& operator= (const IndexOutOfBoundsException&) throw() {} ;
-				virtual ~IndexOutOfBoundsException() throw() {};
 				virtual const char* what () const throw(){return ("Index out of bounds :(");};
 		};
 
 	private:
 		T *array;
-		const unsigned int size;
+		const unsigned int _size;
 };
 
 #endif /* *********************************************************** ARRAY_H */

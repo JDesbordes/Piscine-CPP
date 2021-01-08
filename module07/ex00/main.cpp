@@ -1,6 +1,8 @@
 #include "whatever.hpp"
 
 int main(void) {
+	/*Awesome test1(1);
+	Awesome test2(2);*/
 	int a = 2;
 	int b = 3;
 	double d1(-5.2), d2(5.2);
@@ -51,5 +53,12 @@ int main(void) {
 	std::cout << "min( ci1, ci2 ) = " << ::min( ci1, ci2 ) << std::endl;
 	std::cout << "max( ci1, ci2 ) = " << ::max( ci1, ci2 ) << std::endl;
 	
+	/*std::cout << std::endl << "--- AWESOME ---" << std::endl;
+	std::cout << "test1 = " << test1 << ", test2 = " << test2 << std::endl;
+	::swap(test1, test2);
+	std::cout << "after swap test1 = " << test1 << ", test2 = " << test2 << std::endl;
+	std::cout << "min( test1, test2 ) = " << ::min( test1, test2 ) << std::endl;
+	std::cout << "max( test1, test2 ) = " << ::max( test1, test2 ) << std::endl;*/
+
 	return 0;
 }

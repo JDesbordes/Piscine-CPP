@@ -17,9 +17,21 @@ void swap(const T& a, const T& b)
 }
 
 template <typename T>
+T min( T& a, T& b)
+{
+	return (a < b ? a : b);
+}
+
+template <typename T>
 T min(const T& a, const T& b)
 {
 	return (a < b ? a : b);
+}
+
+template <typename T>
+T max(T& a, T& b)
+{
+	return (a > b ? a : b);
 }
 
 template <typename T>
@@ -27,5 +39,30 @@ T max(const T& a, const T& b)
 {
 	return (a > b ? a : b);
 }
+
+/*class Awesome {
+
+	public:
+
+		Awesome( int n ) : _n( n ) {}
+
+		bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
+		bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
+		bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
+		bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
+		bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
+		bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
+		int getn() const {return (_n);}
+
+	private:
+
+		int _n;
+};
+
+std::ostream &	operator<<( std::ostream & o, Awesome const & i )
+{
+	o << i.getn();
+	return o;
+}*/
 
 #endif

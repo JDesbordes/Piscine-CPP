@@ -1,12 +1,21 @@
 #include "Array.hpp"
+#include <vector>
 
 int main2(void)
 {
 	Array<std::string> strarr(2);
 	Array<int> ble(6);
+	Array<int> ble2;
+	int * a = new int();
+	std::cout<<*a<<std::endl;
+	std::cout<<ble[5]<<std::endl;
+	delete(a);
 
 	strarr[0] = "first";
 	strarr[1] = "second";
+	const Array<std::string> strconst(strarr);
+	//strconst[0] = "nope"; // can't change const
+	std::cout << strconst[0] << std::endl;
 	int i(0);
 	while (i < 6)
 	{
@@ -45,7 +54,6 @@ int main2(void)
 		}
 		i++;
 	}
-	
 	
 	return (0);
 }
