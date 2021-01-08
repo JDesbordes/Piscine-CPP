@@ -3,6 +3,8 @@
 
 # include <iostream>
 # include <string>
+# include <vector>
+# include <iterator>
 
 class Span
 {
@@ -17,15 +19,25 @@ class Span
 		Span &		operator=( Span const & rhs );
 
 		unsigned int getSize() const;
-		unsigned int getNow() const;
 		void addNumber(int nb);
-		int shortestSpan();
-		int longestSpan();
+		long long shortestSpan();
+		long long longestSpan();
+
+	class MaxSizeOfVectorException : public std::exception
+	{
+		public:
+			virtual const char* what () const throw();
+	};
+
+	class UngotValueException : public std::exception
+	{
+		public:
+			virtual const char* what () const throw();
+	};
 
 	private:
-		int *array;
+		std::vector<int> arr;
 		const unsigned int size;
-		unsigned int now;
 
 };
 

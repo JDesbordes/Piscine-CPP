@@ -4,21 +4,20 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Span::Span() : array(new int[0]), size(0), now(0)
+Span::Span() : size(0)
 {
+	this->arr.reserve(0);
 }
 
-Span::Span( unsigned int n) : array(new int[n]), size(n), now(0)
+Span::Span( unsigned int n) : size(n)
 {
+	this->arr.reserve(n);
 }
 
-Span::Span( const Span & src ) : array(new int[src.getSize()]), size(src.getSize())
+Span::Span( const Span & src ) : size(src.getSize())
 {
-	unsigned int& n = const_cast<unsigned int&>(this->size);
-	n = src.getSize();
-	now = src.getNow();
-	for (unsigned int i = 0; i < src.getNow(); i++)
-		array[i] = src.array[i];
+	this->arr.reserve(src.getSize());
+	copy(src.arr.begin(), src.arr.end(), back_inserter(this->arr));
 }
 
 /*
@@ -27,7 +26,6 @@ Span::Span( const Span & src ) : array(new int[src.getSize()]), size(src.getSize
 
 Span::~Span()
 {
-	delete[](array);
 }
 
 
@@ -41,9 +39,10 @@ Span &				Span::operator=( Span const & rhs )
 	{
 		unsigned int& n = const_cast<unsigned int&>(this->size);
 		n = rhs.getSize();
-		now = rhs.getNow();
-		for (unsigned int i = 0; i < rhs.getNow(); i++)
-			array[i] = rhs.array[i];
+		this->arr.reserve(rhs.getSize());
+		// for (int i = 0; i < rhs.arr.size(); i++) 
+        // 	arr.push_back(rhs.arr[i]); 
+		copy(rhs.arr.begin(), rhs.arr.end(), back_inserter(this->arr));
 	}
 	return *this;
 }
@@ -59,35 +58,49 @@ Span &				Span::operator=( Span const & rhs )
 
 unsigned int Span::getSize() const
 {
-	return (size);
-}
-
-unsigned int Span::getNow() const
-{
-	return (now);
+	return (this->size);
 }
 
 void Span::addNumber(int nb)
 {
-	now < size ? array[now++] = nb : 0;
+	if (this->size > this->arr.size())
+		this->arr.push_back(nb);
+	else
+		throw Span::MaxSizeOfVectorException();
+
 }
 
-int Span::shortestSpan()
+long long Span::longestSpan()
 {
-	int ishort(array[0]);
-
-	for (unsigned int i = 0; i < now; i++)
-		array[i] < ishort ? ishort = array[i]: 0;
-	return (ishort);
+	if (!this->arr.size())
+		throw Span::UngotValueException();
+	int ishort(INT_MAX);
+	int ilongest(INT_MIN);
+	for (std::vector<int>::iterator ptr = arr.begin(); ptr != arr.end(); ptr++)
+	{
+		*ptr > ilongest ? ilongest = *ptr: 0;
+		*ptr < ishort ? ishort = *ptr: 0;
+	}
+	return (ilongest - ishort);
 }
 
-int Span::longestSpan()
+long long Span::shortestSpan()
 {
-	int ilongest(array[0]);
+	if (!this->arr.size())
+		throw Span::UngotValueException();
+	std::vector<int> ptr = this->arr;
+	std::sort (ptr.begin(), ptr.end());
+	return (0);
+}
 
-	for (unsigned int i = 0; i < now; i++)
-		array[i] > ilongest ? ilongest = array[i]: 0;
-	return (ilongest);
+const char* Span::MaxSizeOfVectorException::what() const throw ()
+{
+    return ("Max size reach");
+}
+
+const char* Span::UngotValueException::what() const throw ()
+{
+    return ("No value on the span");
 }
 
 /* ************************************************************************** */
