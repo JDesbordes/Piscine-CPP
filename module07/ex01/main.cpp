@@ -11,7 +11,6 @@ class Awesome
 	int _n;
 };
 
-
 std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
 template< typename T >
