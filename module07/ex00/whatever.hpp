@@ -6,41 +6,33 @@
 # include <iomanip>
 
 template <typename T>
-void swap(const T& a, const T& b)
+void swap(T& a, T& b)
 {
-	T & ta = const_cast<T&>(a);
-	T & tb = const_cast<T&>(b);
-	T tempa = a;
+	T temp = a;
 
-	ta = tb;
-	tb = tempa;
+	a = b;
+	b = temp;
 }
 
 template <typename T>
-T min( T& a, T& b)
+void swap(const T& a, const T& b)
 {
-	return (a < b ? a : b);
+	std::cout << "ERROR: trying to swap two const : " << &a << " and " << &b  << std::endl;
 }
 
 template <typename T>
 T min(const T& a, const T& b)
 {
-	return (a < b ? a : b);
-}
-
-template <typename T>
-T max(T& a, T& b)
-{
-	return (a > b ? a : b);
+	return (const_cast<T&>(a) < const_cast<T&>(b) ? a : b);
 }
 
 template <typename T>
 T max(const T& a, const T& b)
 {
-	return (a > b ? a : b);
+	return (const_cast<T&>(a) > const_cast<T&>(b) ? a : b);
 }
 
-/*class Awesome {
+class Awesome {
 
 	public:
 
@@ -63,6 +55,6 @@ std::ostream &	operator<<( std::ostream & o, Awesome const & i )
 {
 	o << i.getn();
 	return o;
-}*/
+}
 
 #endif
