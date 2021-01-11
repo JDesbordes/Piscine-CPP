@@ -7,11 +7,12 @@ int main()
 	mstack.push(5);
 	mstack.push(17);
 
-	std::cout << mstack.top() << std::endl;
+	std::cout << mstack.top() << " = top val" << std::endl;
 
 	mstack.pop();
 
-	std::cout << mstack.size() << std::endl;
+	std::cout << mstack.size() << " = size" << std::endl;
+	std::cout << mstack.empty() << " = empty" << std::endl;
 
 	mstack.push(3);
 	mstack.push(5);
@@ -29,7 +30,6 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
-	std::stack<int> s(mstack);	
 
 	std::cout << std::endl << "--- reverse iterator ---" << std::endl;
 	MutantStack<int>::reverse_iterator itr = mstack.rbegin();
@@ -57,5 +57,7 @@ int main()
 		std::cout << *itc << std::endl;
 		++itc;
 	}
+
+	std::stack<int> s(mstack);
 	return 0;
 }
