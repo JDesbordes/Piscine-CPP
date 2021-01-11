@@ -58,11 +58,6 @@ class Array
 			return (temp);
 		}
 
-		unsigned int size()
-		{
-			return(_size);
-		}
-
 		class IndexOutOfBoundsException : public std::exception
 		{
 			public:

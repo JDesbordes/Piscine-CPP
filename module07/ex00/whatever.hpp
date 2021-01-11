@@ -5,6 +5,12 @@
 # include <string>
 # include <iomanip>
 
+class ConstSwapException : public std::exception
+{
+	public:
+		virtual const char* what () const throw(){return ("ERROR: trying to swap two const");};
+};
+
 template <typename T>
 void swap(T& a, T& b)
 {
@@ -17,6 +23,8 @@ void swap(T& a, T& b)
 template <typename T>
 void swap(const T& a, const T& b)
 {
+	static_cast<void>(a);
+	static_cast<void>(b);
 	throw ConstSwapException();
 }
 
@@ -31,11 +39,5 @@ T max(const T& a, const T& b)
 {
 	return (const_cast<T&>(a) > const_cast<T&>(b) ? a : b);
 }
-
-class ConstSwapException : public std::exception
-{
-	public:
-		virtual const char* what () const throw(){return ("ERROR: trying to swap two const");};
-};
 
 #endif

@@ -84,6 +84,8 @@ int main()
 	}
 
 	std::cout << std::endl;
+	std::cout << "trying INT MAX and INT MIN" << std::endl;
+	std::cout << std::endl;
 	Span sp4 = Span(15);
 	try
 	{
