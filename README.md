@@ -66,7 +66,7 @@ none
 - C++ Casts
 
 
-## Module 07 :
+## ✅ Module 07 :
 
 <strong>Description</strong>
 
@@ -75,7 +75,7 @@ none
 - c++ Templates
 
 
-## Module 08 :
+## ✅ Module 08 :
 
 <strong>Description</strong>
 
