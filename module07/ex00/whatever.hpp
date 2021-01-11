@@ -17,7 +17,7 @@ void swap(T& a, T& b)
 template <typename T>
 void swap(const T& a, const T& b)
 {
-	std::cout << "ERROR: trying to swap two const : " << &a << " and " << &b  << std::endl;
+	throw ConstSwapException();
 }
 
 template <typename T>
@@ -31,5 +31,11 @@ T max(const T& a, const T& b)
 {
 	return (const_cast<T&>(a) > const_cast<T&>(b) ? a : b);
 }
+
+class ConstSwapException : public std::exception
+{
+	public:
+		virtual const char* what () const throw(){return ("ERROR: trying to swap two const");};
+};
 
 #endif
