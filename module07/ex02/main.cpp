@@ -14,7 +14,7 @@ int main2(void)
 	strarr[0] = "first";
 	strarr[1] = "second";
 	const Array<std::string> strconst(strarr);
-	//strconst[0] = "nope"; // can't change const
+	// strconst[0] = "nope"; // can't change const
 	std::cout << strconst[0] << std::endl;
 	unsigned int i(0);
 	while (i < 6)
@@ -61,8 +61,8 @@ int main2(void)
 int main()
 {
 	main2();
-	/*while (1)
-	{
+	// while (1)
+	// {
 
-	}*/
+	// }
 }
