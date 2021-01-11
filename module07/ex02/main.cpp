@@ -16,10 +16,10 @@ int main2(void)
 	const Array<std::string> strconst(strarr);
 	// strconst[0] = "nope"; // can't change const
 	std::cout << strconst[0] << std::endl;
-	int i(0);
+	unsigned int i(0);
 	while (i < 6)
 	{
-		ble[i] = i;
+		ble[i] = static_cast<int>(i);
 		std::cout <<i << " = " << ble[i] << std::endl;
 		i++;
 	}
@@ -35,7 +35,7 @@ int main2(void)
 	i = 0;
 	while (i < 6)
 	{
-		blu[i] = i + 2;
+		blu[i] = static_cast<int>(i) + 2;
 		std::cout <<"----------------------------------------------------------------------"<< std::endl;
 		std::cout <<i << " blu = " << blu[i] << std::endl;
 		std::cout <<i << " ble = " << ble[i] << std::endl;

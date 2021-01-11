@@ -59,23 +59,45 @@ int main(void) {
 	std::cout << "min( d1, d2 ) = " << ::min( d1, d2 ) << std::endl;
 	std::cout << "max( d1, d2 ) = " << ::max( d1, d2 ) << std::endl << std::endl;
 
-	std::cout << "--- CONST DOUBLE ---" << std::endl;
-	std::cout << "cd1 = " << cd1 << ", cd2 = " << cd2 << std::endl;
-	::swap(cd1, cd2);
+
+	try
+	{
+		std::cout << "--- CONST DOUBLE ---" << std::endl;
+		std::cout << "cd1 = " << cd1 << ", cd2 = " << cd2 << std::endl;
+		::swap(cd1, cd2);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << "cd1 = " << cd1 << ", cd2 = " << cd2 << std::endl;
 	std::cout << "min( cd1, cd2 ) = " << ::min( cd1, cd2 ) << std::endl;
 	std::cout << "max( cd1, cd2 ) = " << ::max( cd1, cd2 ) << std::endl << std::endl;
 
-	std::cout << "--- CONST STRING ---" << std::endl;
-	std::cout << "cc1 = " << cc1 << ", cc2 = " << cc2 << std::endl;
-	::swap(cc1, cc2);
+	try
+	{
+		std::cout << "--- CONST STRING ---" << std::endl;
+		std::cout << "cc1 = " << cc1 << ", cc2 = " << cc2 << std::endl;
+		::swap(cc1, cc2);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << "after swap cc1 = " << cc1 << ", cc2 = " << cc2 << std::endl;
 	std::cout << "min( cc1, cc2 ) = " << ::min( cc1, cc2 ) << std::endl;
 	std::cout << "max( cc1, cc2 ) = " << ::max( cc1, cc2 ) << std::endl << std::endl;
 
-	std::cout << "--- CONST INT ---" << std::endl;
-	std::cout << "ci1 = " << ci1 << ", ci2 = " << ci2 << std::endl;
-	::swap(ci1, ci2);
+	try
+	{
+		std::cout << "--- CONST INT ---" << std::endl;
+		std::cout << "ci1 = " << ci1 << ", ci2 = " << ci2 << std::endl;
+		::swap(ci1, ci2);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << "after swap ci1 = " << ci1 << ", ci2 = " << ci2 << std::endl;
 	std::cout << "min( ci1, ci2 ) = " << ::min( ci1, ci2 ) << std::endl;
 	std::cout << "max( ci1, ci2 ) = " << ::max( ci1, ci2 ) << std::endl;
@@ -87,9 +109,17 @@ int main(void) {
 	std::cout << "min( test1, test2 ) = " << ::min( test1, test2 ) << std::endl;
 	std::cout << "max( test1, test2 ) = " << ::max( test1, test2 ) << std::endl;
 
-	std::cout << std::endl << "--- CONST AWESOME ---" << std::endl;
-	std::cout << "ctest1 = " << ctest1 << ", ctest2 = " << ctest2 << std::endl;
-	::swap(ctest1, ctest2);
+	try
+	{
+		std::cout << std::endl << "--- CONST AWESOME ---" << std::endl;
+		std::cout << "ctest1 = " << ctest1 << ", ctest2 = " << ctest2 << std::endl;
+		::swap(ctest1, ctest2);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
 	std::cout << "after swap ctest1 = " << ctest1 << ", ctest2 = " << ctest2 << std::endl;
 	std::cout << "min( ctest1, ctest2 ) = " << ::min( ctest1, ctest2 ) << std::endl;
 	std::cout << "max( tcest1, ctest2 ) = " << ::max( ctest1, ctest2 ) << std::endl;

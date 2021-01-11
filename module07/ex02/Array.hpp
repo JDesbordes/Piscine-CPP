@@ -52,15 +52,10 @@ class Array
 
 		const T &	operator[](unsigned int index) const
 		{
-			T &temp = this->array[index];
 			if (index >= _size)
 				throw IndexOutOfBoundsException();
+			T &temp = this->array[index];
 			return (temp);
-		}
-
-		unsigned int size()
-		{
-			return(_size);
 		}
 
 		class IndexOutOfBoundsException : public std::exception

@@ -3,7 +3,7 @@ SRCS	=	main.cpp
 HEADERS =	whatever.hpp
 INC		=   ./
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -Wconversion
 OBJS	=	$(SRCS:.cpp=.o)
 
 LFLAGS  =   -I $(INC)

@@ -20,6 +20,23 @@ class Span
 
 		unsigned int getSize() const;
 		void addNumber(int nb);
+		template<typename T>
+		void addMultiple(const T& cont)
+		{
+			T b;
+			b = const_cast<T&>(cont);
+			typename T::iterator itr;
+			int i(0);
+
+			for (itr = b.begin(); itr != b.end(); itr++)
+			{
+				i++;
+				if (this->size > this->arr.size())
+					this->arr.push_back(*itr);
+				else
+					throw Span::MaxSizeOfVectorException();
+			}
+		}
 		long shortestSpan();
 		long longestSpan();
 
@@ -29,7 +46,7 @@ class Span
 			virtual const char* what () const throw();
 	};
 
-	class UngotValueException : public std::exception
+	class NoValueException : public std::exception
 	{
 		public:
 			virtual const char* what () const throw();
