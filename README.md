@@ -86,5 +86,4 @@ none
 
 # Note
 
-<img width="1062" alt="Screen Shot 2020-12-24 at 00 28 39" src="https://user-images.githubusercontent.com/45235527/103043943-fd222000-457e-11eb-8306-acf583947579.png">
-
+<img width="1062" alt="Screen Shot 2020-12-24 at 00 28 39" src="https://user-images.githubusercontent.com/45235527/104217768-1579b200-543c-11eb-8b3c-6e0aca7ec7db.PNG">
