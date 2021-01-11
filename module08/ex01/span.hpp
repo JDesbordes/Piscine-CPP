@@ -29,7 +29,7 @@ class Span
 			virtual const char* what () const throw();
 	};
 
-	class UngotValueException : public std::exception
+	class NoValueException : public std::exception
 	{
 		public:
 			virtual const char* what () const throw();

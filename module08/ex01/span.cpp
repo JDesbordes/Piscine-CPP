@@ -71,7 +71,7 @@ void Span::addNumber(int nb)
 long Span::longestSpan()
 {
 	if (this->arr.size() < 2)
-		throw Span::UngotValueException();
+		throw Span::NoValueException();
 	int ishort(INT_MAX);
 	int ilongest(INT_MIN);
 	for (std::vector<int>::iterator ptr = arr.begin(); ptr != arr.end(); ptr++)
@@ -85,7 +85,7 @@ long Span::longestSpan()
 long Span::shortestSpan()
 {
 	if (this->arr.size() < 2)
-		throw Span::UngotValueException();
+		throw Span::NoValueException();
 	long ret(UINT_MAX);
 	std::vector<int> ptr = this->arr;
 	std::sort (ptr.begin(), ptr.end());
@@ -106,7 +106,7 @@ const char* Span::MaxSizeOfVectorException::what() const throw ()
     return ("Max size reach");
 }
 
-const char* Span::UngotValueException::what() const throw ()
+const char* Span::NoValueException::what() const throw ()
 {
     return ("Can't find span (zero or only one value)");
 }
