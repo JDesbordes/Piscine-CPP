@@ -7,9 +7,19 @@ int main()
 	{
 		myvector.push_back(5 - i);
 	}
+	
 	try
 	{
 		std::cout << easyfind(myvector, 3) << " found in container" << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	try
+	{
+		std::cout << easyfind(myvector, -5) << " found in container" << std::endl;
 	}
 	catch(const std::exception& e)
 	{

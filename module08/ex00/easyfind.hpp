@@ -19,16 +19,12 @@ template <typename T>
 int easyfind(const T& a, const int i)
 {
 	T b;
+	
 	b = const_cast<T&>(a);
 	typename T::iterator itr;
-
 	for(itr = b.begin(); itr != b.end(); itr++)  
-	{
 		if (*itr == i)
 			return(*itr);
-	}
-	
-	std::cout << i << " ";
 	throw NumNotFoundException();
 }
 
