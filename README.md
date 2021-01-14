@@ -1,5 +1,7 @@
 #  Piscine-CPP <img alt="C++ icon" src="https://img.icons8.com/color/452/c-plus-plus-logo.png" width="50" height="50">
 
+> *Project en collaboration avec <a href="https://github.com/JDesbordes">Jérôme Desbordes</a> (<a href="https://profile.intra.42.fr/users/jdesbord">jdesbord</a>).*
+
 ## ✅ Module 00 :
 
 <strong>Description</strong>
